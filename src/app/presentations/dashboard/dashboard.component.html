@@ -123,226 +123,32 @@
           <gridster-item [item]="item" *ngFor="let item of dashboard">
 
             <div *ngIf="item.type === 'mini'">
-              <div class="container">
-                <div class="row">
-                  <h3 class="col-12 widget-mini-title">BAJA</h3>
-                  <div class="col-10">
-                    <span class="widget-mini-price">$2.300.120</span>
-                    <span class="widget-mini-quantity"> &nbsp; 2301</span>
-                  </div>
-                </div>
-              </div>
+              <app-operation-mini></app-operation-mini>
             </div>
+
             <div *ngIf="item.type === 'expanded'">
-              <div class="container">
-                <div class="row">
-                  <h3 class="col-12 widget-mini-title color-santander">INGRESADO</h3>
-
-                  <div class="col-9">
-                    <span class="widget-mini-price">$2.300.120</span>
-                    <span class="widget-mini-quantity"> &nbsp; 2301</span>
-                  </div>
-                  <div class="col-3 aligned-centered-flex">
-                    <span class="widget-mini-percent">20%</span>
-                  </div>
-
-                  <div class="mt-2 col-12">
-                    <table style="width:100%" class="expanded-table">
-                      <tr>
-                        <th>Canal</th>
-                        <th>Cantidad</th>
-                        <th>Monto</th>
-                      </tr>
-
-                      <tr>
-                        <td>Sucursales</td>
-                        <td>1500</td>
-                        <td class="quantity">$1.146.010.409</td>
-                      </tr>
-                      <tr>
-                        <td>Datanet</td>
-                        <td>0</td>
-                        <td class="quantity">$0</td>
-                      </tr>
-                      <tr>
-                        <td>Obcm</td>
-                        <td>0</td>
-                        <td class="quantity">$0</td>
-                      </tr>
-                      <tr>
-                        <td>Obe</td>
-                        <td>0</td>
-                        <td class="quantity">$0</td>
-                      </tr>
-                      <tr>
-                        <td>Piryp</td>
-                        <td>0</td>
-                        <td class="quantity">$0</td>
-                      </tr>
-                      <tr>
-                        <td>Superlínea</td>
-                        <td>0</td>
-                        <td class="quantity">$0</td>
-                      </tr>
-
-                    </table>
-                  </div>
-                </div>
-              </div>
-
+              <app-operation-details></app-operation-details>
             </div>
+
             <div class="pink" *ngIf="item.type === 'expanded-rosa'">
-              <div class="container">
-                <div class="row">
-                  <h3 class="col-12 widget-mini-title color-santander">INGRESADO ROSA</h3>
-
-                  <div class="col-9">
-                    <span class="widget-mini-price">$2.300.120</span>
-                    <span class="widget-mini-quantity"> &nbsp; 2301</span>
-                  </div>
-                  <div class="col-3 aligned-centered-flex">
-                    <span class="widget-mini-percent">20%</span>
-                  </div>
-
-                  <div class="mt-2 col-12">
-                    <table style="width:100%" class="expanded-table">
-                      <tr>
-                        <th>Canal</th>
-                        <th>Cantidad</th>
-                        <th>Monto</th>
-                      </tr>
-
-                      <tr>
-                        <td>Sucursales</td>
-                        <td>1500</td>
-                        <td class="quantity">$1.146.010.409</td>
-                      </tr>
-                      <tr>
-                        <td>Datanet</td>
-                        <td>0</td>
-                        <td class="quantity">$0</td>
-                      </tr>
-                      <tr>
-                        <td>Obcm</td>
-                        <td>0</td>
-                        <td class="quantity">$0</td>
-                      </tr>
-                      <tr>
-                        <td>Obe</td>
-                        <td>0</td>
-                        <td class="quantity">$0</td>
-                      </tr>
-                      <tr>
-                        <td>Piryp</td>
-                        <td>0</td>
-                        <td class="quantity">$0</td>
-                      </tr>
-                      <tr>
-                        <td>Superlínea</td>
-                        <td>0</td>
-                        <td class="quantity">$0</td>
-                      </tr>
-
-                    </table>
-                  </div>
-                </div>
-              </div>
-
+              <app-operation-details></app-operation-details>
             </div>
-            <div *ngIf="item.type === 'process'">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="d-block  mt-2 full-width border-bottom-black">
-                    <span class="uppercase">Capacidad de Procesamiento</span>
-                  </div>
 
-                  <div class="col-6">
-                    <app-graph-bullet [options]='graphINTBKOptions'></app-graph-bullet>
-                  </div>
-                  <div class="col-6">
-                    <app-graph-bullet [options]='graphBCRAOptions'></app-graph-bullet>
-                  </div>
-                </div>
-              </div>
+            <div *ngIf="item.type === 'process'">
+              <app-graph-process></app-graph-process>
             </div>
 
             <div *ngIf="item.type === 'process-2'">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="d-block  mt-2 full-width border-bottom-black">
-                    <span class="uppercase">Estado de garantía</span>
-                  </div>
+              <app-graph-warranty></app-graph-warranty>
 
-                  <div class="col">
-                    <app-graph-bullet [options]='graphWarrantyOptions'></app-graph-bullet>
-                  </div>
-
-                </div>
-              </div>
             </div>
+
             <div style="height: inherit" *ngIf="item.type === 'graph'">
-              <div style="height:100%" class="row">
-                <div class="col-1">
-                  <div style="white-space: nowrap; top:63%;   left: -75%;" class="vertical">
-                    EMITIDAS POR HORA
-                  </div>
-                  <div style="border-right: 1px solid black; height: 100%;">
-                  </div>
-                </div>
-                <article class="col-11 border-grey">
-                  <canvas style="padding: 10px 5px;" #lineChart>{{ chart }}</canvas>
-                </article>
-              </div>
+              <app-graph-operations></app-graph-operations>
             </div>
+
             <div style="height:100%" *ngIf="item.type === 'table'">
-              <div style="height:100%" class="row">
-                <div class="col-1">
-                  <div class="vertical">
-                    ALERTAS
-                  </div>
-                  <div style="border-right: 1px solid black; height: 100%;">
-                  </div>
-                </div>
-                <article class="table col-11 border-grey">
-                  <!-- <h3>ALERTAS <span><i class="fas fa-exclamation-circle fa-pull-right statustypered"></i></span></h3> -->
-                  <div class="row status-menu borderbottom">
-                    <div class="col-1">HORA</div>
-                    <div class="col-2">CANTIDAD</div>
-                    <div class="col-5">MONTO</div>
-                    <div class="col-4">DESCRIPCION</div>
-                  </div>
-                  <div class="row status borderbottom">
-                    <div class="col-1">11:10</div>
-                    <div class="col-2">724</div>
-                    <div class="col-5 font-weight-bold">ARS 27.427.577</div>
-                    <div class="col-4">Balanceo</div>
-                  </div>
-                  <div class="row status borderbottom">
-                    <div class="col-1">11:10</div>
-                    <div class="col-2">724</div>
-                    <div class="col-5 font-weight-bold">ARS 27.427.577</div>
-                    <div class="col-4">Balanceo</div>
-                  </div>
-                  <div class="row status borderbottom">
-                    <div class="col-1">11:10</div>
-                    <div class="col-2">724</div>
-                    <div class="col-5 font-weight-bold">ARS 27.427.577</div>
-                    <div class="col-4">Balanceo</div>
-                  </div>
-                  <div class="row status borderbottom">
-                    <div class="col-1">11:10</div>
-                    <div class="col-2">724</div>
-                    <div class="col-5 font-weight-bold">ARS 27.427.577</div>
-                    <div class="col-4">Balanceo</div>
-                  </div>
-                  <div class="status row">
-                    <div class="col-1">11:10</div>
-                    <div class="col-2">724</div>
-                    <div class="col-5 font-weight-bold">ARS 27.427.577</div>
-                    <div class="col-4">Balanceo</div>
-                  </div>
-                </article>
-              </div>
+              <app-table-operations></app-table-operations>
             </div>
           </gridster-item>
         </gridster>
