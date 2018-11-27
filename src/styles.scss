@@ -39,6 +39,7 @@ a:hover {
     text-decoration: none !important;
     opacity: .8
 }
+
 .vertical {
     transform: rotate(-90deg);
     font-size: .95em;
@@ -46,6 +47,7 @@ a:hover {
     left: 0px;
     top: 82%;
 }
+
 #brand span {
     font-size: .55em;
     font-weight: 400;
@@ -62,14 +64,12 @@ header {
     border-bottom: 1px solid #eee;
 }
 
-nav {
+.nav {
     background-color: #6b787a;
-    height: 92vh;
     text-align: center;
-    padding: 0 !important
 }
 
-nav a {
+.nav a {
     font-size: 1.5em;
     text-align: center;
     color: white;
@@ -79,14 +79,30 @@ nav a {
     padding: 5px 15px
 }
 
-nav a:hover,
-nav a:active {
+.navbar-col {
+    max-width: 70px;
+    padding: 0px 13px;
+}
+
+.no-padding {
+    padding: 0px 0px
+}
+
+nav .active {
+    font-size: 1.8rem;
+    color: rgb(255, 224, 224);
+}
+
+nav a:hover
+    {
     color: #808080;
+    transition-duration: 1s;
     background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
     background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
     background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=1);
 }
+
 
 .dropdown {
     float: left;

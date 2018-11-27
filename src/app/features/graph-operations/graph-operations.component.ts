@@ -1,5 +1,5 @@
 import { Chart } from 'chart.js';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 
 @Component({
   selector: 'app-graph-operations',
@@ -9,6 +9,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class GraphOperationsComponent implements OnInit {
 
   @ViewChild('lineChart') chartRef;
+  @Input() label: string;
   chart: any;
 
   constructor() { }
