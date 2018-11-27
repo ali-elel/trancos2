@@ -1,0 +1,45 @@
+<div class="bg">
+  <div class="centered login-max-width">
+
+    <div class="d-flex justify-content-center logo-section">
+      <img src="/assets/images/santander-rio.png" class="santander-logo">
+    </div>
+
+    <form (ngSubmit)="submit()" autocomplete="off">
+
+      <div class="login-section container">
+
+        <mat-form-field class="max-width d-block mt-2 mb-2">
+          <input (blur)="usernameDirty = true" [errorStateMatcher]="matcher" autocomplete="off" matInput [formControl]="usernameControl"
+            type="text" placeholder="Usuario">
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-error *ngIf="usernameControl.hasError('required')">
+            <span *ngIf="usernameDirty"> Nombre de usuario
+              <strong>obligatorio</strong>
+            </span>
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field class="max-width d-block mb-3">
+          <input (blur)="passwordDirty = true" autocomplete="off" [type]="hide ? 'password' : 'text'"
+            [errorStateMatcher]="matcher" matInput [formControl]="passwordControl" placeholder="Password">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+          <mat-error *ngIf="passwordControl.hasError('required')">
+            <span *ngIf="passwordDirty"> Password
+              <strong>obligatorio</strong>
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="d-flex justify-content-center">
+          <button class="btn login-button mb-2" [disabled]="!isValid()" type="submit">INGRESAR
+            <i *ngIf="isLogin" class="fas loading fa-spin fa-spinner"></i>
+          </button>
+          <span *ngIf="error != ''"> {{error}}</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
