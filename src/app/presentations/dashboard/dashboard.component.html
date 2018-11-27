@@ -280,7 +280,7 @@
                 </div>
               </div>
             </div>
-            <div *ngIf="item.type === 'graph'">
+            <div style="height: inherit" *ngIf="item.type === 'graph'">
               <div style="height:100%" class="row">
                 <div class="col-1">
                   <div style="white-space: nowrap; top:63%;   left: -75%;" class="vertical">
@@ -289,8 +289,8 @@
                   <div style="border-right: 1px solid black; height: 100%;">
                   </div>
                 </div>
-                <article style="height: 250px !important" class="col-11 border-grey">
-                  <canvas style="padding: 20px 5px;" #lineChart>{{ chart }}</canvas>
+                <article class="col-11 border-grey">
+                  <canvas style="padding: 10px 5px;" #lineChart>{{ chart }}</canvas>
                 </article>
               </div>
             </div>
