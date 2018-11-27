@@ -18,13 +18,25 @@ import { DashboardComponent } from './presentations/dashboard/dashboard.componen
 import { GraphBulletComponent } from './components/graph-bullet/graph-bullet.component';
 import { ThousandsPipe } from './pipes/thousands.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { OperationMiniComponent } from './features/operation-mini/operation-mini.component';
+import { OperationDetailsComponent } from './features/operation-details/operation-details.component';
+import { GraphProcessComponent } from './features/graph-process/graph-process.component';
+import { GraphWarrantyComponent } from './features/graph-warranty/graph-warranty.component';
+import { GraphOperationsComponent } from './features/graph-operations/graph-operations.component';
+import { TableOperationsComponent } from './features/table-operations/table-operations.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
     GraphBulletComponent,
-    ThousandsPipe
+    ThousandsPipe,
+    OperationMiniComponent,
+    OperationDetailsComponent,
+    GraphProcessComponent,
+    GraphWarrantyComponent,
+    GraphOperationsComponent,
+    TableOperationsComponent
   ],
   imports: [
     BrowserModule,
