@@ -1,0 +1,162 @@
+<!-- <app-graph-bullet [options]='graphINTBKOptions'></app-graph-bullet> -->
+
+<div class="santander internas">
+  <header class="container-fluid">
+    <div class="row">
+      <div id="brand" class="col-md-6">
+        <h1>
+          <img src="/assets/images/santander-rio.png" class="santander-header-logo">
+          <span class="header-location">&nbsp;Emitidas</span>
+        </h1>
+      </div>
+      <div id="tools" class="col-md-6 text-right">
+        <button type="button" class="header-tool btn btn-outline-secondary search"><i class="fas fa-search"></i></button>
+        <button type="button" class="header-tool btn btn-secondary user"><i class="fas fa-user"></i></button>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="container-fluid">
+    <div class="row">
+
+      <nav class="col-1" id="menu">
+        <a href="tablero.html"><i class="fas fa-th-large"></i></a>
+        <a href="emitidas.html" class="active"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="recibidas.html"><i class="fas fa-sign-in-alt"></i></a>
+        <a href="pagos.html"><i class="fas fa-donate"></i></a>
+        <a href="#"><i class="fas fa-search-dollar"></i></a>
+        <a href="detalle.html"><i class="fas fa-chart-bar"></i></a>
+        <a href="tx.html"><i class="fas fa-random"></i></a>
+        <a href="alertas.html"><i class="fas fa-exclamation-triangle"></i></a>
+      </nav>
+
+      <section id="maincontent">
+
+        <div class="row" id="filters">
+          <form action="#" class="col-md-12 expanded">
+            <div class="radioGroup input col-md-3">
+              <div>
+                <span>Filtrar por:</span>&nbsp;
+                <label><input type="radio" name="optradio" checked> Pesos</label>&nbsp;
+                <label><input type="radio" name="optradio"> Dólares</label>
+              </div>
+            </div>
+
+
+            <div class="dropdown col-md-1">
+              <button class="btn dropdown-toggle" type="button" id="dropdownDateButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Fecha
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownDateButton">
+                <input type="text" name="daterange" value="" />
+
+              </div>
+            </div>
+
+
+            <div class="dropdown col-md-1">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Sucursal
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Sucursal 1</a>
+                <a class="dropdown-item" href="#">Sucursal 2</a>
+                <a class="dropdown-item" href="#">Sucursal 3</a>
+              </div>
+            </div>
+
+            <div class="dropdown col-md-1">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Segmento
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <a class="dropdown-item" href="#">Segmento 1</a>
+                <a class="dropdown-item" href="#">Segmento 2</a>
+                <a class="dropdown-item" href="#">Segmento 3</a>
+              </div>
+            </div>
+
+            <div class="dropdown col-md-1">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Producto
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <a class="dropdown-item" href="#">Producto 1</a>
+                <a class="dropdown-item" href="#">Producto 2</a>
+                <a class="dropdown-item" href="#">Producto 3</a>
+              </div>
+            </div>
+            <div class="dropdown col-md-1">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Canal
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <a class="dropdown-item" href="#">Producto 1</a>
+                <a class="dropdown-item" href="#">Producto 2</a>
+                <a class="dropdown-item" href="#">Producto 3</a>
+              </div>
+            </div>
+            <div class="dropdown col-md-1">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Cámara
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <a class="dropdown-item" href="#">Producto 1</a>
+                <a class="dropdown-item" href="#">Producto 2</a>
+                <a class="dropdown-item" href="#">Producto 3</a>
+              </div>
+            </div>
+            <div class="dropdown col-3 text-right">
+              <button type="button" class="btn btn-secondary user">Aplicar filtros <i class="fas fa-filter"></i></button>
+            </div>
+          </form>
+        </div>
+
+        <gridster [options]="options">
+          <gridster-item [item]="item" *ngFor="let item of dashboard">
+
+            <div *ngIf="item.type === 'mini'">
+              <app-operation-mini></app-operation-mini>
+            </div>
+
+            <div *ngIf="item.type === 'expanded'">
+              <app-operation-details></app-operation-details>
+            </div>
+
+            <div class="pink" *ngIf="item.type === 'expanded-rosa'">
+              <app-operation-details></app-operation-details>
+            </div>
+
+            <div *ngIf="item.type === 'process'">
+              <app-graph-process></app-graph-process>
+            </div>
+
+            <div *ngIf="item.type === 'process-2'">
+              <app-graph-warranty></app-graph-warranty>
+
+            </div>
+
+            <div style="height: inherit" *ngIf="item.type === 'graph'">
+              <app-graph-operations></app-graph-operations>
+            </div>
+
+            <div style="height:100%" *ngIf="item.type === 'table'">
+              <app-table-operations></app-table-operations>
+            </div>
+          </gridster-item>
+        </gridster>
+      </section>
+
+    </div>
+
+
+  </section>
+
+</div>

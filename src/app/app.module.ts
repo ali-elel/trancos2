@@ -24,6 +24,8 @@ import { GraphProcessComponent } from './features/graph-process/graph-process.co
 import { GraphWarrantyComponent } from './features/graph-warranty/graph-warranty.component';
 import { GraphOperationsComponent } from './features/graph-operations/graph-operations.component';
 import { TableOperationsComponent } from './features/table-operations/table-operations.component';
+import { EmittedComponent } from './presentations/emitted/emitted.component';
+import { ReceivedComponent } from './presentations/received/received.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { TableOperationsComponent } from './features/table-operations/table-oper
     GraphProcessComponent,
     GraphWarrantyComponent,
     GraphOperationsComponent,
-    TableOperationsComponent
+    TableOperationsComponent,
+    EmittedComponent,
+    ReceivedComponent
   ],
   imports: [
     BrowserModule,
