@@ -27,6 +27,7 @@ import { TableOperationsComponent } from './features/table-operations/table-oper
 import { EmittedComponent } from './presentations/emitted/emitted.component';
 import { ReceivedComponent } from './presentations/received/received.component';
 import { SidenavComponent } from './features/sidenav/sidenav.component';
+import { GraphOperations2Component } from './features/graph-operations2/graph-operations2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { SidenavComponent } from './features/sidenav/sidenav.component';
     TableOperationsComponent,
     EmittedComponent,
     ReceivedComponent,
-    SidenavComponent
+    SidenavComponent,
+    GraphOperations2Component
   ],
   imports: [
     BrowserModule,

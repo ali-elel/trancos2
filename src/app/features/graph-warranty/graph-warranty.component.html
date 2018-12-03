@@ -1,12 +1,20 @@
 <div class="container-fluid">
   <div class="row">
     <div class="d-block  mt-2 full-width border-bottom-black">
-      <span class="uppercase">Estado de garantía</span>
+      <span class="vertical uppercase">Procesamiento</span>
     </div>
-
-    <div class="col">
-      <app-graph-bullet [options]='graphWarrantyOptions'></app-graph-bullet>
-    </div>
-
   </div>
+  <div class="row">
+    <div class="col">
+        <span class="horizontal uppercase" style="padding-left: 40px">INTERBANKING</span>
+      <app-graph-bullet [options]='graphWarrantyOptions'></app-graph-bullet>
+    </div> 
+  </div>
+  <div class="row">
+    <div class="col">
+        <span class="horizontal uppercase" style="padding-left: 40px;">BCRA</span>
+      <app-graph-bullet [options]='graphWarranty2Options'></app-graph-bullet>
+    </div>   
+  </div> 
 </div>
+
