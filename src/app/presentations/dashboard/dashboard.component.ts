@@ -17,16 +17,16 @@ export class DashboardComponent implements OnInit {
     this.options = {
       displayGrid: 'onDrag&Resize',
       draggable: { enabled: true },
-      maxRows: 6,
+      maxRows: 7,
       maxCols: 8,
       pushItems: true
     };
 
     this.dashboard = [
-      { cols: 2, rows: 1, y: 0, x: 6, type: 'mini' },
-      { cols: 2, rows: 1, y: 0, x: 4, type: 'mini' },
-      { cols: 2, rows: 1, y: 0, x: 2, type: 'mini' },
-      { cols: 2, rows: 1, y: 0, x: 0, type: 'mini' },
+      { cols: 2, rows: 2, y: 0, x: 6, type: 'ingresadas-recibidas' },
+      { cols: 2, rows: 2, y: 0, x: 4, type: 'ingresadas-recibidas' },
+      { cols: 2, rows: 2, y: 0, x: 2, type: 'ingresadas-recibidas' },
+      { cols: 2, rows: 2, y: 0, x: 0, type: 'ingresadas-recibidas' },
 
 
       { cols: 4, rows: 2, y: 1, x: 0, type: 'multi-bullet-warranty' },

@@ -1,3 +1,32 @@
+<!--
+      <gridster [options]="options">
+        <gridster-item [item]="item" *ngFor="let item of dashboard">
+
+          <div *ngIf="item.type === 'expanded'">
+            <app-operation-details></app-operation-details>
+          </div>
+
+          <div class="pink" *ngIf="item.type === 'expanded-rosa'">
+            <app-operation-details></app-operation-details>
+          </div>
+
+          <div *ngIf="item.type === 'process'">
+            <app-graph-process></app-graph-process>
+          </div>
+
+          <div *ngIf="item.type === 'process-2'">
+            <app-graph-warranty></app-graph-warranty>
+
+          </div>
+
+          <div style="height: inherit" *ngIf="item.type === 'graph'">
+            <app-graph-operations label="Recibidas por Hora"></app-graph-operations>
+          </div>
+
+          <div style="height:100%" *ngIf="item.type === 'table'">
+            <app-table-operations></app-table-operations>
+          -->
+
 <div class="santander internas">
   <header class="container-fluid">
     <div class="row">
@@ -22,6 +51,10 @@
       <gridster [options]="options">
         <gridster-item [item]="item" *ngFor="let item of dashboard">
 
+          <div *ngIf="item.type === 'mini'">
+            <app-operation-mini></app-operation-mini>
+          </div>
+
           <div *ngIf="item.type === 'expanded'">
             <app-operation-details></app-operation-details>
           </div>
@@ -30,17 +63,11 @@
             <app-operation-details></app-operation-details>
           </div>
 
-          <div *ngIf="item.type === 'process'">
-            <app-graph-process></app-graph-process>
-          </div>
-
-          <div *ngIf="item.type === 'process-2'">
-            <app-graph-warranty></app-graph-warranty>
-
-          </div>
+          <app-graph-process *ngIf="item.type === 'process'"></app-graph-process>
+          <app-graph-warranty *ngIf="item.type === 'process-2'"></app-graph-warranty>
 
           <div style="height: inherit" *ngIf="item.type === 'graph'">
-            <app-graph-operations label="Recibidas por Hora"></app-graph-operations>
+            <app-graph-operations label="Emitidas por hora"></app-graph-operations>
           </div>
 
           <div style="height:100%" *ngIf="item.type === 'table'">

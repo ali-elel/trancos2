@@ -1,0 +1,53 @@
+.half {
+    height: 49%;
+}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.h-2 {
+    height: 2%
+}
+
+.align-center {
+    align-self: center;
+}
+
+.quantity {
+    color: #464646;
+    font-size: 1.1em;
+}
+
+.line {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    border-right: 1px solid rgb(73, 73, 73);
+    left: 100%;
+    top: 0%;
+}
+
+.price {
+    font-size: 1.3em;
+}
+
+.h-20 {
+    height: 10%;
+}
+
+.title {
+    color: #FF6666;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.h-80 {
+    height: 90%;
+}
+
+.percent {
+    font-size: 1.6em;
+    color: rgb(117, 117, 117);
+}

@@ -28,6 +28,7 @@ import { EmittedComponent } from './presentations/emitted/emitted.component';
 import { ReceivedComponent } from './presentations/received/received.component';
 import { SidenavComponent } from './features/sidenav/sidenav.component';
 import { MultiBulletComponent } from './features/multi-bullet/multi-bullet.component';
+import { EmitReceiveComponent } from './features/emit-receive/emit-receive.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { MultiBulletComponent } from './features/multi-bullet/multi-bullet.compo
     EmittedComponent,
     ReceivedComponent,
     SidenavComponent,
-    MultiBulletComponent
+    MultiBulletComponent,
+    EmitReceiveComponent
   ],
   imports: [
     BrowserModule,

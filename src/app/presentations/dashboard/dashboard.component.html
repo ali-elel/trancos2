@@ -21,18 +21,7 @@
     <div class="col">
       <gridster [options]="options">
         <gridster-item [item]="item" *ngFor="let item of dashboard">
-
-          <div *ngIf="item.type === 'mini'">
-            <app-operation-mini></app-operation-mini>
-          </div>
-
-          <div *ngIf="item.type === 'expanded'">
-            <app-operation-details></app-operation-details>
-          </div>
-
-          <div class="pink" *ngIf="item.type === 'expanded-rosa'">
-            <app-operation-details></app-operation-details>
-          </div>
+            <app-emit-receive *ngIf="item.type === 'ingresadas-recibidas'"></app-emit-receive>
 
           <app-multi-bullet *ngIf="item.type === 'multi-bullet-warranty'" label="GARANTÍAS" type="warranty"></app-multi-bullet>
           <app-multi-bullet *ngIf="item.type === 'multi-bullet-process'" label="PROCESAMIENTO" type="process"></app-multi-bullet>
