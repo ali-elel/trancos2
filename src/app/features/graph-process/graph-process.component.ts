@@ -10,6 +10,7 @@ export class GraphProcessComponent implements OnInit {
 
   graphINTBKOptions: GraphBulletOptions = {
     name: 'INTBK',
+    vertical: true,
     segments: {
       used: {
         text: 'Utilizado',
@@ -41,6 +42,7 @@ export class GraphProcessComponent implements OnInit {
 
   graphBCRAOptions: GraphBulletOptions = {
     name: 'BCRA',
+    vertical: true,
     segments: {
       used: {
         text: 'Utilizado',

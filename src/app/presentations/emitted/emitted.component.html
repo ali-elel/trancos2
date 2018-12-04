@@ -14,7 +14,7 @@
     </div>
   </header>
   <div class="row">
-    
+
     <div class="navbar-col nav">
       <app-sidenav></app-sidenav>
     </div>
@@ -34,14 +34,8 @@
             <app-operation-details></app-operation-details>
           </div>
 
-          <div *ngIf="item.type === 'process'">
-            <app-graph-process></app-graph-process>
-          </div>
-
-          <div *ngIf="item.type === 'process-2'">
-            <app-graph-warranty></app-graph-warranty>
-
-          </div>
+          <app-graph-process *ngIf="item.type === 'process'"></app-graph-process>
+          <app-graph-warranty *ngIf="item.type === 'process-2'"></app-graph-warranty>
 
           <div style="height: inherit" *ngIf="item.type === 'graph'">
             <app-graph-operations label="Emitidas por hora"></app-graph-operations>

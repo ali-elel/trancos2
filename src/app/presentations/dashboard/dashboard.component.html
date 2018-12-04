@@ -4,7 +4,7 @@
       <div id="brand" class="col-md-6">
         <h1>
           <img src="/assets/images/santander-rio.png" class="santander-header-logo">
-          <span class="header-location">&nbsp;Emitidas</span>
+          <span class="header-location">&nbsp;Dashboard</span>
         </h1>
       </div>
       <div id="tools" class="col-md-6 text-right">
@@ -14,7 +14,7 @@
     </div>
   </header>
   <div class="row">
-    
+
     <div class="navbar-col nav">
       <app-sidenav></app-sidenav>
     </div>
@@ -34,15 +34,8 @@
             <app-operation-details></app-operation-details>
           </div>
 
-          <div *ngIf="item.type === 'process'">
-            <app-graph-process></app-graph-process>
-          </div>
-
-          <div *ngIf="item.type === 'process-2'">
-            <app-graph-warranty></app-graph-warranty>
-
-          </div>
-
+          <app-multi-bullet *ngIf="item.type === 'multi-bullet-warranty'" label="GARANTÍAS" type="warranty"></app-multi-bullet>
+          <app-multi-bullet *ngIf="item.type === 'multi-bullet-process'" label="PROCESAMIENTO" type="process"></app-multi-bullet>
           <div style="height: inherit" *ngIf="item.type === 'graph'">
             <app-graph-operations></app-graph-operations>
           </div>
