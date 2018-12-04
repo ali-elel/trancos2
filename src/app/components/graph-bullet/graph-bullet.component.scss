@@ -222,6 +222,10 @@ figure {
     height: 40px;
 }
 
-.segment .start {}
+.segment.start {
+    border-radius: 5px 0px 0px 5px;
+}
 
-.segment .end {}
+.segment.end {
+    border-radius: 0px 5px 5px 0px;
+}

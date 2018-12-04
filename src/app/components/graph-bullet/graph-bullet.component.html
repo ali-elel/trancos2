@@ -2,7 +2,9 @@
 
   <div *ngIf="options.name !== ''" style="padding-right: 5px; padding-left:0px;" class="col-1 align-self-flex-end">
     <div class="vertical-multi">
+
       {{options.name}}
+
     </div>
   </div>
 
@@ -50,8 +52,10 @@
 
 <div *ngIf="!options.vertical" class="row half">
 
-  <div class="col-12 h-30">
-    {{options.name}}
+  <div class="col-12 h-30 d-flex">
+    <div style="    align-self: flex-end;">
+      {{options.name}}
+    </div>
   </div>
   <div class="col-12 h-70">
 
