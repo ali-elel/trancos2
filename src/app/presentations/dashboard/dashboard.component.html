@@ -4,7 +4,7 @@
       <div id="brand" class="col-md-6">
         <h1>
           <img src="/assets/images/santander-rio.png" class="santander-header-logo">
-          <span class="header-location">&nbsp;Emitidas</span>
+          <span class="header-location">&nbsp;Dashboard</span>
         </h1>
       </div>
       <div id="tools" class="col-md-6 text-right">
@@ -37,22 +37,25 @@
           <div *ngIf="item.type === 'process'">
             <app-graph-process></app-graph-process>
           </div>
-
           <div *ngIf="item.type === 'process-2'">
             <app-graph-warranty></app-graph-warranty>
-
           </div>
 
-          <div style="height: inherit" *ngIf="item.type === 'graph'">
+          <div style="height: 100%" *ngIf="item.type === 'graph1'">
             <app-graph-operations></app-graph-operations>
+          </div>
+
+          <div style="height:100%" *ngIf="item.type === 'graph2'">
+            <app-graph-operations2></app-graph-operations2>
           </div>
 
           <div style="height:100%" *ngIf="item.type === 'table'">
             <app-table-operations></app-table-operations>
           </div>
+
         </gridster-item>
       </gridster>
     </div>
-
   </div>
+ 
 </div>
