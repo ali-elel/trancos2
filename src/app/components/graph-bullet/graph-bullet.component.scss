@@ -112,7 +112,7 @@ figure {
     display: block;
     height: 100%;
     color: black;
-    font-size: 1em;
+    font-size: 1.2vw;
     overflow: hidden;
     opacity: 1;
     transition: opacity, .3s ease; // cursor: pointer;
@@ -149,7 +149,7 @@ figure {
     height: 0px;
     font-size: 80%;
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%);
     width: 100%;

@@ -13,28 +13,33 @@
       </div>
     </div>
   </header>
-  <div class="row">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="navbar-col nav">
+        <app-sidenav></app-sidenav>
+      </div>
+      <div class="col">
+        <gridster [options]="options">
+          <gridster-item [item]="item" *ngFor="let item of dashboard">
+            <app-emit-receive [percent]="false" label="Total" *ngIf="item.type === 'ingresadas-recibidas-total'"></app-emit-receive>
+            <app-emit-receive [percent]="true" label="Pendiente" isAlert="true" *ngIf="item.type === 'ingresadas-recibidas-pendiente'"></app-emit-receive>
+            <app-emit-receive [percent]="true" label="Procesado" *ngIf="item.type === 'ingresadas-recibidas-procesado'"></app-emit-receive>
+            <app-emit-receive [percent]="true" label="Rechazado" *ngIf="item.type === 'ingresadas-recibidas-rechazado'"></app-emit-receive>
 
-    <div class="navbar-col nav">
-      <app-sidenav></app-sidenav>
+            <app-multi-bullet *ngIf="item.type === 'multi-bullet-warranty'" label="GARANTÍAS" type="warranty"></app-multi-bullet>
+            <app-multi-bullet *ngIf="item.type === 'multi-bullet-process'" label="PROCESAMIENTO" type="process"></app-multi-bullet>
+
+            <div style="height: inherit" *ngIf="item.type === 'multi-graph'">
+                <app-multi-graph-operations label="ASD"></app-multi-graph-operations>
+              </div>
+
+            <div style="height:100%" *ngIf="item.type === 'table'">
+              <app-table-operations></app-table-operations>
+            </div>
+          </gridster-item>
+        </gridster>
+      </div>
     </div>
-    <div class="col">
-      <gridster [options]="options">
-        <gridster-item [item]="item" *ngFor="let item of dashboard">
-            <app-emit-receive *ngIf="item.type === 'ingresadas-recibidas'"></app-emit-receive>
-
-          <app-multi-bullet *ngIf="item.type === 'multi-bullet-warranty'" label="GARANTÍAS" type="warranty"></app-multi-bullet>
-          <app-multi-bullet *ngIf="item.type === 'multi-bullet-process'" label="PROCESAMIENTO" type="process"></app-multi-bullet>
-          <div style="height: inherit" *ngIf="item.type === 'graph'">
-            <app-graph-operations></app-graph-operations>
-          </div>
-
-          <div style="height:100%" *ngIf="item.type === 'table'">
-            <app-table-operations></app-table-operations>
-          </div>
-        </gridster-item>
-      </gridster>
-    </div>
-
   </div>
+
 </div>

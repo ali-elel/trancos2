@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { GridsterModule } from 'angular-gridster2';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './presentations/login/login.component';
@@ -29,6 +30,7 @@ import { ReceivedComponent } from './presentations/received/received.component';
 import { SidenavComponent } from './features/sidenav/sidenav.component';
 import { MultiBulletComponent } from './features/multi-bullet/multi-bullet.component';
 import { EmitReceiveComponent } from './features/emit-receive/emit-receive.component';
+import { MultiGraphOperationsComponent } from './features/multi-graph-operations/multi-graph-operations.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,13 +48,15 @@ import { EmitReceiveComponent } from './features/emit-receive/emit-receive.compo
     ReceivedComponent,
     SidenavComponent,
     MultiBulletComponent,
-    EmitReceiveComponent
+    EmitReceiveComponent,
+    MultiGraphOperationsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    MatTableModule,
     NgbModule,
     MatFormFieldModule,
     MatInputModule,

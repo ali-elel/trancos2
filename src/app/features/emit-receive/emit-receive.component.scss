@@ -1,53 +1,64 @@
 .half {
-    height: 49%;
+  height: 49%;
 }
 
 hr {
-    margin-top: 0px;
-    margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .h-2 {
-    height: 2%
+  height: 2%
 }
 
 .align-center {
-    align-self: center;
+  align-self: center;
 }
 
 .quantity {
-    color: #464646;
-    font-size: 1.1em;
+  color: #464646;
+  font-size: 1.1vw;
 }
 
 .line {
-    position: absolute;
-    height: 100%;
-    width: 1px;
-    border-right: 1px solid rgb(73, 73, 73);
-    left: 100%;
-    top: 0%;
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  border-right: 1px solid rgb(73, 73, 73);
+  left: 100%;
+  top: 0%;
 }
 
 .price {
-    font-size: 1.3em;
+  font-size: 1.16vw;
+}
+
+.red-hover:hover {
+  color: red;
+  transition-duration: .5s;
+  cursor: pointer;
 }
 
 .h-20 {
-    height: 10%;
+  height: 12%;
 }
 
 .title {
-    color: #FF6666;
-    font-weight: bold;
-    padding-top: 5px;
+  color: #FF6666;
+  font-weight: bold;
+  padding-top: 5px;
+  font-size: .95vw;
 }
 
 .h-80 {
-    height: 90%;
+  height: 90%;
+}
+
+.text-align-right {
+  text-align: right;
 }
 
 .percent {
-    font-size: 1.6em;
-    color: rgb(117, 117, 117);
+  font-size: 2.2vw;
+  color: rgb(117, 117, 117);
 }
