@@ -1,6 +1,8 @@
 import { EmittedComponent } from './presentations/emitted/emitted.component';
 import { ReceivedComponent } from './presentations/received/received.component';
 import { DashboardComponent } from './presentations/dashboard/dashboard.component';
+import { PagosComponent } from './presentations/pagos/pagos.component';
+
 import { AuthGuard } from './auth-guard';
 import { LoginComponent } from './presentations/login/login.component';
 
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'emitted', component: EmittedComponent, canActivate: [AuthGuard] },
   { path: 'received', component: ReceivedComponent, canActivate: [AuthGuard] },
+  { path: 'pagos', component: PagosComponent, canActivate: [AuthGuard] },
+
   { path: '**', redirectTo: '/login', pathMatch: 'full' }
 ];
 

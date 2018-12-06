@@ -31,8 +31,14 @@
             <app-emit-receive [percent]="true" label="Procesado" *ngIf="item.type === 'ingresadas-recibidas-procesado'"></app-emit-receive>
             <app-emit-receive [percent]="true" label="Rechazado" *ngIf="item.type === 'ingresadas-recibidas-rechazado'"></app-emit-receive>
 
+<<<<<<< HEAD
             <app-multi-bullet *ngIf="item.type === 'multi-bullet-warranty'" label="GARANTÍAS" type="warranty"></app-multi-bullet>
             <app-multi-bullet *ngIf="item.type === 'multi-bullet-process'" label="PROCESAMIENTO" type="process"></app-multi-bullet>
+=======
+          <div *ngIf="item.type === 'mini'">
+            <app-operation-mini ></app-operation-mini >
+          </div>
+>>>>>>> 1f6419119b611edd9475fda3688d7edf05f641f6
 
             <div style="height: inherit" *ngIf="item.type === 'multi-graph'">
               <app-multi-graph-operations label="ASD"></app-multi-graph-operations>
