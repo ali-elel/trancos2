@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { GridsterModule } from 'angular-gridster2';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {DropdownModule} from 'primeng/dropdown';
+import {CalendarModule} from 'primeng/calendar';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './presentations/login/login.component';
@@ -28,6 +30,10 @@ import { EmittedComponent } from './presentations/emitted/emitted.component';
 import { ReceivedComponent } from './presentations/received/received.component';
 import { SidenavComponent } from './features/sidenav/sidenav.component';
 import { GraphOperations2Component } from './features/graph-operations2/graph-operations2.component';
+import { PagosComponent } from './presentations/pagos/pagos.component';
+import { TableOperationsPagosComponent } from './features/table-operations-pagos/table-operations-pagos.component';
+import { FiltersPagosComponent } from './features/filters-pagos/filters-pagos.component';
+import { OperationDetailsBajaComponent } from './features/operation-details-baja/operation-details-baja.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +50,11 @@ import { GraphOperations2Component } from './features/graph-operations2/graph-op
     EmittedComponent,
     ReceivedComponent,
     SidenavComponent,
-    GraphOperations2Component
+    GraphOperations2Component,
+    PagosComponent,
+    TableOperationsPagosComponent,
+    FiltersPagosComponent,
+    OperationDetailsBajaComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +68,8 @@ import { GraphOperations2Component } from './features/graph-operations2/graph-op
     MatIconModule,
     ReactiveFormsModule,
     FormsModule,
-    GridsterModule
+    GridsterModule,
+    DropdownModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
