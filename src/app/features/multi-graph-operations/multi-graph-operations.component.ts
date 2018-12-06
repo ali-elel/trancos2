@@ -25,13 +25,15 @@ export class MultiGraphOperationsComponent implements OnInit {
             label: 'Data 1',
             data: [0, 4, 11, 5, 7, 8, 10, 15, 16, 12],
             borderColor: '#ff2b2b',
-            fill: false
+            fill: false,
+            borderWidth: 2
           },
           {
             label: 'Data 2',
             data: [5, 1, 2, 3, 8, 5, 4, 12, 16, 26],
-            borderColor: '#630909',
-            fill: false
+            borderColor: '#ffb7b7',
+            fill: false,
+            borderWidth: 2
           }
         ]
       },
@@ -40,7 +42,7 @@ export class MultiGraphOperationsComponent implements OnInit {
         responsive: true,
         elements: {
           line: {
-            tension: 0, // disables bezier curves
+            tension: 0
           }
         }
       }
@@ -54,13 +56,15 @@ export class MultiGraphOperationsComponent implements OnInit {
             label: 'Data 1',
             data: [0, 10, 11, 13, 7, 8, 10, 15],
             borderColor: '#ff2b2b',
-            fill: false
+            fill: false,
+            borderWidth: 2
           },
           {
             label: 'Data 2',
             data: [5, 6, 8, 3, 4, 5, 4, 12],
-            borderColor: '#630909',
-            fill: false
+            borderColor: '#ffb7b7',
+            fill: false,
+            borderWidth: 2
           }
         ]
       },
