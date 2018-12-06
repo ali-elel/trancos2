@@ -60,6 +60,7 @@ figure {
     left: 5px;
     top: 12px;
 }
+
 .vertical-2 {
     transform: rotate(-90deg);
     font-size: .85em;
@@ -67,6 +68,7 @@ figure {
     left: 5px;
     top: 12px;
 }
+
 .chart {
     overflow: hidden;
     border-radius: 2px;
@@ -74,8 +76,28 @@ figure {
     animation: expand 1.5s ease forwards;
 }
 
+.half {
+    height: 50%;
+    padding: 5px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
 figure {
     height: 35px;
+}
+
+.h-30 {
+    height: 30%;
+    padding-left: 5px;
+}
+
+.h-70 {
+    height: 70%;
+}
+
+.h-100 {
+    height: 100%;
 }
 
 .row+.row .chart {
@@ -88,12 +110,32 @@ figure {
 
 .numbers-block {
     display: block;
-    height: 40px;
+    height: 100%;
     color: black;
-    font-size: 1em;
+    font-size: 1.2vw;
     overflow: hidden;
     opacity: 1;
     transition: opacity, .3s ease; // cursor: pointer;
+}
+
+.vertical-multi {
+    transform: rotate(-90deg);
+    font-size: .9em; // position: absolute;
+    position: relative;
+    top: -13px;
+}
+
+.align-self-flex-end {
+    align-self: flex-end;
+}
+
+.vertical-line {
+    border-right: 1px solid #303030;
+    position: relative;
+    left: 100%;
+    height: 100%;
+    width: 1px;
+    margin-left: 10px;
 }
 
 .numbers-block span {
@@ -104,13 +146,12 @@ figure {
 .value {
     display: block;
     line-height: 1em;
-    height: 0px;
+    height: auto;
     font-size: 80%;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%);
-    top: 12px; // z-index: 1;
     width: 100%;
     text-align: right;
     padding: 0 6px;
@@ -119,8 +160,10 @@ figure {
 .painted-block {
     position: absolute; // display: flex;
     width: 100%;
+    height: 100%;
     top: 0px;
     left: 0px;
+    padding: 5px 0px;
 }
 
 .x-axis {
@@ -165,7 +208,7 @@ figure {
 }
 
 .segment {
-    height: 40px;
+    height: 100%;
     display: inline-block;
     position: relative; // transition-duration: 1s;
 }
@@ -177,4 +220,12 @@ figure {
 
 .segment-error {
     height: 40px;
+}
+
+.segment.start {
+    border-radius: 5px 0px 0px 5px;
+}
+
+.segment.end {
+    border-radius: 0px 5px 5px 0px;
 }

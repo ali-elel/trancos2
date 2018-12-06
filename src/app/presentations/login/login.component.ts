@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
   usernameControl: FormControl;
   passwordControl: FormControl;
-
+  usernameDirty = false;
+  passwordDirty = false;
   constructor(private _authService: AuthService, private router: Router) {
     this.usernameControl = new FormControl('', [Validators.required]);
     this.passwordControl = new FormControl('', [Validators.required]);

@@ -1,53 +1,100 @@
-<figure>
-  <div class="row">
-    <div style="padding-left: 0%;" *ngIf="name != ''" class="col-1">
-      <div class="vertical">
-        {{options.name}}
-      </div>
+<div *ngIf="options.vertical" style="    padding: 0px 10px;" class="row h-100">
+
+  <div *ngIf="options.name !== ''" style="padding-right: 5px; padding-left:0px;" class="col-1 align-self-flex-end">
+    <div class="vertical-multi">
+
+      {{options.name}}
+
     </div>
-
-    <div class="col-11">
-
-      <div class="row">
-
-        <!-- Numbers -->
-        <div *ngFor="let value of values; let i = index" class="numbers-block col">
-          <span class="value" style="text-align: left;padding-left: 8px;" *ngIf="i == 0">
-            0
-          </span>
-          <span class="value">
-            {{value | thousands: 1 }}
-          </span>
-        </div>
-
-        <div class="painted-block">
-
-          <!-- Utilizado -->
-
-          <div class="segment" matTooltip="Utilizado: {{options.segments.used.value | currency:options.segments.proyected.currency:true}}"
-            placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentUsed" [style.width]="segmentsWidth.used + '%'"
-            [style.backgroundColor]="options.segments.used.backgroundColor"></div>
-
-          <!-- Proyectado -->
-          <div class="segment" matTooltip="Proyectado: {{options.segments.proyected.value | currency:options.segments.proyected.currency:true}}"
-            placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentProyected" [style.width]="segmentsWidth.proyected + '%'"
-            [style.backgroundColor]="options.segments.proyected.backgroundColor"></div>
-          <!-- <ng-template #segmentProyected>Proyectado: {{options.segments.proyected.value | currency:'ARS':true}}</ng-template> -->
-          <!-- Disponible -->
-          <div class="segment" matTooltip="Disponible: {{options.segments.available.value | currency:options.segments.available.currency:true}}"
-            placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentAvailable" [style.width]="segmentsWidth.available + '%'"
-            [style.backgroundColor]="options.segments.available.backgroundColor"></div>
-          <!-- <ng-template #segmentAvailable>Disponible: {{options.segments.available.value | currency:'ARS':true}}</ng-template> -->
-
-          <!-- Excedido -->
-          <div class="segment" matTooltip="Excedido: {{options.segments.exceded.value | currency:options.segments.exceded.currency:true}}"
-            placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentExceded" [style.width]="segmentsWidth.exceded + '%'"
-            [style.backgroundColor]="options.segments.exceded.backgroundColor"></div>
-          <!-- <ng-template #segmentExceded>Excedido: {{options.segments.exceded.value | currency:'ARS':true}}</ng-template> -->
-
-        </div>
-      </div>
-    </div>
-
   </div>
-</figure>
+
+  <div class="col h-100">
+
+    <div class="row h-100">
+      <div *ngFor="let value of values; let i = index" class="numbers-block col">
+        <span class="value" style="text-align: left;padding-left: 8px;" *ngIf="i == 0">
+          0
+        </span>
+        <span class="value">
+          {{value | thousands: 1 }}
+        </span>
+      </div>
+
+      <div class="painted-block">
+
+        <!-- Utilizado -->
+
+        <div class="segment start" matTooltip="Utilizado: {{options.segments.used.value | currency:options.segments.proyected.currency:true}}"
+          placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentUsed" [style.width]="segmentsWidth.used + '%'"
+          [style.backgroundColor]="options.segments.used.backgroundColor"></div>
+
+        <!-- Proyectado -->
+        <div class="segment" matTooltip="Proyectado: {{options.segments.proyected.value | currency:options.segments.proyected.currency:true}}"
+          placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentProyected" [style.width]="segmentsWidth.proyected + '%'"
+          [style.backgroundColor]="options.segments.proyected.backgroundColor"></div>
+        <!-- <ng-template #segmentProyected>Proyectado: {{options.segments.proyected.value | currency:'ARS':true}}</ng-template> -->
+        <!-- Disponible -->
+        <div class="segment end" matTooltip="Disponible: {{options.segments.available.value | currency:options.segments.available.currency:true}}"
+          placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentAvailable" [style.width]="segmentsWidth.available + '%'"
+          [style.backgroundColor]="options.segments.available.backgroundColor"></div>
+        <!-- <ng-template #segmentAvailable>Disponible: {{options.segments.available.value | currency:'ARS':true}}</ng-template> -->
+
+        <!-- Excedido -->
+        <div class="segment end" matTooltip="Excedido: {{options.segments.exceded.value | currency:options.segments.exceded.currency:true}}"
+          placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentExceded" [style.width]="segmentsWidth.exceded + '%'"
+          [style.backgroundColor]="options.segments.exceded.backgroundColor"></div>
+        <!-- <ng-template #segmentExceded>Excedido: {{options.segments.exceded.value | currency:'ARS':true}}</ng-template> -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!options.vertical" class="row half">
+
+  <div class="col-12 h-30 d-flex">
+    <div style="    align-self: flex-end;">
+      {{options.name}}
+    </div>
+  </div>
+  <div class="col-12 h-70">
+
+    <div class="row h-100">
+      <div *ngFor="let value of values; let i = index" class="numbers-block col">
+        <span class="value" style="text-align: left;padding-left: 8px;" *ngIf="i == 0">
+          0
+        </span>
+        <span class="value">
+          {{value | thousands: 1 }}
+        </span>
+      </div>
+
+      <div class="painted-block">
+
+        <!-- Utilizado -->
+
+        <div class="segment start" matTooltip="Utilizado: {{options.segments.used.value | currency:options.segments.proyected.currency:true}}"
+          placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentUsed" [style.width]="segmentsWidth.used + '%'"
+          [style.backgroundColor]="options.segments.used.backgroundColor"></div>
+
+        <!-- Proyectado -->
+        <div class="segment" matTooltip="Proyectado: {{options.segments.proyected.value | currency:options.segments.proyected.currency:true}}"
+          placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentProyected" [style.width]="segmentsWidth.proyected + '%'"
+          [style.backgroundColor]="options.segments.proyected.backgroundColor"></div>
+        <!-- <ng-template #segmentProyected>Proyectado: {{options.segments.proyected.value | currency:'ARS':true}}</ng-template> -->
+        <!-- Disponible -->
+        <div class="segment end" matTooltip="Disponible: {{options.segments.available.value | currency:options.segments.available.currency:true}}"
+          placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentAvailable" [style.width]="segmentsWidth.available + '%'"
+          [style.backgroundColor]="options.segments.available.backgroundColor"></div>
+        <!-- <ng-template #segmentAvailable>Disponible: {{options.segments.available.value | currency:'ARS':true}}</ng-template> -->
+
+        <!-- Excedido -->
+        <div class="segment end" matTooltip="Excedido: {{options.segments.exceded.value | currency:options.segments.exceded.currency:true}}"
+          placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentExceded" [style.width]="segmentsWidth.exceded + '%'"
+          [style.backgroundColor]="options.segments.exceded.backgroundColor"></div>
+        <!-- <ng-template #segmentExceded>Excedido: {{options.segments.exceded.value | currency:'ARS':true}}</ng-template> -->
+
+      </div>
+    </div>
+  </div>
+</div>

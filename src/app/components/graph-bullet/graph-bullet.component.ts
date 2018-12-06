@@ -85,6 +85,7 @@ export class SegmentTypes {
 }
 export class GraphBulletOptions {
   name: string;
+  vertical = false;
   segments: SegmentTypes;
 }
 export class SegmentTypesWidth {
