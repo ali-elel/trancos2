@@ -91,6 +91,17 @@ header {
   margin-left: 6px;
 }
 
+.btn-user {
+  padding: 10px 10px;
+  background-color: rgba(0, 0, 0, .09);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.color-red {
+  color: red;
+}
+
 .nav a {
   font-size: 1.5em;
   text-align: center;
@@ -157,7 +168,7 @@ nav a:hover {
 }
 
 #tools {
-  padding-top: .8em;
+  align-self: center;
 }
 
 #maincontent {
@@ -456,6 +467,20 @@ h3.whitetype {
 
 #boxes article {
   font-weight: bold;
+}
+
+.exclamation-circle {
+  position: absolute;
+  right: 4%;
+  top: 3%;
+}
+
+.exclamation {
+  color: white;
+  font-weight: 800;
+  background-color: rgb(219, 0, 0);
+  padding: 0px 7px;
+  border-radius: 100%;
 }
 
 h3 span {
