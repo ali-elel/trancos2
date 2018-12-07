@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class GraphProcessComponent implements OnInit {
 
   graphINTBKOptions: GraphBulletOptions = {
-    //name: 'Garantias',
-    name: '',
+    name: 'INTBK',
+    vertical: true,
     segments: {
       used: {
         text: 'Utilizado',
@@ -41,8 +41,8 @@ export class GraphProcessComponent implements OnInit {
   };
 
   graphBCRAOptions: GraphBulletOptions = {
-    //name: 'BCRA',
-    name: '',
+    name: 'BCRA',
+    vertical: true,
     segments: {
       used: {
         text: 'Utilizado',

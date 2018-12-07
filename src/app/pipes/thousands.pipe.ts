@@ -14,7 +14,7 @@ export class ThousandsPipe implements PipeTransform {
     }
 
     if (input < 1000) {
-      return input;
+      return input.toFixed(0);
     }
 
     exp = Math.floor(Math.log(input) / Math.log(1000));

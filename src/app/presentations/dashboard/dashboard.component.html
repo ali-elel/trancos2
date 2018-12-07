@@ -7,36 +7,50 @@
           <span class="header-location">&nbsp;Dashboard</span>
         </h1>
       </div>
-      <div id="tools" class="col-md-6 text-right">
-        <button type="button" class="header-tool btn btn-outline-secondary search"><i class="fas fa-search"></i></button>
-        <button type="button" class="header-tool btn btn-secondary user"><i class="fas fa-user"></i></button>
+      <div id="tools" style="display: flex;justify-content: flex-end;" class="col-md-6 text-right">
+        <div class="header-tool" style=" align-self:center; color:rgba(0,0,0,.6)">
+          <span style="padding-right: 8px;"> Actualizado hace 1"</span>
+        </div>
+        <div class="header-tool btn-user color-red">
+          <span style="padding-right: 10px;" style="font-size:.95vw"> Juan Perez González</span> <i style="font-size:1.2vw;padding-left: 10px"
+            class="far fa-user"></i>
+        </div>
       </div>
     </div>
   </header>
-  <div class="row">
-    
-    <div class="navbar-col nav">
-      <app-sidenav></app-sidenav>
-    </div>
-    <div class="col">
-      <gridster [options]="options">
-        <gridster-item [item]="item" *ngFor="let item of dashboard">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="navbar-col nav">
+        <app-sidenav></app-sidenav>
+      </div>
+      <div class="col">
+        <gridster [options]="options">
+          <gridster-item [item]="item" *ngFor="let item of dashboard">
+            <app-emit-receive [percent]="false" label="Total" *ngIf="item.type === 'ingresadas-recibidas-total'"></app-emit-receive>
+            <app-emit-receive [percent]="true" label="Pendiente" isAlert="true" *ngIf="item.type === 'ingresadas-recibidas-pendiente'"></app-emit-receive>
+            <app-emit-receive [percent]="true" label="Procesado" *ngIf="item.type === 'ingresadas-recibidas-procesado'"></app-emit-receive>
+            <app-emit-receive [percent]="true" label="Rechazado" *ngIf="item.type === 'ingresadas-recibidas-rechazado'"></app-emit-receive>
 
+<<<<<<< HEAD
+            <app-multi-bullet *ngIf="item.type === 'multi-bullet-warranty'" label="GARANTÍAS" type="warranty"></app-multi-bullet>
+            <app-multi-bullet *ngIf="item.type === 'multi-bullet-process'" label="PROCESAMIENTO" type="process"></app-multi-bullet>
+=======
           <div *ngIf="item.type === 'mini'">
             <app-operation-mini ></app-operation-mini >
           </div>
+>>>>>>> 1f6419119b611edd9475fda3688d7edf05f641f6
 
-          <div *ngIf="item.type === 'expanded'">
-            <app-operation-details></app-operation-details>
-          </div>
+            <div style="height: inherit" *ngIf="item.type === 'multi-graph'">
+              <app-multi-graph-operations label="ASD"></app-multi-graph-operations>
+            </div>
 
-          <div class="pink" *ngIf="item.type === 'expanded-rosa'">
-            <app-operation-details></app-operation-details>
-          </div>
-
-          <div *ngIf="item.type === 'process'">
-            <app-graph-process></app-graph-process>
-          </div>
+            <div style="height:100%" *ngIf="item.type === 'table'">
+              <app-table-operations></app-table-operations>
+            </div>
+          </gridster-item>
+        </gridster>
+      </div>
+<<<<<<< .mine
           <div *ngIf="item.type === 'process-2'">
             <app-graph-warranty></app-graph-warranty>
           </div>
@@ -55,7 +69,40 @@
 
         </gridster-item>
       </gridster>
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
     </div>
+<<<<<<< .mine
+
+
+=======
+  </div>
+
+>>>>>>> .theirs
+<<<<<<< .mine
   </div>
  
 </div>
+=======
+</div>
+
+
+>>>>>>> .theirs

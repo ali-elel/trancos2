@@ -9,8 +9,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { GridsterModule } from 'angular-gridster2';
 import { MatTooltipModule } from '@angular/material/tooltip';
+<<<<<<< HEAD
+import {MatTableModule} from '@angular/material/table';
+=======
 import {DropdownModule} from 'primeng/dropdown';
 import {CalendarModule} from 'primeng/calendar';
+>>>>>>> 1f6419119b611edd9475fda3688d7edf05f641f6
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './presentations/login/login.component';
@@ -29,11 +33,17 @@ import { TableOperationsComponent } from './features/table-operations/table-oper
 import { EmittedComponent } from './presentations/emitted/emitted.component';
 import { ReceivedComponent } from './presentations/received/received.component';
 import { SidenavComponent } from './features/sidenav/sidenav.component';
+<<<<<<< HEAD
+import { MultiBulletComponent } from './features/multi-bullet/multi-bullet.component';
+import { EmitReceiveComponent } from './features/emit-receive/emit-receive.component';
+import { MultiGraphOperationsComponent } from './features/multi-graph-operations/multi-graph-operations.component';
+=======
 import { GraphOperations2Component } from './features/graph-operations2/graph-operations2.component';
 import { PagosComponent } from './presentations/pagos/pagos.component';
 import { TableOperationsPagosComponent } from './features/table-operations-pagos/table-operations-pagos.component';
 import { FiltersPagosComponent } from './features/filters-pagos/filters-pagos.component';
 import { OperationDetailsBajaComponent } from './features/operation-details-baja/operation-details-baja.component';
+>>>>>>> 1f6419119b611edd9475fda3688d7edf05f641f6
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,18 +59,29 @@ import { OperationDetailsBajaComponent } from './features/operation-details-baja
     TableOperationsComponent,
     EmittedComponent,
     ReceivedComponent,
+<<<<<<< .mine
     SidenavComponent,
+<<<<<<< HEAD
+=======
+    SidenavComponent,
+>>>>>>> .theirs
+    MultiBulletComponent,
+    EmitReceiveComponent,
+    MultiGraphOperationsComponent
+=======
     GraphOperations2Component,
     PagosComponent,
     TableOperationsPagosComponent,
     FiltersPagosComponent,
     OperationDetailsBajaComponent
+>>>>>>> 1f6419119b611edd9475fda3688d7edf05f641f6
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    MatTableModule,
     NgbModule,
     MatFormFieldModule,
     MatInputModule,

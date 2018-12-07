@@ -10,6 +10,7 @@ export class GraphWarrantyComponent implements OnInit {
 
   graphWarrantyOptions: GraphBulletOptions = {
     name: '',
+    vertical: true,
     segments: {
       used: {
         text: 'Utilizado',
