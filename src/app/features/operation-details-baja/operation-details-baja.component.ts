@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { EmitidasService } from "../../services/emitidas.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-operation-details-baja',
@@ -8,10 +10,23 @@ import { Component, OnInit, Input } from '@angular/core';
 export class OperationDetailsBajaComponent implements OnInit {
   @Input() label: string;
   @Input() cab1:string;
-  constructor() { }
+  public listado: any; 
+  constructor(
+    private _EmitidasService: EmitidasService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+    this.listOperations();
   }
 
-}
 
+  listOperations() {
+    this._EmitidasService.getBaja()
+        .subscribe(resp => {      
+        this.listado = resp;
+  
+
+});
+  }
+}
