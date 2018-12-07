@@ -9,16 +9,17 @@ select {
  }
 
 .container{
-    border:1px solid #d9d9d9;
     width: 100%;
-    max-width: 1263px;
+    // max-width: 1263px;
 }
 
 .caja-rigth{    
     float: right;
     
 }
-
+.border-right{
+    border-radius: 1px solid black;
+}
 .caja{    
    // border-right: 1px solid gray;
     

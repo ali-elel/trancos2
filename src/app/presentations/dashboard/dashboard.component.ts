@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
     };
 
     this.dashboard = [
+
       { cols: 2, rows: 2, y: 0, x: 0, type: 'ingresadas-recibidas-total' },
       { cols: 2, rows: 2, y: 0, x: 2, type: 'ingresadas-recibidas-pendiente' },
       { cols: 2, rows: 2, y: 0, x: 4, type: 'ingresadas-recibidas-procesado' },
@@ -33,26 +34,6 @@ export class DashboardComponent implements OnInit {
       { cols: 4, rows: 2, y: 1, x: 4, type: 'multi-bullet-process' },
       { cols: 4, rows: 3, y: 3, x: 0, type: 'multi-graph' },
       { cols: 4, rows: 3, y: 3, x: 4, type: 'table' },
-<<<<<<< .mine
-
-      { cols: 4, rows: 2, y: 1, x: 0, type: 'process' },
-      { cols: 4, rows: 2, y: 1, x: 5, type: 'process-2' },
-     /* { cols: 4, rows: 1, y: 2, x: 0, type: 'process-3' },
-      { cols: 4, rows: 1, y: 2, x: 5, type: 'process-4' },*/
-
-      { cols: 4, rows: 1, y: 2, x: 0, type: 'graph1' },      
-      { cols: 4, rows: 3, y: 2, x: 5, type: 'table' },
-=======
-
-
-
-
-
-
-
-
->>>>>>> .theirs
-      { cols: 4, rows: 1, y: 2, x: 0, type: 'graph2' },
     ];
   }
- }
+}

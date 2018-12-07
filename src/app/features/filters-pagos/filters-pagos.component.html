@@ -1,29 +1,31 @@
-<div class="container">
-  <div class="row">
-      <div>
-          <p-dropdown [options]="fecha "[style]="{'border':'0px'}"  [(ngModel)]="selectedCity" placeholder="Fecha" optionLabel="name" [showClear]="true"></p-dropdown>           
-      </div>
-    
-      <div>
-          <p-dropdown [options]="canal "[style]="{'border':'0px'}"  [(ngModel)]="selectedCanal" placeholder="Canal" optionLabel="name" [showClear]="true"></p-dropdown>           
-      </div> 
+<div style="padding: 2px 0px;" class="container-fluid h-100 ">
+  <div class="row d-flex border-grey h-100 bold">
 
-    <div>
-        <p-dropdown [options]="productos "[style]="{'border':'0px'}"  [(ngModel)]="selectedpProductos" placeholder="Productos" optionLabel="name" [showClear]="true"></p-dropdown>           
-    </div>
-    
-    <div>
-        <p-dropdown [options]="acuerdo "[style]="{'border':'0px'}"  [(ngModel)]="filtersSelectedng" placeholder="Acuerdo" optionLabel="name" [showClear]="true"></p-dropdown>           
+    <div class="col align-self-center border-right">
+      <p-dropdown [options]="fecha " [style]="{'width': '100%','border':'0px'}" [(ngModel)]="selectedCity" placeholder="Fecha"
+        optionLabel="name" [showClear]="true"></p-dropdown>
     </div>
 
-   
-    <div class="col-6 text-right">
-      <a><i class="fas fa-eraser fa-2x" style="color: darkgrey"></i>
-        <span size="2" color="darkgrey">BORRAR <br> FILTROS </span>
-      </a>
+    <div class="col align-self-center border-right">
+      <p-dropdown [options]="canal " [style]="{'width': '100%','border':'0px'}" [(ngModel)]="selectedCanal" placeholder="Canal"
+        optionLabel="name" [showClear]="true"></p-dropdown>
+    </div>
+
+    <div class="col align-self-center border-right">
+      <p-dropdown [options]="canal " [style]="{'width': '100%','border':'0px'}" [(ngModel)]="selectedCanal" placeholder="Canal"
+        optionLabel="name" [showClear]="true"></p-dropdown>
+    </div>
+
+    <div class="col align-self-center border-right">
+      <p-dropdown [options]="acuerdo " [style]="{'width': '100%','border':'0px'}" [(ngModel)]="filtersSelectedng"
+        placeholder="Acuerdo" optionLabel="name" [showClear]="true"></p-dropdown>
+    </div>
+
+    <div style="justify-content: center; display: flex;" class="col align-self-center">
+      <i class="fas fa-eraser fa-2x d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>
+      <span style="align-self: center;">
+        BORRAR FILTROS
+      </span>
     </div>
   </div>
-
 </div>
-
-<div class="col-12" *ngFor="let item of fecha"></div>

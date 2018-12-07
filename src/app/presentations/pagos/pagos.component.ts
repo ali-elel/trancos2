@@ -25,23 +25,18 @@ export class PagosComponent implements OnInit {
       { cols: 2, rows: 1, y: 0, x: 4, type: 'mini-pendiente-tibco' },
       { cols: 2, rows: 1, y: 0, x: 2, type: 'mini-enviada' },
       { cols: 2, rows: 1, y: 0, x: 0, type: 'mini-pendiente-mq' },
-      
+
       { cols: 2, rows: 3, y: 1, x: 0, type: 'expanded-ingresado' },
-      { cols: 2, rows: 3, y: 1, x: 2, type: 'expanded-rosa-pendiente'},
+      { cols: 2, rows: 3, y: 1, x: 2, type: 'expanded-rosa-pendiente' },
       { cols: 2, rows: 3, y: 1, x: 4, type: 'expanded-procesado' },
       { cols: 2, rows: 2, y: 1, x: 6, type: 'expanded-rechazado' },
-     
+
       { cols: 2, rows: 1, y: 1, x: 6, type: 'expanded-baja' },
 
       { cols: 4, rows: 2, y: 1, x: 0, type: 'graph1' },
-      /*{ cols: 4, rows: 2, y: 1, x: 5, type: 'process-2' },
-      { cols: 4, rows: 1, y: 2, x: 0, type: 'process-3' },
-      { cols: 4, rows: 1, y: 2, x: 5, type: 'process-4' },*/
-
-      /*{ cols: 4, rows: 1, y: 2, x: 0, type: 'graph1' },*/      
-      { cols: 4, rows: 2, y: 2, x: 5, type: 'table' },     
+      { cols: 4, rows: 2, y: 2, x: 5, type: 'table' },
     ];
   }
-  
+
 
 }

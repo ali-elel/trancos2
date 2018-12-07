@@ -13,7 +13,6 @@ export class MultiBulletComponent implements OnInit {
   bullet1: GraphBulletOptions;
   bullet2: GraphBulletOptions;
 
-
   constructor() { }
 
   ngOnInit() {

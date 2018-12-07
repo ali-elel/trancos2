@@ -1,22 +1,14 @@
 <div style="height:100%" class="container-fluid h-100">
-  <div style="height:inherit" class="row">
-    <div class="d-block col-12 h-30 full-width border-bottom-black">
-      <span class="vertical uppercase">Garantias</span>
+    <div style="height:inherit" class="row">
+      <div class="d-block col-12 h-30 full-width border-bottom-black">
+        <span class="uppercase">Capacidad de Procesamiento</span>
+      </div>
+  
+      <div class="col-6 h-70">
+        <app-graph-bullet [options]='graphINTBKOptions'></app-graph-bullet>
+      </div>
+      <div class="col-6">
+        <app-graph-bullet [options]='graphBCRAOptions'></app-graph-bullet>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-        <span class="horizontal uppercase" style="padding-left: 40px">pesos</span>
-
-    <div class="col-6 h-70">
-      <app-graph-bullet [options]='graphINTBKOptions'></app-graph-bullet>
-    </div> 
-  </div>
-  <div class="row">
-    <div class="col-12">
-        <span class="horizontal uppercase" style="padding-left: 40px">dólares</span>
-
-      <app-graph-bullet [options]='graphBCRAOptions'></app-graph-bullet>
-    </div>   
-  </div> 
-</div>

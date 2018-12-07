@@ -24,85 +24,48 @@
         <app-sidenav></app-sidenav>
       </div>
       <div class="col">
-        <gridster [options]="options">
-          <gridster-item [item]="item" *ngFor="let item of dashboard">
-            <app-emit-receive [percent]="false" label="Total" *ngIf="item.type === 'ingresadas-recibidas-total'"></app-emit-receive>
-            <app-emit-receive [percent]="true" label="Pendiente" isAlert="true" *ngIf="item.type === 'ingresadas-recibidas-pendiente'"></app-emit-receive>
-            <app-emit-receive [percent]="true" label="Procesado" *ngIf="item.type === 'ingresadas-recibidas-procesado'"></app-emit-receive>
-            <app-emit-receive [percent]="true" label="Rechazado" *ngIf="item.type === 'ingresadas-recibidas-rechazado'"></app-emit-receive>
+        <div style="padding: 1px 10px;" class="h-10">
+          <div class="row h-100">
+            <div style="    padding: 1px 15px;" class="col-3 d-flex h-100 align-self-center ">
+              <div style="border-radius: 7px 0px 0px 7px;" class="container-fluid border-grey">
+                <div class="row h-100">
+                  <div style="background-color: green;border-radius: 10px 0px 0px 10px;" class="col-1"></div>
+                  <div class="col-8 align-self-center d-flex h-100">
+                    <span class="align-self-center"> ESTADO DE LAS CÁMARAS</span>
+                  </div>
 
-<<<<<<< HEAD
-            <app-multi-bullet *ngIf="item.type === 'multi-bullet-warranty'" label="GARANTÍAS" type="warranty"></app-multi-bullet>
-            <app-multi-bullet *ngIf="item.type === 'multi-bullet-process'" label="PROCESAMIENTO" type="process"></app-multi-bullet>
-=======
-          <div *ngIf="item.type === 'mini'">
-            <app-operation-mini ></app-operation-mini >
+                  <div class="col-3"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-9">
+              <app-filters-pagos></app-filters-pagos>
+            </div>
           </div>
->>>>>>> 1f6419119b611edd9475fda3688d7edf05f641f6
 
-            <div style="height: inherit" *ngIf="item.type === 'multi-graph'">
-              <app-multi-graph-operations label="ASD"></app-multi-graph-operations>
-            </div>
+        </div>
+        <div class="h-90">
+          <gridster [options]="options">
+            <gridster-item [item]="item" *ngFor="let item of dashboard">
 
-            <div style="height:100%" *ngIf="item.type === 'table'">
-              <app-table-operations></app-table-operations>
-            </div>
-          </gridster-item>
-        </gridster>
+              <app-emit-receive [percent]="false" label="Total" *ngIf="item.type === 'ingresadas-recibidas-total'"></app-emit-receive>
+              <app-emit-receive [percent]="true" label="Pendiente" isAlert="true" *ngIf="item.type === 'ingresadas-recibidas-pendiente'"></app-emit-receive>
+              <app-emit-receive [percent]="true" label="Procesado" *ngIf="item.type === 'ingresadas-recibidas-procesado'"></app-emit-receive>
+              <app-emit-receive [percent]="true" label="Rechazado" *ngIf="item.type === 'ingresadas-recibidas-rechazado'"></app-emit-receive>
+              <app-multi-bullet *ngIf="item.type === 'multi-bullet-warranty'" label="GARANTÍAS" type="warranty"></app-multi-bullet>
+              <app-multi-bullet *ngIf="item.type === 'multi-bullet-process'" label="PROCESAMIENTO" type="process"></app-multi-bullet>
+
+              <div style="height: inherit" *ngIf="item.type === 'multi-graph'">
+                <app-multi-graph-operations label="ASD"></app-multi-graph-operations>
+              </div>
+
+              <div style="height:100%" *ngIf="item.type === 'table'">
+                <app-table-operations></app-table-operations>
+              </div>
+            </gridster-item>
+          </gridster>
+        </div>
       </div>
-<<<<<<< .mine
-          <div *ngIf="item.type === 'process-2'">
-            <app-graph-warranty></app-graph-warranty>
-          </div>
-
-          <div style="height: 100%" *ngIf="item.type === 'graph1'">
-            <app-graph-operations></app-graph-operations>
-          </div>
-
-          <div style="height:100%" *ngIf="item.type === 'graph2'">
-            <app-graph-operations2></app-graph-operations2>
-          </div>
-
-          <div style="height:100%" *ngIf="item.type === 'table'">
-            <app-table-operations></app-table-operations>
-          </div>
-
-        </gridster-item>
-      </gridster>
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> .theirs
     </div>
-<<<<<<< .mine
 
-
-=======
   </div>
-
->>>>>>> .theirs
-<<<<<<< .mine
-  </div>
- 
-</div>
-=======
-</div>
-
-
->>>>>>> .theirs
