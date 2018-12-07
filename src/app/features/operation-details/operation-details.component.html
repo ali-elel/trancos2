@@ -11,7 +11,7 @@
     </div>
 
     <div class="mt-2 col-12">
-      <table style="width:100%" class="expanded-table">
+     <!-- <table style="width:100%" class="expanded-table">
         <tr>
           <th>{{cab1}}</th>
           <th>Cantidad</th>
@@ -49,6 +49,21 @@
           <td class="quantity">$0</td>
         </tr>
 
-      </table>
+      </table>-->
+
+      <table style="width:100%" class="expanded-table">
+        <tr>
+          <th>{{cab1}}</th>
+          <th>Cantidad</th>
+          <th>Monto</th>
+        </tr>
+        <tr *ngFor="let list of listado">
+            <td>{{ list.name }}</td>
+            <td>{{ list.address.street }}</td>
+            <td>{{ list.email }}</td>
+            </tr>
+            
+        
+      </table><br>
     </div>
   </div>

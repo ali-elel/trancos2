@@ -20,7 +20,7 @@ export class EmitidasService {
 
   getBaja(): Observable<any> {
     this.prueba=this.http.get('http://jsonplaceholder.typicode.com/users');
-    console.log("En el servicio");
+    //console.log("En el servicio",this.prueba);
     return (this.prueba);     
   }
   

@@ -36,6 +36,10 @@ import { MultiBulletComponent } from './features/multi-bullet/multi-bullet.compo
 import { EmitReceiveComponent } from './features/emit-receive/emit-receive.component';
 import { MultiGraphOperationsComponent } from './features/multi-graph-operations/multi-graph-operations.component';
 import { TableOperationsPagosComponent } from './features/table-operations-pagos/table-operations-pagos.component';
+import { FiltersDashboardComponent } from './features/filters-dashboard/filters-dashboard.component';
+import { FiltersEmitidasComponent } from './features/filters-emitidas/filters-emitidas.component';
+import { FiltersRecibidasComponent } from './features/filters-recibidas/filters-recibidas.component';
+import { FiltersBuscadorComponent } from './features/filters-buscador/filters-buscador.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -59,7 +63,11 @@ import { TableOperationsPagosComponent } from './features/table-operations-pagos
         // GraphOperations2Component,
         TableOperationsPagosComponent,
         FiltersPagosComponent,
-        OperationDetailsBajaComponent
+        OperationDetailsBajaComponent,
+        FiltersDashboardComponent,
+        FiltersEmitidasComponent,
+        FiltersRecibidasComponent,
+        FiltersBuscadorComponent,
     ],
     imports: [
         BrowserModule,
@@ -74,7 +82,8 @@ import { TableOperationsPagosComponent } from './features/table-operations-pagos
         ReactiveFormsModule,
         FormsModule,
         GridsterModule,
-        DropdownModule
+        DropdownModule,
+        CalendarModule
     ],
     providers: [AuthGuard],
     bootstrap: [AppComponent]

@@ -2,8 +2,9 @@
   <div class="row d-flex border-grey h-100 bold">
 
     <div class="col align-self-center border-right">
-      <p-dropdown [options]="fecha " [style]="{'width': '100%','border':'0px'}" [(ngModel)]="selectedCity" placeholder="Fecha"
-        optionLabel="name" [showClear]="true"></p-dropdown>
+        <p-calendar [(ngModel)]="date" [style]="{'width': '90%','border':'0px'}" showButtonBar="false" [locale]="es" selectionMode="range" [readonlyInput]="true" dateFormat="dd/mm/yy" placeholder="Fecha"></p-calendar>
+       <!-- <span class="ui-dropdown-trigger-icon ui-clickable pi pi-caret-down" ng-reflect-klass="ui-dropdown-trigger-icon ui-cl" ng-reflect-ng-class="pi pi-caret-down"></span>-->
+
     </div>
 
     <div class="col align-self-center border-right">

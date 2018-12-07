@@ -21,6 +21,25 @@
         <app-sidenav></app-sidenav>
       </div>
       <div class="col">
+          <div style="padding: 1px 10px;" class="h-10">
+              <div class="row h-100">
+                <div style="    padding: 1px 15px;" class="col-3 d-flex h-100 align-self-center ">
+                  <div style="border-radius: 7px 0px 0px 7px;" class="container-fluid border-grey">
+                    <div class="row h-100">
+                      <div class="col-8 align-self-center d-flex h-100">
+                        <span class="align-self-center"> ESTADO DE LAS CÁMARAS</span>
+                      </div>
+    
+                      <div class="col-3"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-9">
+                  <app-filters-emitidas></app-filters-emitidas>
+                </div>
+              </div>
+    
+            </div>
         <gridster [options]="options">
           <gridster-item [item]="item" *ngFor="let item of dashboard">
 
