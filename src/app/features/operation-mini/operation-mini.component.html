@@ -1,9 +1,17 @@
-<div class="container">
-  <div class="row">
-    <h3 class="col-12 widget-mini-title">{{label}}</h3>
-    <div class="col-10">
-      <span class="widget-mini-price">$2.300.120  </span>
-      <span class="widget-mini-quantity"> &nbsp; | 2301</span>
+<div  [ngClass]="{'pink': alert}"  class="container h-100">
+  <div class="row h-100">
+    <div class="col-12 d-flex h-25 widget-mini-title bold uppercase label">
+      <div class="align-self-center"> {{label}}</div>
+    </div>
+    <div class="col-12 h-75">
+      <div class="container-fluid h-100 p-custom">
+        <div class="row h-100">
+          <div class="col-10 align-self-center">
+            <span class="widget-mini-price">$2.300.120 </span>
+            <span class="widget-mini-quantity"> &nbsp; | 2301</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -7,67 +7,71 @@
           <span class="header-location">&nbsp;Emitidas</span>
         </h1>
       </div>
-      <div id="tools" class="col-md-6 text-right">
-        <button type="button" class="header-tool btn btn-outline-secondary search"><i class="fas fa-search"></i></button>
-        <button type="button" class="header-tool btn btn-secondary user"><i class="fas fa-user"></i></button>
+      <div id="tools" style="display: flex;justify-content: flex-end;" class="col-md-6 text-right">
+        <div class="header-tool" style=" align-self:center; color:rgba(0,0,0,.6)">
+          <span style="padding-right: 8px;"> Actualizado hace 1"</span>
+        </div>
+        <div class="header-tool btn-user color-red">
+          <span style="padding-right: 10px;" style="font-size:.95vw"> Juan Perez González</span> <i style="font-size:1.2vw;padding-left: 10px"
+            class="far fa-user"></i>
+        </div>
       </div>
     </div>
   </header>
   <div class="container-fluid">
-
     <div class="row">
-
       <div class="navbar-col nav">
         <app-sidenav></app-sidenav>
       </div>
       <div class="col">
-          <div style="padding: 1px 10px;" class="h-10">
-              <div class="row h-100">
-                <div style="    padding: 1px 15px;" class="col-3 d-flex h-100 align-self-center ">
-                  <div style="border-radius: 7px 0px 0px 7px;" class="container-fluid border-grey">
-                    <div class="row h-100">
-                      <div class="col-8 align-self-center d-flex h-100">
-                        <span class="align-self-center"> ESTADO DE LAS CÁMARAS</span>
-                      </div>
-    
-                      <div class="col-3"></div>
-                    </div>
+        <div style="padding: 1px 10px;" class="filter-height">
+          <div class="row h-100">
+            <div style="    padding: 1px 15px;" class="col-3 d-flex h-100 align-self-center ">
+              <div style="border-radius: 7px 0px 0px 7px;" class="container-fluid border-grey">
+                <div class="row h-100">
+                  <div style="background-color: green;border-radius: 10px 0px 0px 10px;" class="col-1"></div>
+                  <div class="col-8 align-self-center d-flex h-100">
+                    <span class="align-self-center"> ESTADO DE LAS CÁMARAS</span>
                   </div>
-                </div>
-                <div class="col-9">
-                  <app-filters-emitidas></app-filters-emitidas>
+
+                  <div class="col-3"></div>
                 </div>
               </div>
-    
             </div>
-        <gridster [options]="options">
-          <gridster-item [item]="item" *ngFor="let item of dashboard">
-
-            <div *ngIf="item.type === 'mini'">
-              <app-operation-mini></app-operation-mini>
+            <div class="col-9">
+              <app-filters-emitidas></app-filters-emitidas>
             </div>
+          </div>
 
-            <div *ngIf="item.type === 'expanded'">
-              <app-operation-details></app-operation-details>
-            </div>
+        </div>
+        <div class="grid-height">
+          <gridster [options]="options">
+            <gridster-item [item]="item" *ngFor="let item of dashboard">
 
-            <div class="pink" *ngIf="item.type === 'expanded-rosa'">
-              <app-operation-details></app-operation-details>
-            </div>
+              <app-operation-mini *ngIf="item.type === 'mini-baja'" label="Baja"></app-operation-mini>
+              <app-operation-mini *ngIf="item.type === 'mini-ddif'" label="Ddif"></app-operation-mini>
+              <app-operation-mini *ngIf="item.type === 'mini-7x24'" label="7x24"></app-operation-mini>
+              <app-operation-mini *ngIf="item.type === 'mini-pendiente'" label="Pendiente emisión de pago"></app-operation-mini>
 
-            <app-graph-process *ngIf="item.type === 'process'"></app-graph-process>
-            <app-graph-warranty *ngIf="item.type === 'process-2'"></app-graph-warranty>
+              <app-operation-details *ngIf="item.type === 'expanded-ingresado'" cab1="Canal" label="Ingresado"></app-operation-details>
+              <app-operation-details *ngIf="item.type === 'expanded-pendiente'" alert="true" cab1="Sistema" label="Pendiente"></app-operation-details>
+              <app-operation-details *ngIf="item.type === 'expanded-procesado'" cab1="Cámara" label="Procesado"></app-operation-details>
+              <app-operation-details *ngIf="item.type === 'expanded-rechazado'" cab1="Motivo" label="Rechazado"></app-operation-details>
 
-            <div style="height: inherit" *ngIf="item.type === 'graph'">
-              <app-graph-operations label="NOO"></app-graph-operations>
-            </div>
+              <app-graph-process *ngIf="item.type === 'process'"></app-graph-process>
+              <app-graph-warranty *ngIf="item.type === 'process-2'"></app-graph-warranty>
 
-            <div style="height:100%" *ngIf="item.type === 'table'">
-              <app-table-operations></app-table-operations>
-            </div>
-          </gridster-item>
-        </gridster>
+              <div style="height: inherit" *ngIf="item.type === 'graph'">
+                <app-graph-operations label="Emitidas por hora"></app-graph-operations>
+              </div>
+
+              <div style="height:100%" *ngIf="item.type === 'table'">
+                <app-table-operations></app-table-operations>
+              </div>
+            </gridster-item>
+          </gridster>
+        </div>
       </div>
     </div>
+
   </div>
-</div>
