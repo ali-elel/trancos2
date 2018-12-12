@@ -24,7 +24,7 @@ export class MultiBulletComponent implements OnInit {
         segments: {
           used: {
             text: 'Utilizado',
-            value: 400000,
+            value: 1000,
             currency: 'ARS',
             backgroundColor: '#00CBD2'
           },
@@ -36,7 +36,7 @@ export class MultiBulletComponent implements OnInit {
           },
           available: {
             text: 'Disponible',
-            value: 1000000,
+            value: 20000,
             currency: 'ARS',
             backgroundColor: '#E3F8F9'
           },
@@ -86,25 +86,25 @@ export class MultiBulletComponent implements OnInit {
         segments: {
           used: {
             text: 'Utilizado',
-            value: 400000,
+            value: 1900,
             currency: 'ARS',
             backgroundColor: '#5D95FF'
           },
           proyected: {
             text: 'Proyectado',
-            value: 500000,
+            value: 5000,
             currency: 'ARS',
             backgroundColor: '#8FB4FF'
           },
           available: {
             text: 'Disponible',
-            value: 1000000,
+            value: 0,
             currency: 'ARS',
             backgroundColor: '#E9F0FF'
           },
           exceded: {
             text: 'Excedido',
-            value: 0,
+            value: 300,
             currency: 'ARS',
             backgroundColor: '#0066FF'
           }
