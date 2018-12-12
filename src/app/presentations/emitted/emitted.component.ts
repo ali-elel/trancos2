@@ -25,15 +25,15 @@ export class EmittedComponent implements OnInit {
     };
 
     this.dashboard = [
-      { cols: 2, rows: 1, y: 0, x: 6, type: 'mini' },
-      { cols: 2, rows: 1, y: 0, x: 4, type: 'mini' },
-      { cols: 2, rows: 1, y: 0, x: 2, type: 'mini' },
-      { cols: 2, rows: 1, y: 0, x: 0, type: 'mini' },
+      { cols: 2, rows: 1, y: 0, x: 0, type: 'mini-baja' },
+      { cols: 2, rows: 1, y: 0, x: 2, type: 'mini-ddif' },
+      { cols: 2, rows: 1, y: 0, x: 4, type: 'mini-7x24' },
+      { cols: 2, rows: 1, y: 0, x: 6, type: 'mini-pendiente' },
 
-      { cols: 2, rows: 3, y: 1, x: 0, type: 'expanded' },
-      { cols: 2, rows: 3, y: 1, x: 2, type: 'expanded-rosa' },
-      { cols: 2, rows: 3, y: 1, x: 4, type: 'expanded' },
-      { cols: 2, rows: 3, y: 1, x: 6, type: 'expanded' },
+      { cols: 2, rows: 3, y: 1, x: 0, type: 'expanded-ingresado' },
+      { cols: 2, rows: 3, y: 1, x: 2, type: 'expanded-pendiente' },
+      { cols: 2, rows: 3, y: 1, x: 4, type: 'expanded-procesado' },
+      { cols: 2, rows: 3, y: 1, x: 6, type: 'expanded-rechazado' },
 
       { cols: 5, rows: 1, y: 2, x: 0, type: 'process' },
       { cols: 3, rows: 1, y: 2, x: 5, type: 'process-2' },

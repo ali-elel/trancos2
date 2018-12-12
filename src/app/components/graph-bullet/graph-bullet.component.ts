@@ -24,11 +24,11 @@ export class GraphBulletComponent implements OnInit {
     // Check Maximum
     if (this.options.segments.proyected.value > this.options.segments.available.value) {
       this.max = this.options.segments.proyected.value;
-      this.options.segments.exceded.value = this.options.segments.proyected.value - this.options.segments.available.value;
+      // this.options.segments.exceded.value = this.options.segments.proyected.value - this.options.segments.available.value;
 
     } else if (this.options.segments.used.value > this.options.segments.available.value) {
       this.max = this.options.segments.used.value;
-      this.options.segments.exceded.value = this.options.segments.used.value - this.options.segments.available.value;
+      // this.options.segments.exceded.value = this.options.segments.used.value - this.options.segments.available.value;
     } else {
       this.max = this.options.segments.available.value;
     }
@@ -62,7 +62,11 @@ export class GraphBulletComponent implements OnInit {
     }
 
     if (this.options.segments.proyected.value > 0) {
-      this.segmentsWidth.proyected = this.options.segments.proyected.value * 100 / this.max - this.segmentsWidth.used;
+      if (this.max === this.options.segments.proyected.value) { // Se le resta el exceso
+        this.segmentsWidth.proyected = this.options.segments.proyected.value * 100 / this.max - this.segmentsWidth.exceded - this.segmentsWidth.used;
+      } else {
+        this.segmentsWidth.proyected = this.options.segments.proyected.value * 100 / this.max;
+      }
     }
 
     if (this.options.segments.available.value > 0) {
