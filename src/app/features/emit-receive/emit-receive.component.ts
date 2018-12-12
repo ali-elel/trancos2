@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { EmitidasService } from "../../services/emitidas.service";
-import { RecibidasService } from "../../services/recibidas.service";
+import { EmitidasService } from '../../services/emitidas.service';
 
 
 @Component({
@@ -11,10 +10,10 @@ import { RecibidasService } from "../../services/recibidas.service";
 export class EmitReceiveComponent implements OnInit {
   public listado: any;
   public list_recibidas: any;
-  public total:number=0;
-  public total_recibidas:number=0;
+  public total = 0;
+  public total_recibidas = 0;
 
-  public count_total:number=0;
+  public count_total = 0;
 
   @Input() label: string;
   @Input() isAlert: boolean;
@@ -22,7 +21,7 @@ export class EmitReceiveComponent implements OnInit {
 
   constructor(
     private _EmitidasService: EmitidasService,
-    private _RecibidasService: RecibidasService,
+    // private _RecibidasService: RecibidasService,
   ) {
 
   }
@@ -35,37 +34,37 @@ export class EmitReceiveComponent implements OnInit {
   }
 
   listEmitidas(tipo) {
-    //Lleno this.count_total
+    // Lleno this.count_total
     this._EmitidasService.getIngresado()
-        .subscribe(resp => {
-          this.count_total=resp[0]["amountARS"]["count"];
-          this.listado = resp;
-        });
+      .subscribe(resp => {
+        this.count_total = resp[0]["amountARS"]["count"];
+        this.listado = resp;
+      });
 
-    if (tipo === "Total") {      
+    if (tipo === "Total") {
       this._EmitidasService.getIngresado()
         .subscribe(resp => {
-         this.listado = resp;
+          this.listado = resp;
         });
     } else if (tipo === "Pendiente") {
-      this.total=0;
+      this.total = 0;
       this._EmitidasService.getPendiente()
         .subscribe(resp => {
-          this.total=(resp[0]["amountARS"]["count"]*this.count_total)/100;
+          this.total = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
           this.listado = resp;
         });
     } else if (tipo === "Procesado") {
-      this.total=0;
+      this.total = 0;
       this._EmitidasService.getProcesado()
         .subscribe(resp => {
-          this.total=(resp[0]["amountARS"]["count"]*this.count_total)/100;
+          this.total = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
           this.listado = resp;
         });
     } else if (tipo === "Rechazado") {
-      this.total=0;
+      this.total = 0;
       this._EmitidasService.getRechazado()
         .subscribe(resp => {
-          this.total=(resp[0]["amountARS"]["count"]*this.count_total)/100;
+          this.total = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
           this.listado = resp;
         });
     }
@@ -73,36 +72,36 @@ export class EmitReceiveComponent implements OnInit {
   }
 
   listRecibidas(tipo) {
-    this.count_total=0;
+    this.count_total = 0;
     //Lleno this.count_total
     this._RecibidasService.getIngresado()
-        .subscribe(resp => {
-          this.count_total=resp[0]["amountARS"]["count"];
-          this.listado = resp;
-        });
+      .subscribe(resp => {
+        this.count_total = resp[0]["amountARS"]["count"];
+        this.listado = resp;
+      });
 
     if (tipo === "Total") {
-        this._RecibidasService.getIngresado()
+      this._RecibidasService.getIngresado()
         .subscribe(resp => {
-          this.total_recibidas=(resp[0]["amountARS"]["count"]*this.count_total)/100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
           this.list_recibidas = resp;
         });
     } else if (tipo === "Pendiente") {
       this._RecibidasService.getPendiente()
         .subscribe(resp => {
-          this.total_recibidas=(resp[0]["amountARS"]["count"]*this.count_total)/100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
           this.list_recibidas = resp;
         });
     } else if (tipo === "Procesado") {
       this._RecibidasService.getProcesado()
         .subscribe(resp => {
-          this.total_recibidas=(resp[0]["amountARS"]["count"]*this.count_total)/100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
           this.list_recibidas = resp;
         });
     } else if (tipo === "Rechazado") {
       this._RecibidasService.getRechazado()
         .subscribe(resp => {
-          this.total_recibidas=(resp[0]["amountARS"]["count"]*this.count_total)/100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
           this.list_recibidas = resp;
         });
     }
