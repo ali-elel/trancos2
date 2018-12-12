@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EmitidasService } from '../../services/emitidas.service';
+import { RecibidasService } from '../../services/recibidas.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class EmitReceiveComponent implements OnInit {
 
   constructor(
     private _EmitidasService: EmitidasService,
-    // private _RecibidasService: RecibidasService,
+    private _RecibidasService: RecibidasService,
   ) {
 
   }
