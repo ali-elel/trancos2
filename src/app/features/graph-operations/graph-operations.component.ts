@@ -1,6 +1,6 @@
 import { Chart } from 'chart.js';
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-
+import * as Dygraph from 'dygraphs';
 @Component({
   selector: 'app-graph-operations',
   templateUrl: './graph-operations.component.html',
@@ -9,12 +9,15 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 export class GraphOperationsComponent implements OnInit {
 
   @ViewChild('lineChart') chartRef;
+  // @ViewChild('dygraph') graphRef;
   @Input() label: string;
   chart: any;
+  // dygraph: any;
 
   constructor() { }
 
   ngOnInit() {
+    // this.dygraph = new Dygraph(this.graphRef.nativeElement, 'temperatures.csv', {});
     this.chart = new Chart(this.chartRef.nativeElement, {
       type: 'line',
       data: {
@@ -25,14 +28,17 @@ export class GraphOperationsComponent implements OnInit {
             data: [0, 4, 11, 5, 7, 8, 10, 15, 16, 12],
             borderColor: '#ff2b2b',
             fill: false,
-            borderWidth: 2
+            borderWidth: 2,
+            pointStyle: 'rect'
           },
           {
             label: 'Data 2',
             data: [5, 1, 2, 3, 8, 5, 4, 12, 16, 26],
             borderColor: '#ffb7b7',
             fill: false,
-            borderWidth: 2
+            borderWidth: 2,
+            pointStyle: 'rect',
+            borderDash: [5, 5]
           }
         ]
       },
@@ -42,6 +48,8 @@ export class GraphOperationsComponent implements OnInit {
         elements: {
           line: {
             tension: 0
+            // titleFontColor: '#000',
+            // backgroundColor: 'rgba(255,255,255,.9)',
           }
         }
       }
