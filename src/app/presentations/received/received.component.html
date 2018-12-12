@@ -20,7 +20,33 @@
       <div class="navbar-col nav">
         <app-sidenav></app-sidenav>
       </div>
+      
       <div class="col">
+          <div style="padding: 1px 10px 0px 0px;" class="h-10">
+              <div class="row h-100">
+                <div style="padding: 10px 15px;" class="d-flex h-100 align-self-center ">
+                  <div style="border-radius: 0px 0px 0px 0px;" class="container-fluid border-grey">
+                    <div class="row h-100">
+                      <!-- <div style="background-color: green;border-radius: 10px 0px 0px 10px;" class="col-1"></div> -->
+                      <div class="col-20 align-self-center d-flex h-100">
+                        <label style="padding-right: 24px;">
+                            <input type="radio"  name="moneda" value="pesos"> Filtrar por pesos
+                        </label>
+                        <label>
+                            <input type="radio" name="moneda" value="dolares"> Dólares
+                        </label>
+                      </div>
+    
+                      <div class="col-3"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-9">
+                  <app-filters-recibidas></app-filters-recibidas>
+                </div>
+              </div>
+    
+            </div>
         <gridster [options]="options">
           <gridster-item [item]="item" *ngFor="let item of dashboard">
 

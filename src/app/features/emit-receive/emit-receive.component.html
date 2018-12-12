@@ -4,46 +4,46 @@
   </div>
   <div class="h-80">
     <div class="half">
-      <div class="container-fluid  h-100">
+      <div class="container-fluid  h-100" *ngFor="let list of listado">
         <div class="row h-100">
           <div style="padding-left: 3px;" class="col-6 align-center bold price">
             <div class="text-align-right">
-              <span class="red-hover"> $1.120.000.000 </span>
+              <span class="red-hover"> ${{ list.amountARS.amount }} </span>
             </div>
             <div class="text-align-right">
-              <span class="red-hover">U$S 10.000</span>
+              <span class="red-hover">U$S {{ list.amountUSD.amount }}</span>
             </div>
             <div class="line"></div>
           </div>
           <div class="col-3 align-center">
-            <div class="quantity"><span class="red-hover">1900</span></div>
-            <div class="quantity"><span class="red-hover">179</span></div>
+            <div class="quantity"><span class="red-hover">{{list.amountARS.count}}</span></div>
+            <div class="quantity"><span class="red-hover">{{list.amountUSD.count }}</span></div>
           </div>
           <div class="col-3 align-center">
-            <div *ngIf="percent"  class="percent">20%</div>
+            <div *ngIf="percent"  class="percent">{{total}}%</div>
           </div>
         </div>
       </div>
     </div>
     <hr class="h-2">
     <div class="half">
-      <div class="container-fluid  h-100">
+      <div class="container-fluid  h-100" *ngFor="let list of list_recibidas">
         <div class="row h-100">
           <div style="padding-left: 3px;" class="col-6 align-center bold price">
             <div class="text-align-right">
-              <span class="red-hover"> $1.120.000.000 </span>
+              <span class="red-hover"> ${{ list.amountARS.amount }} </span>
             </div>
             <div class="text-align-right">
-              <span class="red-hover">U$S 10.000</span>
+              <span class="red-hover">U$S {{ list.amountUSD.amount }}</span>
             </div>
             <div class="line"></div>
           </div>
           <div class="col-3 align-center">
-            <div class="quantity"><span class="red-hover">1900</span></div>
-            <div class="quantity"><span class="red-hover">179</span></div>
+            <div class="quantity"><span class="red-hover">{{list.amountARS.count}}</span></div>
+            <div class="quantity"><span class="red-hover">{{list.amountUSD.count }}</span></div>
           </div>
           <div class="col-3 align-center">
-            <div *ngIf="percent" class="percent">20%</div>
+            <div *ngIf="percent"  class="percent">{{total_recibidas}}%%</div>
           </div>
         </div>
       </div>

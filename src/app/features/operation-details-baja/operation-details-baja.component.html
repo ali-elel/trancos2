@@ -24,13 +24,11 @@
           
         </table><br>
         <table style="width:100%" class="expanded-table">
-            <tr *ngFor="let list of listado">
-                <td>{{ list.name }}</td>
-                <td>{{ list.address.street }}</td>
-                <td>{{ list.email }}</td>
-                </tr>
-                
-            
+          <tr *ngFor="let list of listado">
+            <td>{{ list.cod_bco_destino }}</td>
+            <td>{{ list.cod_evento }}</td>
+            <td>{{ list.cod_producto }}</td>
+            </tr>
           </table><br>
       </div>
     </div>

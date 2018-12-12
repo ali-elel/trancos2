@@ -9,26 +9,28 @@ import { EmitidasService } from "../../services/emitidas.service";
 export class OperationDetailsComponent implements OnInit {
   @Input() label: string;
   @Input() cab1: string;
-  public listado: any; 
+  public listado: any;
 
   constructor(
     private _EmitidasService: EmitidasService,
+  ) {   
 
-  ) { }
-
+  }
+  
   ngOnInit() {
     this.listOperations();
 
   }
 
+ 
+
   listOperations() {
     this._EmitidasService.getBaja()
-        .subscribe(resp => {              
+      .subscribe(resp => {
         this.listado = resp;
-       // console.log('llego al componente',this.listado);
-  
-
-});
+      });
   }
+
+ 
 
 }

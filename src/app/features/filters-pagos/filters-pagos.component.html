@@ -1,25 +1,27 @@
-<div style="padding: 2px 0px;" class="container-fluid h-100 ">
+<div style="padding: 2px 25px 0 25px;" class="container-fluid h-100 ">
   <div class="row d-flex border-grey h-100 bold">
 
     <div class="col align-self-center border-right">
-      <p-dropdown [options]="fecha " [style]="{'width': '100%','border':'0px'}"  placeholder="Fecha"
-        optionLabel="name" [showClear]="true"></p-dropdown>
+        <p-calendar [(ngModel)]="value" [style]="{'width': '90%','border':'0px'}" showButtonBar="false" [locale]="es"  [readonlyInput]="true" dateFormat="dd/mm/yy" placeholder="Fecha"></p-calendar>
+       <!-- <span class="ui-dropdown-trigger-icon ui-clickable pi pi-caret-down" ng-reflect-klass="ui-dropdown-trigger-icon ui-cl" ng-reflect-ng-class="pi pi-caret-down"></span>-->
+
     </div>
 
     <div class="col align-self-center border-right">
-      <p-dropdown [options]="sucursal " [style]="{'width': '100%','border':'0px'}"  placeholder="Sucursal"
+      <p-dropdown [options]="canal " [style]="{'width': '100%','border':'0px'}"  placeholder="Canal"
         optionLabel="name" [showClear]="true"></p-dropdown>
-    </div>  
-
+    </div> 
+     
+     <div class="col align-self-center border-right">
+      <p-dropdown [options]="producto " [style]="{'width': '100%','border':'0px'}"  placeholder="Producto"
+        optionLabel="name" [showClear]="true"></p-dropdown>
+    </div> 
     <div class="col align-self-center border-right">
-      <p-dropdown [options]="segmento " [style]="{'width': '100%','border':'0px'}"
-        placeholder="Segmento" optionLabel="name" [showClear]="true"></p-dropdown>
+      <p-dropdown [options]="acuerdo " [style]="{'width': '100%','border':'0px'}" 
+        placeholder="Acuerdo" optionLabel="name" [showClear]="true"></p-dropdown>
     </div>
 
-    <div class="col align-self-center border-right">
-      <p-dropdown [options]="productos " [style]="{'width': '100%','border':'0px'}"  placeholder="Producto"
-        optionLabel="name" [showClear]="true"></p-dropdown>
-    </div>
+    
     <div style="justify-content: center; display: flex;" class="col align-self-center">
       <i class="fas fa-eraser fa-2x d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>
       <span style="align-self: center;">

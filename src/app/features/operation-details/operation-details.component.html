@@ -58,12 +58,10 @@
           <th>Monto</th>
         </tr>
         <tr *ngFor="let list of listado">
-            <td>{{ list.name }}</td>
-            <td>{{ list.address.street }}</td>
-            <td>{{ list.email }}</td>
+            <td>{{ list.amountARS.amount }}</td>
+            <td>{{ list.amountARS.count }}</td>
+            <td>{{ list.amountARS.count }}</td>
             </tr>
-            
-        
       </table><br>
     </div>
   </div>

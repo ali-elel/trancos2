@@ -30,7 +30,7 @@ export class MultiBulletComponent implements OnInit {
           },
           proyected: {
             text: 'Proyectado',
-            value: 0,
+            value: 12000,
             currency: 'ARS',
             backgroundColor: '#8FB4FF'
           },
@@ -61,7 +61,7 @@ export class MultiBulletComponent implements OnInit {
           },
           proyected: {
             text: 'Proyectado',
-            value: 0,
+            value: 10200,
             currency: 'ARS',
             backgroundColor: '#8FB4FF'
           },
@@ -123,13 +123,13 @@ export class MultiBulletComponent implements OnInit {
           },
           proyected: {
             text: 'Proyectado',
-            value: 6000,
+            value: 60000,
             currency: 'USD',
             backgroundColor: '#9DDDB3'
           },
           available: {
             text: 'Disponible',
-            value: 10000,
+            value: 1000000,
             currency: 'USD',
             backgroundColor: '#DAF2E1'
           },

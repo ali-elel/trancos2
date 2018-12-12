@@ -48,7 +48,7 @@
           <gridster [options]="options">
             <gridster-item [item]="item" *ngFor="let item of dashboard">
 
-              <app-emit-receive [percent]="false" label="Total" *ngIf="item.type === 'ingresadas-recibidas-total'"></app-emit-receive>
+              <app-emit-receive [percent]="false"  [percent]="false" label="Total" *ngIf="item.type === 'ingresadas-recibidas-total'"></app-emit-receive>
               <app-emit-receive [percent]="true" label="Pendiente" isAlert="true" *ngIf="item.type === 'ingresadas-recibidas-pendiente'"></app-emit-receive>
               <app-emit-receive [percent]="true" label="Procesado" *ngIf="item.type === 'ingresadas-recibidas-procesado'"></app-emit-receive>
               <app-emit-receive [percent]="true" label="Rechazado" *ngIf="item.type === 'ingresadas-recibidas-rechazado'"></app-emit-receive>

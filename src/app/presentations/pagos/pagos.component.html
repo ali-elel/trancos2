@@ -1,4 +1,4 @@
-<div class="santander internas">
+<div class="santander internas scroll">
   <header class="container-fluid">
     <div class="row">
       <div id="brand" class="col-md-6">
@@ -27,7 +27,7 @@
       </div>
       <div class="col">
         <div>
-          <app-filters-pagos></app-filters-pagos>
+          <app-filters-recibidas></app-filters-recibidas>
         </div>
 
         <gridster [options]="options">
@@ -71,8 +71,6 @@
             <div style="height: 100%" *ngIf="item.type === 'graph1'">
               <app-graph-operations></app-graph-operations>
             </div>
-
-
             <div style="height:100%" *ngIf="item.type === 'table'">
               <app-table-operations-pagos></app-table-operations-pagos>
             </div>
