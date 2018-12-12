@@ -33,7 +33,7 @@ export class RecibidasService {
           "count": "73"
         },
         "amountUSD": {
-          "amount": "450000.0",
+          "amount": "3009",
           "count": "95"
         },
         "errorMessage": null
