@@ -4,7 +4,7 @@
   </div>
   <div class="h-80">
     <div class="half">
-      <div class="container-fluid  h-100" *ngFor="let list of listado">
+      <div class="container-fluid  h-100" *ngFor="let list of listado_emitidas">
         <div class="row h-100">
           <div style="padding-left: 3px;" class="col-6 align-center bold price">
             <div class="text-align-right">
@@ -20,7 +20,7 @@
             <div class="quantity"><span class="red-hover">{{list.amountUSD.count }}</span></div>
           </div>
           <div class="col-3 align-center">
-            <div *ngIf="percent"  class="percent">{{total}}%</div>
+            <div *ngIf="percent"  class="percent">{{total_emitidas}}%</div>
           </div>
         </div>
       </div>

@@ -9,10 +9,14 @@ import { RecibidasService } from '../../services/recibidas.service';
   styleUrls: ['./emit-receive.component.scss']
 })
 export class EmitReceiveComponent implements OnInit {
+  public listado_emitidas: any;
   public listado: any;
+
   public list_recibidas: any;
   public total = 0;
   public total_recibidas = 0;
+  public total_emitidas = 0;
+
 
   public count_total = 0;
 
@@ -40,34 +44,37 @@ export class EmitReceiveComponent implements OnInit {
     this._EmitidasService.getIngresado()
       .subscribe(resp => {
         this.count_total = resp[0]["amountARS"]["count"];
-        this.listado = resp;
+        this.listado_emitidas = resp;
+        console.warn(resp);
       });
 
     if (tipo === "Total") {
       this._EmitidasService.getIngresado()
         .subscribe(resp => {
-          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
-          this.listado = resp;
+          this.total_emitidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
+          this.listado_emitidas = resp;
         });
     } else if (tipo === "Pendiente") {
       this._EmitidasService.getPendiente()
         .subscribe(resp => {
-          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
-          this.listado = resp;
+          this.total_emitidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
+          this.listado_emitidas = resp;
         });
     } else if (tipo === "Procesado") {
       this._EmitidasService.getProcesado()
         .subscribe(resp => {
-          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
-          this.listado = resp;
+          this.total_emitidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
+          this.listado_emitidas = resp;
         });
     } else if (tipo === "Rechazado") {
       this._EmitidasService.getRechazado()
         .subscribe(resp => {
-          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
-          this.listado = resp;
+          this.total_emitidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
+          this.listado_emitidas = resp;
         });
     }
+    console.log("list_recibidas",this.listado);
+    console.log("tipo",tipo);
   }
 
   listRecibidas(tipo) {
@@ -77,6 +84,7 @@ export class EmitReceiveComponent implements OnInit {
       .subscribe(resp => {
         this.count_total = resp[0]["amountARS"]["count"];
         this.listado = resp;
+        
       });
 
     if (tipo === "Total") {
@@ -104,6 +112,7 @@ export class EmitReceiveComponent implements OnInit {
           this.list_recibidas = resp;
         });
     }
+    
   }
 
 }

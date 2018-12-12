@@ -79,8 +79,8 @@ export class EmitidasService {
     this.emitidas = [
       {
         "amountARS": {
-          "amount": "12000.0",
-          "count": "130"
+          "amount": "15000.0",
+          "count": "150"
         },
         "amountUSD": {
           "amount": "450000.0",
