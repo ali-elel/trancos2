@@ -9,20 +9,19 @@ import { EmitidasService } from "../../services/emitidas.service";
 export class OperationDetailsComponent implements OnInit {
   @Input() label: string;
   @Input() cab1: string;
+  @Input() alert = false;
+
   public listado: any;
 
   constructor(
-    private _EmitidasService: EmitidasService,
-  ) {   
-
+    private _EmitidasService: EmitidasService) {
   }
-  
+
   ngOnInit() {
     this.listOperations();
-
   }
 
- 
+
 
   listOperations() {
     this._EmitidasService.getBaja()
@@ -31,6 +30,6 @@ export class OperationDetailsComponent implements OnInit {
       });
   }
 
- 
+
 
 }

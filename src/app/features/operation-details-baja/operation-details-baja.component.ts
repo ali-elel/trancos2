@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class OperationDetailsBajaComponent implements OnInit {
   @Input() label: string;
-  @Input() cab1:string;
-  public listado: any; 
+  @Input() cab1: string;
+  public listado: any;
   constructor(
     private _EmitidasService: EmitidasService,
     private router: Router,
@@ -23,10 +23,10 @@ export class OperationDetailsBajaComponent implements OnInit {
 
   listOperations() {
     this._EmitidasService.getBaja()
-        .subscribe(resp => {      
+      .subscribe(resp => {
         this.listado = resp;
-  
 
-});
+
+      });
   }
 }

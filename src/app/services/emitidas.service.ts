@@ -22,10 +22,10 @@ export class EmitidasService {
   }
 
   getBaja(): Observable<any> {
-   
-    this.emitidas="";
-    this.emitidas_detalle="";
-    
+
+    this.emitidas = "";
+    this.emitidas_detalle = "";
+
     this.emitidas = [
       {
         "amountARS": {
@@ -73,8 +73,8 @@ export class EmitidasService {
 
 
   getIngresado(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    this.emitidas = "";
+    this.emitidas_detalle = "";
 
     this.emitidas = [
       {
@@ -107,7 +107,7 @@ export class EmitidasService {
       ],
       "errorMessage": null
     }
-     // asi es como va desde el endpoint
+    // asi es como va desde el endpoint
     //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
 
     //console.log("En el servicio",this.prueba);
@@ -120,8 +120,8 @@ export class EmitidasService {
   }
 
   getDdif(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    this.emitidas = "";
+    this.emitidas_detalle = "";
 
     this.emitidas = [
       {
@@ -154,7 +154,7 @@ export class EmitidasService {
       ],
       "errorMessage": null
     }
-     // asi es como va desde el endpoint
+    // asi es como va desde el endpoint
     //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
 
     //console.log("En el servicio",this.prueba);
@@ -167,8 +167,8 @@ export class EmitidasService {
   }
 
   getPendiente(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    this.emitidas = "";
+    this.emitidas_detalle = "";
 
     this.emitidas = [
       {
@@ -201,7 +201,7 @@ export class EmitidasService {
       ],
       "errorMessage": null
     }
-     // asi es como va desde el endpoint
+    // asi es como va desde el endpoint
     //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
 
     //console.log("En el servicio",this.prueba);
@@ -214,8 +214,8 @@ export class EmitidasService {
   }
 
   getRechazado(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    this.emitidas = "";
+    this.emitidas_detalle = "";
 
     this.emitidas = [
       {
@@ -248,7 +248,7 @@ export class EmitidasService {
       ],
       "errorMessage": null
     }
-     // asi es como va desde el endpoint
+    // asi es como va desde el endpoint
     //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
 
     //console.log("En el servicio",this.prueba);
@@ -261,8 +261,8 @@ export class EmitidasService {
   }
 
   getProcesado(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    this.emitidas = "";
+    this.emitidas_detalle = "";
 
     this.emitidas = [
       {
@@ -295,7 +295,7 @@ export class EmitidasService {
       ],
       "errorMessage": null
     }
-     // asi es como va desde el endpoint
+    // asi es como va desde el endpoint
     //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
 
     //console.log("En el servicio",this.prueba);
@@ -308,8 +308,8 @@ export class EmitidasService {
   }
 
   getPendEmisionPago(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    this.emitidas = "";
+    this.emitidas_detalle = "";
 
     this.emitidas = [
       {
@@ -342,7 +342,7 @@ export class EmitidasService {
       ],
       "errorMessage": null
     }
-     // asi es como va desde el endpoint
+    // asi es como va desde el endpoint
     //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
 
     //console.log("En el servicio",this.prueba);
@@ -355,8 +355,8 @@ export class EmitidasService {
   }
 
   get7x24(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    this.emitidas = "";
+    this.emitidas_detalle = "";
 
     this.emitidas = [
       {
@@ -389,7 +389,7 @@ export class EmitidasService {
       ],
       "errorMessage": null
     }
-     // asi es como va desde el endpoint
+    // asi es como va desde el endpoint
     //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
 
     //console.log("En el servicio",this.prueba);

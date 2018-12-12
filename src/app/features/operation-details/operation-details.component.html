@@ -1,6 +1,6 @@
-<div class="container">
+<div [ngClass]="{'pink': alert}" class="container">
   <div class="row">
-    <h3 class="col-12 widget-mini-title color-santander">{{label}}</h3>
+    <div style="font-size: 1vw" class="col-12 bold widget-mini-title uppercase color-santander">{{label}}</div>
 
     <div class="col-9">
       <span class="widget-mini-price">$2.300.120</span>
@@ -11,57 +11,42 @@
     </div>
 
     <div class="mt-2 col-12">
-     <!-- <table style="width:100%" class="expanded-table">
-        <tr>
-          <th>{{cab1}}</th>
-          <th>Cantidad</th>
-          <th>Monto</th>
-        </tr>
-
-        <tr>
-          <td>Sucursales</td>
-          <td>1500</td>
-          <td class="quantity">$1.146.010.409</td>
-        </tr>
-        <tr>
-          <td>Datanet</td>
-          <td>0</td>
-          <td class="quantity">$0</td>
-        </tr>
-        <tr>
-          <td>Obcm</td>
-          <td>0</td>
-          <td class="quantity">$0</td>
-        </tr>
-        <tr>
-          <td>Obe</td>
-          <td>0</td>
-          <td class="quantity">$0</td>
-        </tr>
-        <tr>
-          <td>Piryp</td>
-          <td>0</td>
-          <td class="quantity">$0</td>
-        </tr>
-        <tr>
-          <td>Superlínea</td>
-          <td>0</td>
-          <td class="quantity">$0</td>
-        </tr>
-
-      </table>-->
-
-      <table style="width:100%" class="expanded-table">
-        <tr>
-          <th>{{cab1}}</th>
-          <th>Cantidad</th>
-          <th>Monto</th>
-        </tr>
-        <tr *ngFor="let list of listado">
-            <td>{{ list.amountARS.amount }}</td>
-            <td>{{ list.amountARS.count }}</td>
-            <td>{{ list.amountARS.count }}</td>
-            </tr>
-      </table><br>
+      <table class="table table-sm">
+        <thead>
+          <tr class="uppercase">
+            <th scope="col">{{cab1}}</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>41</td>
+            <td>ARS 800.000</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>11</td>
+            <td>ARS 150.000</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>26</td>
+            <td>USD 3.000</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>32</td>
+            <td>USD 5.000</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>5</td>
+            <td>ARS 5.300.200</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>

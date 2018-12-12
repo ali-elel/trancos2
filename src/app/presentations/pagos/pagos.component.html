@@ -34,18 +34,11 @@
           <div class="col-md-6"></div>
           <gridster-item [item]="item" *ngFor="let item of dashboard">
 
-            <div *ngIf="item.type === 'mini-capturados'">
-              <app-operation-mini label="ARCH. CAPTURADOS"></app-operation-mini>
-            </div>
-            <div *ngIf="item.type === 'mini-pendiente-tibco'">
-              <app-operation-mini label="PENDIENTE TIBCO"></app-operation-mini>
-            </div>
-            <div *ngIf="item.type === 'mini-enviada'">
-              <app-operation-mini label="FUR. ENVIADA"></app-operation-mini>
-            </div>
-            <div *ngIf="item.type === 'mini-pendiente-mq'">
-              <app-operation-mini label="PENDIENTE MQ PIRYP"></app-operation-mini>
-            </div>
+              <app-operation-mini *ngIf="item.type === 'mini-capturados'" label="ARCH. CAPTURADOS"></app-operation-mini>
+              <app-operation-mini *ngIf="item.type === 'mini-pendiente-tibco'" label="PENDIENTE TIBCO"></app-operation-mini>
+       
+              <app-operation-mini *ngIf="item.type === 'mini-enviada'" label="FUR. ENVIADA"></app-operation-mini>
+              <app-operation-mini *ngIf="item.type === 'mini-pendiente-mq'" label="PENDIENTE MQ PIRYP"></app-operation-mini>
 
 
             <div *ngIf="item.type === 'expanded-ingresado'">

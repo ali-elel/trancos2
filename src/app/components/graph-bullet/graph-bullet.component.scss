@@ -120,9 +120,11 @@ figure {
 
 .vertical-multi {
     transform: rotate(-90deg);
-    font-size: .9em; // position: absolute;
+    font-size: 80%; // position: absolute;
     position: relative;
-    top: -13px;
+    top: -9px;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .align-self-flex-end {

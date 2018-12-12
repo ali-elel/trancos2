@@ -1,29 +1,35 @@
 .table {
-  height: 100%;
+    height: 100%;
 }
 
 table.mat-table {
-  width: 100% !important;
+    width: 100% !important;
 }
 
 .red {
-  background-color: red;
+    background-color: red;
 }
 
-
 .yellow {
-  background-color: yellow;
+    background-color: yellow;
 }
 
 .orange {
-  background-color: orange;
+    background-color: orange;
 }
 
-
-
+.table td,
+ {
+    padding: 0.25vh 5px;
+    font-size: 2vh;
+}
+.table th{
+  padding: 0.3vh 5px;
+  font-size: 2.1vh;
+}
 .blocker {
-  width: 16px;
-  height: 16px;
-  margin-right: 5px;
-  display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    display: inline-block;
 }
