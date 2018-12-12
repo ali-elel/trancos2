@@ -14,14 +14,14 @@ export class OperationDetailsComponent implements OnInit {
   public listado: any;
 
   constructor(
-    private _EmitidasService: EmitidasService,
+    private _EmitidasService: EmitidasService) {
   }
-  
+
   ngOnInit() {
     this.listOperations();
   }
 
- 
+
 
   listOperations() {
     this._EmitidasService.getBaja()
@@ -30,6 +30,6 @@ export class OperationDetailsComponent implements OnInit {
       });
   }
 
- 
+
 
 }
