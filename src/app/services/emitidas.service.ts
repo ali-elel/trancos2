@@ -126,7 +126,7 @@ export class EmitidasService {
     this.emitidas = [
       {
         "amountARS": {
-          "amount": "35000.0",
+          "amount": "5000.0",
           "count": "10"
         },
         "amountUSD": {
@@ -140,7 +140,7 @@ export class EmitidasService {
     this.emitidas_detalle = {
       "amountARS": [
         {
-          "amount": "53000.0",
+          "amount": "5000.0",
           "count": "12",
           "detail": "Sucursales"
         }
@@ -173,8 +173,8 @@ export class EmitidasService {
     this.emitidas = [
       {
         "amountARS": {
-          "amount": "23400.0",
-          "count": "10"
+          "amount": "0",
+          "count": "0"
         },
         "amountUSD": {
           "amount": "87600.0",
@@ -220,8 +220,8 @@ export class EmitidasService {
     this.emitidas = [
       {
         "amountARS": {
-          "amount": "23600.0",
-          "count": "160"
+          "amount": "0",
+          "count": "0"
         },
         "amountUSD": {
           "amount": "50000.0",
@@ -267,8 +267,8 @@ export class EmitidasService {
     this.emitidas = [
       {
         "amountARS": {
-          "amount": "23400.0",
-          "count": "10"
+          "amount": "15000",
+          "count": "150"
         },
         "amountUSD": {
           "amount": "44400.0",
