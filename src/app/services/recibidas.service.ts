@@ -14,7 +14,6 @@ const httpOptionsUrl = {
   providedIn: 'root'
 })
 export class RecibidasService {
-  prueba: any;
   recibidas: any;
   recibidas_detalle: any;
 
@@ -30,11 +29,11 @@ export class RecibidasService {
       {
         "amountARS": {
           "amount": "12000.0",
-          "count": "73"
+          "count": "120"
         },
         "amountUSD": {
-          "amount": "3009",
-          "count": "95"
+          "amount": "300",
+          "count": "40"
         },
         "errorMessage": null
       }
@@ -76,8 +75,8 @@ export class RecibidasService {
     this.recibidas = [
       {
         "amountARS": {
-          "amount": "23400.0",
-          "count": "8"
+          "amount": "12000",
+          "count": "120"
         },
         "amountUSD": {
           "amount": "87600.0",
@@ -123,8 +122,8 @@ export class RecibidasService {
     this.recibidas = [
       {
         "amountARS": {
-          "amount": "23600.0",
-          "count": "23"
+          "amount": "0",
+          "count": "0"
         },
         "amountUSD": {
           "amount": "50000.0",
@@ -171,8 +170,8 @@ export class RecibidasService {
     this.recibidas = [
       {
         "amountARS": {
-          "amount": "23400.0",
-          "count": "18"
+          "amount": "0",
+          "count": "0"
         },
         "amountUSD": {
           "amount": "44400.0",

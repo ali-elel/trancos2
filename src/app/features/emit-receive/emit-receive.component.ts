@@ -35,7 +35,8 @@ export class EmitReceiveComponent implements OnInit {
   }
 
   listEmitidas(tipo) {
-    // Lleno this.count_total
+    this.count_total = 0;
+    //Lleno this.count_total
     this._EmitidasService.getIngresado()
       .subscribe(resp => {
         this.count_total = resp[0]["amountARS"]["count"];
@@ -45,31 +46,28 @@ export class EmitReceiveComponent implements OnInit {
     if (tipo === "Total") {
       this._EmitidasService.getIngresado()
         .subscribe(resp => {
+          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
           this.listado = resp;
         });
     } else if (tipo === "Pendiente") {
-      this.total = 0;
       this._EmitidasService.getPendiente()
         .subscribe(resp => {
-          this.total = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
           this.listado = resp;
         });
     } else if (tipo === "Procesado") {
-      this.total = 0;
       this._EmitidasService.getProcesado()
         .subscribe(resp => {
-          this.total = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
           this.listado = resp;
         });
     } else if (tipo === "Rechazado") {
-      this.total = 0;
       this._EmitidasService.getRechazado()
         .subscribe(resp => {
-          this.total = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
           this.listado = resp;
         });
     }
-
   }
 
   listRecibidas(tipo) {
@@ -82,27 +80,27 @@ export class EmitReceiveComponent implements OnInit {
       });
 
     if (tipo === "Total") {
-      this._RecibidasService.getIngresado()
+        this._RecibidasService.getIngresado()
         .subscribe(resp => {
-          this.total_recibidas = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
           this.list_recibidas = resp;
         });
     } else if (tipo === "Pendiente") {
       this._RecibidasService.getPendiente()
         .subscribe(resp => {
-          this.total_recibidas = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
           this.list_recibidas = resp;
         });
     } else if (tipo === "Procesado") {
       this._RecibidasService.getProcesado()
         .subscribe(resp => {
-          this.total_recibidas = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
           this.list_recibidas = resp;
         });
     } else if (tipo === "Rechazado") {
       this._RecibidasService.getRechazado()
         .subscribe(resp => {
-          this.total_recibidas = (resp[0]["amountARS"]["count"] * this.count_total) / 100;
+          this.total_recibidas = (resp[0]["amountARS"]["count"] / this.count_total) * 100;
           this.list_recibidas = resp;
         });
     }
