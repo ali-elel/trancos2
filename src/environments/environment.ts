@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // url: location.origin + '/rest'
-  url: 'http://35.232.237.25:8080/Tablero/rest/'
+  url: 'http://35.232.237.25:8080/rest/'
   
 };
 
