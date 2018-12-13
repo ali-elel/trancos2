@@ -1,29 +1,52 @@
 <div style="padding: 2px 15px 0 0px" class="container-fluid h-100 ">
   <div class="row d-flex border-grey h-100 bold">
 
-    <div class="col align-self-center border-right">
-        <p-calendar [(ngModel)]="value" [style]="{'width': '90%','border':'0px'}"  showButtonBar="false"  [locale]="es" selectionMode="range" [readonlyInput]="true" dateFormat="dd/mm/yy" placeholder="Fecha">  </p-calendar>
-       <!-- <span class="ui-dropdown-trigger-icon ui-clickable pi pi-caret-down" ng-reflect-klass="ui-dropdown-trigger-icon ui-cl" ng-reflect-ng-class="pi pi-caret-down"></span>-->
+    <div class="col-3 align-self-center border-right">
+      <!-- <p-calendar showIcon="true" [(ngModel)]="value" showButtonBar="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy" placeholder="Fecha">
+        <p-footer>Cutom footer with custom buttons</p-footer>
+      </p-calendar> -->
+      <p-calendar #calendar [(ngModel)]="value" showIcon="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy"
+        placeholder="Fecha">
+        <p-footer>
+          <div class="container-fluid pt-2">
+            <div class="row">
+              <div class="col-4 d-flex justify-content-center">
+                <div (click)="applyDateCalendar(calendar)"  class="calendar-button apply">
+                  Aplicar
+                </div>
+              </div>
+              <div class="col-4 d-flex justify-content-center">
+                <div (click)="clearCalendar(calendar)" class="calendar-button default">
+                  Limpiar
+                </div>
+              </div>
+              <div class="col-4 d-flex justify-content-center">
+                <div (click)="cancelCalendar(calendar)" class="calendar-button default">
+                  Cancelar
+                </div>
+              </div>
+            </div>
+          </div>
+        </p-footer>
+      </p-calendar>
+      <!-- <span class="ui-dropdown-trigger-icon ui-clickable pi pi-caret-down" ng-reflect-klass="ui-dropdown-trigger-icon ui-cl" ng-reflect-ng-class="pi pi-caret-down"></span>-->
 
     </div>
 
-    <div class="col align-self-center border-right">
-      <p-dropdown [options]="sucursal " [style]="{'width': '100%','border':'0px'}"  placeholder="Sucursal"
-        optionLabel="name" [showClear]="true"></p-dropdown>
-    </div>  
-
-    <div class="col align-self-center border-right">
-      <p-dropdown [options]="segmento " [style]="{'width': '100%','border':'0px'}" 
-        placeholder="Segmento" optionLabel="name" [showClear]="true"></p-dropdown>
+    <div class="col-2 align-self-center border-right">
+      <p-dropdown [options]="sucursal " [style]="{'width': '100%','border':'0px'}" placeholder="Sucursal" optionLabel="name"></p-dropdown>
     </div>
 
-    <div class="col align-self-center border-right">
-      <p-dropdown [options]="productos " [style]="{'width': '100%','border':'0px'}"  placeholder="Producto"
-        optionLabel="name" [showClear]="true"></p-dropdown>
+    <div class="col-2 align-self-center border-right">
+      <p-dropdown [options]="segmento " [style]="{'width': '100%','border':'0px'}" placeholder="Segmento" optionLabel="name"></p-dropdown>
     </div>
-    <div style="justify-content: center; display: flex;" class="col align-self-center">
+
+    <div class="col-2 align-self-center border-right">
+      <p-dropdown [options]="productos " [style]="{'width': '100%','border':'0px'}" placeholder="Producto" optionLabel="name"></p-dropdown>
+    </div>
+    <div style="justify-content: center; display: flex;" class="col erase-filters-button align-self-center">
       <i class="fas fa-eraser fa-2x d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>
-      <span style="align-self: center;">
+      <span style="align-self: center">
         BORRAR FILTROS
       </span>
     </div>

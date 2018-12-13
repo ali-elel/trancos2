@@ -1,0 +1,27 @@
+.calendar-button {
+    padding: 0.6vh .6vw;
+    font-size: 1vw;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.calendar-button:hover {
+    padding: 0.6vh .61vw;
+    transition-duration: .2s;
+}
+
+.apply {
+    color: white;
+    background-color: #368c36;
+}
+
+.erase-filters-button {
+    cursor: pointer;
+    font-size: .9vw
+}
+
+.default {
+    color: rgb(29, 29, 29);
+    background-color: white;
+    border: 1px solid rgb(107, 107, 107);
+}

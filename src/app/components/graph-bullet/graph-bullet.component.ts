@@ -35,12 +35,11 @@ export class GraphBulletComponent implements OnInit {
 
     // Numbers for Division
     this.values = [];
-    const minim = this.max / 6;
+    const minim = this.max / 5;
     this.values.push(minim);
     this.values.push(minim * 2);
     this.values.push(minim * 3);
     this.values.push(minim * 4);
-    this.values.push(minim * 5);
     this.values.push(this.max);
 
     // Definir dimensiones

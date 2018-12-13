@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Calendar } from 'primeng/calendar';
 
 @Component({
   selector: 'app-filters-dashboard',
@@ -37,6 +38,21 @@ export class FiltersDashboardComponent implements OnInit {
     ];
   }
 
+  clearCalendar(cal: Calendar) {
+    cal.updateModel(null);
+    cal.updateInputfield();
+    cal.hideOverlay();
+  }
+
+  cancelCalendar(cal: Calendar) {
+    cal.updateInputfield();
+    cal.hideOverlay();
+  }
+
+  applyDateCalendar(cal: Calendar) {
+    cal.hideOverlay();
+    cal.onModelTouched();
+  }
   ngOnInit() {
     this.es = {
       firstDayOfWeek: 1,
@@ -50,6 +66,6 @@ export class FiltersDashboardComponent implements OnInit {
     }
   }
 
-  
+
 
 }
