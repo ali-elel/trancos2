@@ -92,8 +92,11 @@ export class EmitReceiveComponent implements OnInit {
     if (tipo === "Total") {
         this._RecibidasService.getIngresado()
         .subscribe(resp => {
+          console.log(resp);
+
           this.total_recibidas = (resp[0]["amountARS"]["amount"] / this.count_total_recibidas) * 100;
           this.list_recibidas = resp;
+          console.warn(this.list_recibidas);
         });
     } else if (tipo === "Pendiente") {
       this._RecibidasService.getPendiente()

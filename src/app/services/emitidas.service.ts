@@ -22,232 +22,83 @@ export class EmitidasService {
   }
 
   getBaja(): Observable<any> {
-   
-    this.emitidas="";
-    this.emitidas_detalle="";
-    
-    this.emitidas = [
-      {
-        "amountARS": {
-          "amount": "50000.0",
-          "count": "100"
-        },
-        "amountUSD": {
-          "amount": "700.0",
-          "count": "80"
-        },
-        "errorMessage": null
-      }
-    ];
+    return this.http.post(environment.url+'transfer/emitidas/getBaja',
+    {
+      sucursal : "",
+      segmento : "",
+      producto : "",
+      canal : "",
+      camara : "",
+      fechaDesde : "2018-11-14T00:00:00Z",
+      fechaHasta : "2018-11-15T23:59:59.59Z"
+    },
 
-    this.emitidas_detalle = {
-      "amountARS": [
-        {
-          "amount": "3200.0",
-          "count": "123",
-          "detail": "Sucursales"
-        }
-      ],
-      "amountUSD": [
-        {
-          "amount": "15000.0",
-          "count": "3",
-          "detail": "Sucursales"
-        }
-      ],
-      "errorMessage": null
-    }
-
-    // asi es como va desde el endpoint
-    //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
-
-    //console.log("En el servicio",this.prueba);
-
-    //Cuando viene de un json interno se debe agregar 
-    //of para hacerlo un observable ya que el json en si 
-    //no es un observable esto es a partir de angular 7
-
-    return of(this.emitidas);
+    httpOptionsUrl);
 
   }
 
 
   getIngresado(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    return this.http.post(environment.url+'transfer/emitidas/getIngresado',
+    {
+      sucursal : "",
+      segmento : "",
+      producto : "",
+      canal : "",
+      camara : "",
+      fechaDesde : "2018-11-14T00:00:00Z",
+      fechaHasta : "2018-11-15T23:59:59.59Z"
+    },
 
-    this.emitidas = [
-      {
-        "amountARS": {
-          "amount": "15000.0",
-          "count": "150"
-        },
-        "amountUSD": {
-          "amount": "450000.0",
-          "count": "130"
-        },
-        "errorMessage": null
-      }
-    ];
-
-    this.emitidas_detalle = {
-      "amountARS": [
-        {
-          "amount": "34000.0",
-          "count": "31",
-          "detail": "Sucursales"
-        }
-      ],
-      "amountUSD": [
-        {
-          "amount": "1378.0",
-          "count": "3",
-          "detail": "Sucursales"
-        }
-      ],
-      "errorMessage": null
-    }
-     // asi es como va desde el endpoint
-    //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
-
-    //console.log("En el servicio",this.prueba);
-
-    // Cuando viene de un json interno se debe agregar 
-    // of para hacerlo un observable ya que el json en si 
-    // no es un observable esto es a partir de angular 7
-    return of(this.emitidas);
+    httpOptionsUrl);
 
   }
 
   getDdif(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    return this.http.post(environment.url+'transfer/emitidas/getDdif',
+    {
+      sucursal : "",
+      segmento : "",
+      producto : "",
+      canal : "",
+      camara : "",
+      fechaDesde : "2018-11-14T00:00:00Z",
+      fechaHasta : "2018-11-15T23:59:59.59Z"
+    },
 
-    this.emitidas = [
-      {
-        "amountARS": {
-          "amount": "5000.0",
-          "count": "10"
-        },
-        "amountUSD": {
-          "amount": "57400.0",
-          "count": "10"
-        },
-        "errorMessage": null
-      }
-    ];
-
-    this.emitidas_detalle = {
-      "amountARS": [
-        {
-          "amount": "5000.0",
-          "count": "12",
-          "detail": "Sucursales"
-        }
-      ],
-      "amountUSD": [
-        {
-          "amount": "125000.0",
-          "count": "32",
-          "detail": "Sucursales"
-        }
-      ],
-      "errorMessage": null
-    }
-     // asi es como va desde el endpoint
-    //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
-
-    //console.log("En el servicio",this.prueba);
-
-    // Cuando viene de un json interno se debe agregar 
-    // of para hacerlo un observable ya que el json en si 
-    // no es un observable esto es a partir de angular 7
-    return of(this.emitidas);
+    httpOptionsUrl);
 
   }
 
   getPendiente(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    return this.http.post(environment.url+'transfer/emitidas/getPendiente',
+    {
+      sucursal : "",
+      segmento : "",
+      producto : "",
+      canal : "",
+      camara : "",
+      fechaDesde : "2018-11-14T00:00:00Z",
+      fechaHasta : "2018-11-15T23:59:59.59Z"
+    },
 
-    this.emitidas = [
-      {
-        "amountARS": {
-          "amount": "0",
-          "count": "0"
-        },
-        "amountUSD": {
-          "amount": "87600.0",
-          "count": "130"
-        },
-        "errorMessage": null
-      }
-    ];
-
-    this.emitidas_detalle = {
-      "amountARS": [
-        {
-          "amount": "7500.0",
-          "count": "1",
-          "detail": "Sucursales"
-        }
-      ],
-      "amountUSD": [
-        {
-          "amount": "34000.0",
-          "count": "83",
-          "detail": "Sucursales"
-        }
-      ],
-      "errorMessage": null
-    }
-     // asi es como va desde el endpoint
-    //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
-
-    //console.log("En el servicio",this.prueba);
-
-    // Cuando viene de un json interno se debe agregar 
-    // of para hacerlo un observable ya que el json en si 
-    // no es un observable esto es a partir de angular 7
-    return of(this.emitidas);
+    httpOptionsUrl);
 
   }
 
   getRechazado(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    return this.http.post(environment.url+'transfer/emitidas/getRechazado',
+    {
+      sucursal : "",
+      segmento : "",
+      producto : "",
+      canal : "",
+      camara : "",
+      fechaDesde : "2018-11-14T00:00:00Z",
+      fechaHasta : "2018-11-15T23:59:59.59Z"
+    },
 
-    this.emitidas = [
-      {
-        "amountARS": {
-          "amount": "0",
-          "count": "0"
-        },
-        "amountUSD": {
-          "amount": "50000.0",
-          "count": "140"
-        },
-        "errorMessage": null
-      }
-    ];
-
-    this.emitidas_detalle = {
-      "amountARS": [
-        {
-          "amount": "66500.0",
-          "count": "145",
-          "detail": "Sucursales"
-        }
-      ],
-      "amountUSD": [
-        {
-          "amount": "79300.0",
-          "count": "93",
-          "detail": "Sucursales"
-        }
-      ],
-      "errorMessage": null
-    }
+    httpOptionsUrl);
      // asi es como va desde el endpoint
     //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
 
@@ -256,149 +107,55 @@ export class EmitidasService {
     // Cuando viene de un json interno se debe agregar 
     // of para hacerlo un observable ya que el json en si 
     // no es un observable esto es a partir de angular 7
-    return of(this.emitidas);
+   // return of(this.emitidas);
 
   }
 
   getProcesado(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    return this.http.post(environment.url+'transfer/emitidas/getProcesado',
+    {
+      sucursal : "",
+      segmento : "",
+      producto : "",
+      canal : "",
+      camara : "",
+      fechaDesde : "2018-11-14T00:00:00Z",
+      fechaHasta : "2018-11-15T23:59:59.59Z"
+    },
 
-    this.emitidas = [
-      {
-        "amountARS": {
-          "amount": "15000",
-          "count": "150"
-        },
-        "amountUSD": {
-          "amount": "44400.0",
-          "count": "450"
-        },
-        "errorMessage": null
-      }
-    ];
-
-    this.emitidas_detalle = {
-      "amountARS": [
-        {
-          "amount": "5000.0",
-          "count": "1",
-          "detail": "Sucursales"
-        }
-      ],
-      "amountUSD": [
-        {
-          "amount": "13600.0",
-          "count": "143",
-          "detail": "Sucursales"
-        }
-      ],
-      "errorMessage": null
-    }
-     // asi es como va desde el endpoint
-    //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
-
-    //console.log("En el servicio",this.prueba);
-
-    // Cuando viene de un json interno se debe agregar 
-    // of para hacerlo un observable ya que el json en si 
-    // no es un observable esto es a partir de angular 7
-    return of(this.emitidas);
+    httpOptionsUrl);
 
   }
 
   getPendEmisionPago(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    return this.http.post(environment.url+'transfer/emitidas/getPendEmisionPago',
+    {
+      sucursal : "",
+      segmento : "",
+      producto : "",
+      canal : "",
+      camara : "",
+      fechaDesde : "2018-11-14T00:00:00Z",
+      fechaHasta : "2018-11-15T23:59:59.59Z"
+    },
 
-    this.emitidas = [
-      {
-        "amountARS": {
-          "amount": "34000.0",
-          "count": "10"
-        },
-        "amountUSD": {
-          "amount": "65000.0",
-          "count": "410"
-        },
-        "errorMessage": null
-      }
-    ];
-
-    this.emitidas_detalle = {
-      "amountARS": [
-        {
-          "amount": "3200.0",
-          "count": "34",
-          "detail": "Sucursales"
-        }
-      ],
-      "amountUSD": [
-        {
-          "amount": "15000.0",
-          "count": "35",
-          "detail": "Sucursales"
-        }
-      ],
-      "errorMessage": null
-    }
-     // asi es como va desde el endpoint
-    //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
-
-    //console.log("En el servicio",this.prueba);
-
-    // Cuando viene de un json interno se debe agregar 
-    // of para hacerlo un observable ya que el json en si 
-    // no es un observable esto es a partir de angular 7
-    return of(this.emitidas);
+    httpOptionsUrl);
 
   }
 
   get7x24(): Observable<any> {
-    this.emitidas="";
-    this.emitidas_detalle="";
+    return this.http.post(environment.url+'transfer/emitidas/get7x24',
+    {
+      sucursal : "",
+      segmento : "",
+      producto : "",
+      canal : "",
+      camara : "",
+      fechaDesde : "2018-11-14T00:00:00Z",
+      fechaHasta : "2018-11-15T23:59:59.59Z"
+    },
 
-    this.emitidas = [
-      {
-        "amountARS": {
-          "amount": "4500.0",
-          "count": "130"
-        },
-        "amountUSD": {
-          "amount": "45000.0",
-          "count": "110"
-        },
-        "errorMessage": null
-      }
-    ];
-
-    this.emitidas_detalle = {
-      "amountARS": [
-        {
-          "amount": "3200.0",
-          "count": "21",
-          "detail": "Sucursales"
-        }
-      ],
-      "amountUSD": [
-        {
-          "amount": "32000.0",
-          "count": "33",
-          "detail": "Sucursales"
-        }
-      ],
-      "errorMessage": null
-    }
-     // asi es como va desde el endpoint
-    //this.emitidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
-
-    //console.log("En el servicio",this.prueba);
-
-    // Cuando viene de un json interno se debe agregar 
-    // of para hacerlo un observable ya que el json en si 
-    // no es un observable esto es a partir de angular 7
-    return of(this.emitidas);
-
+    httpOptionsUrl);
   }
 
 }
