@@ -501,14 +501,23 @@ h3 span {
 gridster {
     background: white !important;
 }
-.ui-calendar{
-    display:inline-flex !important;
+
+.ui-calendar {
+    display: inline-flex !important;
 }
-body .ui-inputtext{
+
+body .ui-inputtext {
     font-size: .9vw !important;
 }
+
 .gridster-row {
     border-color: rgb(247, 187, 187) !important;
+}
+
+body .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
+    background-color: white;
+    border: 1px solid rgb(163, 163, 163);
+    color: rgb(109, 109, 109);
 }
 
 .ui-dropdown label.ui-dropdown-label {
