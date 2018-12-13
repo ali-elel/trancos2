@@ -520,8 +520,15 @@ body .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
     color: rgb(109, 109, 109);
 }
 
+body .ui-datepicker table {
+    font-size: .8vw !important;
+}
+
 .ui-dropdown label.ui-dropdown-label {
     font-size: .9vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .gridster-column {
