@@ -501,7 +501,12 @@ h3 span {
 gridster {
     background: white !important;
 }
-
+.ui-calendar{
+    display:inline-flex !important;
+}
+body .ui-inputtext{
+    font-size: .9vw !important;
+}
 .gridster-row {
     border-color: rgb(247, 187, 187) !important;
 }
