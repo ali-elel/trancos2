@@ -1,49 +1,51 @@
-<div [ngClass]="{'pink': isAlert}" class="container-fluid h-100">
+<!-- <div [ngClass]="{'pink': isAlert}" class="container-fluid h-100"> -->
+   <div class="container-fluid h-100" *ngIf="emitted != null">
+
   <div class="h-20 title uppercase">
     {{label}}
   </div>
   <div class="h-80">
     <div class="half">
-      <div class="container-fluid  h-100" *ngFor="let list of listado_emitidas">
+      <div class="container-fluid  h-100" >
         <div class="row h-100">
           <div style="padding-left: 3px;" class="col-6 align-center bold price">
             <div class="text-align-right">
-              <span class="red-hover"> ${{ list.amountARS.amount }} </span>
+              <span class="red-hover"> ${{ emitted.amountARS[0].amount }} </span>
             </div>
             <div class="text-align-right">
-              <span class="red-hover">U$S {{ list.amountUSD.amount }}</span>
+              <span class="red-hover">U$S {{ emitted.amountUSD[0].amount }}</span>
             </div>
             <div class="line"></div>
           </div>
           <div class="col-3 align-center">
-            <div class="quantity"><span class="red-hover">{{list.amountARS.count}}</span></div>
-            <div class="quantity"><span class="red-hover">{{list.amountUSD.count }}</span></div>
+            <div class="quantity"><span class="red-hover">{{emitted.amountARS[0].count}}</span></div>
+            <div class="quantity"><span class="red-hover">{{emitted.amountUSD[0].count }}</span></div>
           </div>
           <div class="col-3 align-center">
-            <div *ngIf="percent"  class="percent">{{total_emitidas}}%</div>
+            <div *ngIf="label != 'Total'"  class="percent">{{emitted.percent}}%</div>
           </div>
         </div>
       </div>
     </div>
     <hr class="h-2">
-    <div class="half">
-      <div class="container-fluid  h-100" *ngFor="let lista of list_recibidas">
-        <div class="row h-100">
+     <div class="half">
+      <div class="container-fluid  h-100">
+        <div class="row h-100" *ngIf="recieve != undefined">
           <div style="padding-left: 3px;" class="col-6 align-center bold price">
             <div class="text-align-right">
-              <span class="red-hover"> ${{ lista.amountARS.amount }} </span>
+              <span class="red-hover"> ${{ recieve.amountARS[0].amount }} </span>
             </div>
             <div class="text-align-right">
-              <span class="red-hover">U$S {{ lista.amountUSD.amount }}</span>
+              <span class="red-hover">U$S {{ recieve.amountUSD[0].amount }}</span>
             </div>
             <div class="line"></div>
           </div>
           <div class="col-3 align-center">
-            <div class="quantity"><span class="red-hover">{{lista.amountARS.count}}</span></div>
-            <div class="quantity"><span class="red-hover">{{lista.amountUSD.count }}</span></div>
+            <div class="quantity"><span class="red-hover">{{recieve.amountARS[0].count}}</span></div>
+            <div class="quantity"><span class="red-hover">{{recieve.amountUSD[0].count }}</span></div>
           </div>
-          <div class="col-3 align-center">
-            <div *ngIf="percent"  class="percent">{{total_recibidas}}%</div>
+          <div class="col-3 align-center"  >
+            <div *ngIf="label != 'Total'"  class="percent">{{recieve.percent}}%</div>
           </div>
         </div>
       </div>
