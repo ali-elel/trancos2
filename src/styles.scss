@@ -506,8 +506,16 @@ gridster {
     border-color: rgb(247, 187, 187) !important;
 }
 
+.ui-dropdown label.ui-dropdown-label {
+    font-size: .9vw;
+}
+
 .gridster-column {
     border-color: rgb(247, 187, 187) !important;
+}
+
+.filter-font {
+    font-size: .9vw;
 }
 
 .widget-mini-price {
@@ -523,9 +531,11 @@ gridster {
 .widget-mini-title {
     font-size: .95vw !important;
 }
-.grid-height{
+
+.grid-height {
     height: 93%;
 }
+
 .filter-height {
     height: 7%;
 }
