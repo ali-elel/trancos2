@@ -521,7 +521,20 @@ body .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
 }
 
 body .ui-datepicker table {
-    font-size: .8vw !important;
+    font-size: .75vw !important;
+}
+
+body .ui-calendar.ui-calendar-w-btn .ui-inputtext {
+    border: 0px !important;
+    width: 100%;
+}
+
+body .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
+    border: 0px;
+}
+
+.ui-calendar {
+    width: 100%;
 }
 
 .ui-dropdown label.ui-dropdown-label {
@@ -616,4 +629,10 @@ gridster-item {
 
 .border-bottom-black {
     border-bottom: rgb(134, 134, 134) 1.5px solid;
+}
+
+@media screen and (max-width: 1300px) {
+    body {
+        overflow: auto;
+    }
 }

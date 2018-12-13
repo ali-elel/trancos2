@@ -19,14 +19,29 @@ table.mat-table {
 }
 
 .table td,
- {
-    padding: 0.25vh 5px;
-    font-size: 2vh;
+    {
+    font-size: .9vw;
 }
-.table th{
-  padding: 0.3vh 5px;
-  font-size: 2.1vh;
+
+.w-100 {
+    width: 100%;
 }
+
+.table td,
+.table th {
+    vertical-align: middle !important;
+    padding: 1px 4px !important;
+}
+
+tr {
+    height: fit-content;
+}
+
+.table th {
+    padding: 0.3vh 5px;
+    font-size: 2.1vh;
+}
+
 .blocker {
     width: 16px;
     height: 16px;
