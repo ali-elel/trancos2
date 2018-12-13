@@ -8,12 +8,21 @@
     <div class="half">
       <div class="container-fluid  h-100" >
         <div class="row h-100">
+<<<<<<< HEAD
           <div style="padding-left: 3px;" class="col-6 align-center bold price">
             <div class="text-align-right">
               <span class="red-hover"> ${{ emitted.amountARS[0].amount }} </span>
             </div>
             <div class="text-align-right">
               <span class="red-hover">U$S {{ emitted.amountUSD[0].amount }}</span>
+=======
+          <div style="padding-left: 3px;" class="col-5 align-center bold price">
+            <div class="text-align-right no-wrap">
+              <span class="red-hover"> ${{ list.amountARS.amount }} </span>
+            </div>
+            <div class="text-align-right no-wrap">
+              <span class="red-hover">U$S {{ list.amountUSD.amount }}</span>
+>>>>>>> 3623faf71c313a16d6910d9872429fd714b022a4
             </div>
             <div class="line"></div>
           </div>
@@ -21,13 +30,19 @@
             <div class="quantity"><span class="red-hover">{{emitted.amountARS[0].count}}</span></div>
             <div class="quantity"><span class="red-hover">{{emitted.amountUSD[0].count }}</span></div>
           </div>
+<<<<<<< HEAD
           <div class="col-3 align-center">
             <div *ngIf="label != 'Total'"  class="percent">{{emitted.percent}}%</div>
+=======
+          <div class="col-4 align-center">
+            <div *ngIf="percent" class="percent">{{total_emitidas}}%</div>
+>>>>>>> 3623faf71c313a16d6910d9872429fd714b022a4
           </div>
         </div>
       </div>
     </div>
     <hr class="h-2">
+<<<<<<< HEAD
      <div class="half">
       <div class="container-fluid  h-100">
         <div class="row h-100" *ngIf="recieve != undefined">
@@ -37,6 +52,17 @@
             </div>
             <div class="text-align-right">
               <span class="red-hover">U$S {{ recieve.amountUSD[0].amount }}</span>
+=======
+    <div class="half">
+      <div class="container-fluid  h-100 " *ngFor="let lista of list_recibidas">
+        <div class="no-wrap row h-100">
+          <div style="padding-left: 3px;" class="col-5 align-center bold price">
+            <div class="text-align-right no-wrap">
+              <span class="red-hover"> ${{ lista.amountARS.amount }} </span>
+            </div>
+            <div class="text-align-right no-wrap">
+              <span class="red-hover">U$S {{ lista.amountUSD.amount }}</span>
+>>>>>>> 3623faf71c313a16d6910d9872429fd714b022a4
             </div>
             <div class="line"></div>
           </div>
@@ -44,8 +70,13 @@
             <div class="quantity"><span class="red-hover">{{recieve.amountARS[0].count}}</span></div>
             <div class="quantity"><span class="red-hover">{{recieve.amountUSD[0].count }}</span></div>
           </div>
+<<<<<<< HEAD
           <div class="col-3 align-center"  >
             <div *ngIf="label != 'Total'"  class="percent">{{recieve.percent}}%</div>
+=======
+          <div class="col-4 align-center">
+            <div *ngIf="percent" class="percent">{{total_recibidas}}%</div>
+>>>>>>> 3623faf71c313a16d6910d9872429fd714b022a4
           </div>
         </div>
       </div>

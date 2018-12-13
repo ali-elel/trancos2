@@ -54,40 +54,28 @@ export class MultiGraphOperationsComponent implements OnInit {
         labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8'],
         datasets: [
           {
-            label: 'Data 1',
+            label: '',
             data: [0, 10, 11, 13, 7, 8, 10, 15],
             borderColor: '#ff2b2b',
             fill: false,
             borderWidth: 1.5
           },
           {
-            label: 'Data 2',
+            label: '',
             data: [5, 6, 8, 3, 4, 5, 4, 12],
             borderColor: '#ffb7b7',
             fill: false,
             borderWidth: 1.5,
             borderDash: [5, 5]
-          },
-          {
-            label: 'Data 2',
-            data: [5, 6, 8, 3, 4, 5, 4, 12],
-            borderColor: '#ffb7b7',
-            fill: false,
-            borderWidth: 1.5,
-            borderDash: [5, 5]
-          },
-          {
-            label: 'Data 2',
-            data: [5, 6, 8, 3, 4, 5, 4, 12],
-            borderColor: '#ffb7b7',
-            fill: false,
-            borderWidth: 0
           }
         ]
       },
       options: {
         maintainAspectRatio: false,
         responsive: true,
+        legend: {
+          display: false
+        },
         elements: {
           line: {
             tension: 0, // disables bezier curves
