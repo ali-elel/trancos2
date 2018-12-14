@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: location.origin + '/rest'
+  url: location.origin + '/rest/'
 };
