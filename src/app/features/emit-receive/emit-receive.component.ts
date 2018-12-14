@@ -4,8 +4,6 @@ import { RecibidasService } from '../../services/recibidas.service';
 import { Emitted } from 'src/app/model/emitted';
 import { Receive } from 'src/app/model/receive';
 
-
-
 @Component({
   selector: 'app-emit-receive',
   templateUrl: './emit-receive.component.html',
@@ -13,7 +11,7 @@ import { Receive } from 'src/app/model/receive';
 })
 export class EmitReceiveComponent implements OnInit {
   emitted: Emitted;
-  recieve : Receive;
+  recieve: Receive;
   @Input() label: string;
   @Input() isAlert: boolean;
   @Input() percent: boolean;
@@ -41,7 +39,4 @@ export class EmitReceiveComponent implements OnInit {
         this.recieve = res;
       });
   }
-
-  
-
 }

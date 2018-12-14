@@ -8,7 +8,7 @@
     <div class="half">
       <div class="container-fluid  h-100" >
         <div class="row h-100">
-          <div style="padding-left: 3px;" class="col-6 align-center bold price">
+          <div style="padding-left: 3px;" class="col-5 align-center bold price">
             <div class="text-align-right">
               <span class="red-hover"> ${{ emitted.amountARS[0].amount }} </span>
             </div>
@@ -21,7 +21,7 @@
             <div class="quantity"><span class="red-hover">{{emitted.amountARS[0].count}}</span></div>
             <div class="quantity"><span class="red-hover">{{emitted.amountUSD[0].count }}</span></div>
           </div>
-          <div class="col-3 align-center">
+          <div class="col-4 align-center">
             <div *ngIf="label != 'Total'"  class="percent">{{emitted.percent}}%</div>
           </div>
         </div>
@@ -31,7 +31,7 @@
      <div class="half">
       <div class="container-fluid  h-100">
         <div class="row h-100" *ngIf="recieve != undefined">
-          <div style="padding-left: 3px;" class="col-6 align-center bold price">
+          <div style="padding-left: 3px;" class="col-5 align-center bold price">
             <div class="text-align-right">
               <span class="red-hover"> ${{ recieve.amountARS[0].amount }} </span>
             </div>
@@ -44,7 +44,7 @@
             <div class="quantity"><span class="red-hover">{{recieve.amountARS[0].count}}</span></div>
             <div class="quantity"><span class="red-hover">{{recieve.amountUSD[0].count }}</span></div>
           </div>
-          <div class="col-3 align-center"  >
+          <div class="col-4 align-center"  >
             <div *ngIf="label != 'Total'"  class="percent">{{recieve.percent}}%</div>
           </div>
         </div>

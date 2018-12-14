@@ -44,7 +44,7 @@
     <div class="col-2 align-self-center border-right">
       <p-dropdown [options]="productos " [style]="{'width': '100%','border':'0px'}" placeholder="Producto" optionLabel="name"></p-dropdown>
     </div>
-    <div style="justify-content: center; display: flex;" class="col erase-filters-button align-self-center">
+    <div style="justify-content: center; display: flex;" (click)="eraseFilters()" class="col erase-filters-button align-self-center">
       <i class="fas fa-eraser fa-2x d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>
       <span style="align-self: center">
         BORRAR FILTROS
