@@ -1,15 +1,13 @@
 <div style="height:100%" class="container-fluid">
   <div style="height:100%" class="row">
-    <div style="padding-right: 5px; padding-left:0px;" class="col-1">
+    <div style="padding-right: 5px; padding-left:0px;" class="col-1 d-flex">
       <div class="vertical-multi">
         {{label}}
       </div>
       <div class=" vertical-line"></div>
     </div>
     <article class="col-11 border-grey">
-      <canvas style="padding: 15px 5px;" #lineChart>{{ chart }}</canvas>
-      <!-- <div style="padding: 15px 5px;" #dygraph>{{ dygraph }}</div> -->
-      
+      <canvas style="padding: 15px 5px;" #lineChart>{{ chart }}</canvas>     
     </article>
   </div>
 </div>

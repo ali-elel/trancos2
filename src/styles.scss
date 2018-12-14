@@ -62,7 +62,7 @@ a:hover {
 
 header {
     border-bottom: 1px solid #eee;
-    height: 9vh;
+    height: 7.5vh;
 }
 
 .nav {
@@ -70,13 +70,31 @@ header {
     text-align: center;
 }
 
-.vertical-multi {
-    transform: rotate(-90deg);
-    font-size: 1vw; // position: absolute;
+.line-right {
+    border-right: 1px solid rgb(39, 39, 39);
     position: relative;
-    top: 75%;
+    right: -44%;
+    height: 93%;
+    margin-top: 24%;
+}
+
+.col-0-5 {
+    max-width: 5%;
+}
+
+.vertical-multi {
+    // transform: rotate(-90deg);
+    // font-size: 1vw; // position: absolute;
+    // position: relative;
+    // top: 75%;
+    // white-space: nowrap;
+    // text-transform: uppercase;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding: 7px 0px;
+    font-size: .9vw;
     white-space: nowrap;
-    text-transform: uppercase;
+
 }
 
 .align-self-flex-end {
@@ -93,7 +111,7 @@ header {
 }
 
 .btn-user {
-    padding: 10px 10px;
+    padding: 1%;
     background-color: rgba(0, 0, 0, .09);
     border-radius: 2px;
     cursor: pointer;
@@ -228,7 +246,7 @@ nav a:hover {
 }
 
 .internas nav {
-    height: 91vh; //   min-height:90vh;
+    height: 92.5vh; //   min-height:90vh;
 }
 
 // .internas.minheight nav {
@@ -489,16 +507,15 @@ h3 span {
 }
 
 .santander-header-logo {
-    width: 27%;
-    max-width: 200px;
-    min-width: 150px;
-    height: 27%;
+    width: 10vw;
+    height: 1.42vw;
+    margin-bottom: 8px;
 }
 
 .header-location {
     margin-left: 10px;
     font-weight: normal;
-    font-size: .8em;
+    font-size: 1.1vw !important;
 }
 
 .header-tool {
@@ -509,9 +526,11 @@ h3 span {
 gridster {
     background: white !important;
 }
-.ui-multiselect-items-wrapper{
+
+.ui-multiselect-items-wrapper {
     min-width: 150px;
 }
+
 .ui-calendar {
     display: inline-flex !important;
 }

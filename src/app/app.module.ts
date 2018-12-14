@@ -41,6 +41,7 @@ import { FiltersEmitidasComponent } from './features/filters-emitidas/filters-em
 import { FiltersRecibidasComponent } from './features/filters-recibidas/filters-recibidas.component';
 import { FiltersBuscadorComponent } from './features/filters-buscador/filters-buscador.component';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { MeterBalaComponent } from './features/meter-bala/meter-bala.component';
 
 @NgModule({
     declarations: [
@@ -70,6 +71,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
         FiltersEmitidasComponent,
         FiltersRecibidasComponent,
         FiltersBuscadorComponent,
+        MeterBalaComponent,
     ],
     imports: [
         BrowserModule,

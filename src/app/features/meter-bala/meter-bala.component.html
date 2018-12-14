@@ -1,0 +1,37 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col-0-5 h-100">
+      <div class="col-12 d-flex h-50">
+        <div class="vertical-multi uppercase">
+          Emitidas
+        </div>
+        <div class="line-right"></div>
+      </div>
+      <div class="col-12 d-flex h-50">
+        <div class="vertical-multi uppercase">
+          Recibidas
+        </div>
+        <div class="line-right"></div>
+      </div>
+
+    </div>
+    <div class="col">
+      <div class="container-fluid h-100">
+        <div class="row h-100" style="white-space: nowrap;">
+          <div class="col-3">
+            <app-emit-receive [percent]="false" [percent]="false" label="Total"></app-emit-receive>
+          </div>
+          <div class="col-3">
+            <app-emit-receive [percent]="true" label="Pendiente" isAlert="true"></app-emit-receive>
+          </div>
+          <div class="col-3">
+            <app-emit-receive [percent]="true" label="Procesado"></app-emit-receive>
+          </div>
+          <div class="col-3">
+            <app-emit-receive [percent]="true" label="Rechazado"></app-emit-receive>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
