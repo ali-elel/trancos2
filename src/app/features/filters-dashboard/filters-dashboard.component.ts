@@ -7,12 +7,17 @@ import { Calendar } from 'primeng/calendar';
   styleUrls: ['./filters-dashboard.component.scss']
 })
 export class FiltersDashboardComponent implements OnInit {
-  fecha: any[];
   sucursal: any[];
   segmento: any[];
   productos: any[];
-  value: Date;
   es: any;
+
+  date: Date[];
+  selectedOffice: string;
+  selectedSegment: string;
+  selectedProduct: string;
+
+
   constructor() {
     this.sucursal = [
       { name: 'Banco Santander Rio S.A.', code: 'sr' },
@@ -53,6 +58,18 @@ export class FiltersDashboardComponent implements OnInit {
     cal.hideOverlay();
     cal.onModelTouched();
   }
+
+  eraseFilters() {
+    this.selectedSegment = '';
+    this.selectedOffice = '';
+    this.selectedProduct = '';
+    this.date = [];
+  }
+
+  onChangeOffice() { }
+  onChangeSegment() { }
+  onChangeProduct() { }
+
   ngOnInit() {
     this.es = {
       firstDayOfWeek: 1,

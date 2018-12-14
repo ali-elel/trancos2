@@ -5,7 +5,7 @@
       <!-- <p-calendar showIcon="true" [(ngModel)]="value" showButtonBar="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy" placeholder="Fecha">
         <p-footer>Cutom footer with custom buttons</p-footer>
       </p-calendar> -->
-      <p-calendar #calendar [(ngModel)]="value" showIcon="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy"
+      <p-calendar #calendar [(ngModel)]="date" showIcon="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy"
         placeholder="Fecha">
         <p-footer>
           <div class="container-fluid pt-2">
@@ -34,15 +34,15 @@
     </div>
 
     <div class="col-2 align-self-center border-right">
-      <p-dropdown [options]="sucursal " [style]="{'width': '100%','border':'0px'}" placeholder="Sucursal" optionLabel="name"></p-dropdown>
+      <p-dropdown [options]="sucursal" (onChange)="onChangeOffice()" [(ngModel)]="selectedOffice" [style]="{'width': '100%','border':'0px'}" placeholder="Sucursal" optionLabel="name"></p-dropdown>
     </div>
 
     <div class="col-2 align-self-center border-right">
-      <p-dropdown [options]="segmento " [style]="{'width': '100%','border':'0px'}" placeholder="Segmento" optionLabel="name"></p-dropdown>
+      <p-dropdown [options]="segmento" (onChange)="onChangeSegment()"  [(ngModel)]="selectedSegment" [style]="{'width': '100%','border':'0px'}" placeholder="Segmento" optionLabel="name"></p-dropdown>
     </div>
 
     <div class="col-2 align-self-center border-right">
-      <p-dropdown [options]="productos " [style]="{'width': '100%','border':'0px'}" placeholder="Producto" optionLabel="name"></p-dropdown>
+      <p-dropdown [options]="productos" (onChange)="onChangeProduct()"  [(ngModel)]="selectedProduct"  [style]="{'width': '100%','border':'0px'}" placeholder="Producto" optionLabel="name"></p-dropdown>
     </div>
     <div style="justify-content: center; display: flex;" (click)="eraseFilters()" class="col erase-filters-button align-self-center">
       <i class="fas fa-eraser fa-2x d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>
