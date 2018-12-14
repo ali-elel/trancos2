@@ -423,6 +423,14 @@ h3.whitetype {
     margin-right: 0px
 }
 
+body .ui-widget {
+    font-size: 1vw !important;
+}
+
+.ui-dropdown .ui-dropdown-panel {
+    width: max-content;
+}
+
 #boxes .ingreso {
     font-size: 1.1em;
     font-weight: lighter;
@@ -501,7 +509,9 @@ h3 span {
 gridster {
     background: white !important;
 }
-
+.ui-multiselect-items-wrapper{
+    min-width: 150px;
+}
 .ui-calendar {
     display: inline-flex !important;
 }
@@ -512,6 +522,10 @@ body .ui-inputtext {
 
 .gridster-row {
     border-color: rgb(247, 187, 187) !important;
+}
+
+.ui-multiselect-label {
+    margin: 0px !important;
 }
 
 body .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
@@ -538,6 +552,13 @@ body .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
 }
 
 .ui-dropdown label.ui-dropdown-label {
+    font-size: .9vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ui-multiselect .ui-multiselect-label {
     font-size: .9vw;
     white-space: nowrap;
     overflow: hidden;

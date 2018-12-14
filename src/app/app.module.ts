@@ -12,8 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { GridsterModule } from 'angular-gridster2';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {DropdownModule} from 'primeng/dropdown';
-import {CalendarModule} from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './presentations/login/login.component';
@@ -40,6 +40,8 @@ import { FiltersDashboardComponent } from './features/filters-dashboard/filters-
 import { FiltersEmitidasComponent } from './features/filters-emitidas/filters-emitidas.component';
 import { FiltersRecibidasComponent } from './features/filters-recibidas/filters-recibidas.component';
 import { FiltersBuscadorComponent } from './features/filters-buscador/filters-buscador.component';
+import { MultiSelectModule } from 'primeng/multiselect';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -83,7 +85,8 @@ import { FiltersBuscadorComponent } from './features/filters-buscador/filters-bu
         FormsModule,
         GridsterModule,
         DropdownModule,
-        CalendarModule
+        CalendarModule,
+        MultiSelectModule
     ],
     providers: [AuthGuard],
     bootstrap: [AppComponent]

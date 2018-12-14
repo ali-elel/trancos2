@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Calendar } from 'primeng/calendar';
 
 @Component({
@@ -7,19 +7,20 @@ import { Calendar } from 'primeng/calendar';
   styleUrls: ['./filters-dashboard.component.scss']
 })
 export class FiltersDashboardComponent implements OnInit {
-  sucursal: any[];
-  segmento: any[];
+  sucursales: any[];
+  segmentos: any[];
   productos: any[];
   es: any;
 
   date: Date[];
-  selectedOffice: string;
-  selectedSegment: string;
-  selectedProduct: string;
+  selectedOffices: string[];
+  selectedSegments: string[];
+  selectedProducts: string[];
 
+  @ViewChild('calendar') dateRef: Calendar;
 
   constructor() {
-    this.sucursal = [
+    this.sucursales = [
       { name: 'Banco Santander Rio S.A.', code: 'sr' },
       { name: 'Banco de Entre Rios S.A.', code: 'er' },
       { name: 'Banco del Tucuman S.A.', code: 'bt' },
@@ -27,7 +28,7 @@ export class FiltersDashboardComponent implements OnInit {
       { name: 'Banco Municipal de Rosario', code: 'bmr' }
     ];
 
-    this.segmento = [
+    this.segmentos = [
       { name: 'Corporates', code: 'co' },
       { name: 'Individuos', code: 'in' },
       { name: 'Pyme', code: 'py' },
@@ -60,10 +61,12 @@ export class FiltersDashboardComponent implements OnInit {
   }
 
   eraseFilters() {
-    this.selectedSegment = '';
-    this.selectedOffice = '';
-    this.selectedProduct = '';
-    this.date = [];
+    this.selectedSegments = [];
+    this.selectedOffices = [];
+    this.selectedProducts = [];
+    this.dateRef.value = null;
+    this.dateRef.updateInputfield();
+    this.date = null;
   }
 
   onChangeOffice() { }
@@ -80,7 +83,8 @@ export class FiltersDashboardComponent implements OnInit {
       monthNamesShort: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
       today: 'Hoy',
       clear: 'Borrar'
-    }
+    };
+
   }
 
 

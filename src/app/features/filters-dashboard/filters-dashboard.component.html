@@ -1,5 +1,5 @@
 <div style="padding: 2px 15px 0 0px" class="container-fluid h-100 ">
-  <div class="row d-flex border-grey h-100 bold">
+  <div class="row d-flex border-grey h-100 ">
 
     <div class="col-3 align-self-center border-right">
       <!-- <p-calendar showIcon="true" [(ngModel)]="value" showButtonBar="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy" placeholder="Fecha">
@@ -34,15 +34,18 @@
     </div>
 
     <div class="col-2 align-self-center border-right">
-      <p-dropdown [options]="sucursal" (onChange)="onChangeOffice()" [(ngModel)]="selectedOffice" [style]="{'width': '100%','border':'0px'}" placeholder="Sucursal" optionLabel="name"></p-dropdown>
+      <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados" [options]="sucursales" (onChange)="onChangeOffice()"
+        [(ngModel)]="selectedOffices" [style]="{'width': '100%','border':'0px'}" defaultLabel="Sucursales" optionLabel="name"></p-multiSelect>
     </div>
 
     <div class="col-2 align-self-center border-right">
-      <p-dropdown [options]="segmento" (onChange)="onChangeSegment()"  [(ngModel)]="selectedSegment" [style]="{'width': '100%','border':'0px'}" placeholder="Segmento" optionLabel="name"></p-dropdown>
+      <p-multiSelect maxSelectedLabels="1"  selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados" [options]="segmentos" (onChange)="onChangeSegment()"
+        [(ngModel)]="selectedSegments" [style]="{'width': '100%','border':'0px'}" defaultLabel="Segmentos" optionLabel="name"></p-multiSelect>
     </div>
 
     <div class="col-2 align-self-center border-right">
-      <p-dropdown [options]="productos" (onChange)="onChangeProduct()"  [(ngModel)]="selectedProduct"  [style]="{'width': '100%','border':'0px'}" placeholder="Producto" optionLabel="name"></p-dropdown>
+      <p-multiSelect maxSelectedLabels="1"  selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados" [options]="productos" (onChange)="onChangeProduct()"
+        [(ngModel)]="selectedProducts" [style]="{'width': '100%','border':'0px'}" defaultLabel="Productos" optionLabel="name"></p-multiSelect>
     </div>
     <div style="justify-content: center; display: flex;" (click)="eraseFilters()" class="col erase-filters-button align-self-center">
       <i class="fas fa-eraser fa-2x d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>
