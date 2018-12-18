@@ -12,8 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { GridsterModule } from 'angular-gridster2';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {DropdownModule} from 'primeng/dropdown';
-import {CalendarModule} from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
 
 
 
@@ -43,6 +43,11 @@ import { FiltersDashboardComponent } from './features/filters-dashboard/filters-
 import { FiltersEmitidasComponent } from './features/filters-emitidas/filters-emitidas.component';
 import { FiltersRecibidasComponent } from './features/filters-recibidas/filters-recibidas.component';
 import { FiltersBuscadorComponent } from './features/filters-buscador/filters-buscador.component';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { MeterBalaComponent } from './features/meter-bala/meter-bala.component';
+import { ChartsModule } from 'ng2-charts';
+import 'chartjs-plugin-zoom';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -71,6 +76,7 @@ import { FiltersBuscadorComponent } from './features/filters-buscador/filters-bu
         FiltersEmitidasComponent,
         FiltersRecibidasComponent,
         FiltersBuscadorComponent,
+        MeterBalaComponent,
     ],
     imports: [
         BrowserModule,
@@ -87,6 +93,8 @@ import { FiltersBuscadorComponent } from './features/filters-buscador/filters-bu
         GridsterModule,
         DropdownModule,
         CalendarModule,
+        MultiSelectModule,
+        ChartsModule
     ],
     providers: [AuthGuard],
     bootstrap: [AppComponent]
