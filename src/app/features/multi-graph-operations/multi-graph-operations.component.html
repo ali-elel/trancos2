@@ -27,7 +27,9 @@
               !
             </div>
           </div> -->
-      <canvas style="padding: 0px 0px;" #lineChart2>{{ chart2 }}</canvas>
+      <!-- <canvas style="padding: 0px 0px;" #lineChart2>{{ chart2 }}</canvas> -->
+      <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+        [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
     </div>
   </div>
 </div>

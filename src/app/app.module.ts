@@ -42,6 +42,8 @@ import { FiltersRecibidasComponent } from './features/filters-recibidas/filters-
 import { FiltersBuscadorComponent } from './features/filters-buscador/filters-buscador.component';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { MeterBalaComponent } from './features/meter-bala/meter-bala.component';
+import { ChartsModule } from 'ng2-charts';
+import 'chartjs-plugin-zoom';
 
 @NgModule({
     declarations: [
@@ -88,7 +90,8 @@ import { MeterBalaComponent } from './features/meter-bala/meter-bala.component';
         GridsterModule,
         DropdownModule,
         CalendarModule,
-        MultiSelectModule
+        MultiSelectModule,
+        ChartsModule
     ],
     providers: [AuthGuard],
     bootstrap: [AppComponent]

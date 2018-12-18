@@ -35,7 +35,9 @@
               "./node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/chart.js/src/chart.js",
+              "node_modules/chartjs-plugin-zoom/src/chart.zoom.js"
             ]
           },
           "configurations": {
@@ -90,7 +92,6 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-
               "src/styles.scss"
             ],
             "scripts": [],
