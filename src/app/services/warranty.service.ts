@@ -1,9 +1,10 @@
 import { Router } from '@angular/router';
-import { environment } from './../../environments/environment';
+import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-
+import { map } from 'rxjs/operators';
+import { Warranty } from '../model/warranty';
 const httpOptionsUrl = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
@@ -17,86 +18,51 @@ export class WarrantyService {
   prueba: any;
   recibidas: any;
   recibidas_detalle: any;
-  bullet1 : any;
-  bullet2 : any;
-  
+
+  bullet: any;
+
+  bullet1: any;
+  bullet2: any;
+  bullet3: any;
+
   constructor(private http: HttpClient, private router: Router) { }
 
-
-  getIngresado(): Observable<any> {
-    this.recibidas="";
-    this.recibidas_detalle="";
-
-    this.bullet1 = {
-      name: 'INTERBANKING',
-      vertical: false,
-      segments: {
-        used: {
-          text: 'Utilizado',
-          value: 400000,
-          currency: 'ARS',
-          backgroundColor: '#00CBD2'
-        },
-        proyected: {
-          text: 'Proyectado',
-          value: 0,
-          currency: 'ARS',
-          backgroundColor: '#8FB4FF'
-        },
-        available: {
-          text: 'Disponible',
-          value: 1000000,
-          currency: 'ARS',
-          backgroundColor: '#E3F8F9'
-        },
-        exceded: {
-          text: 'Excedido',
-          value: 0,
-          currency: 'ARS',
-          backgroundColor: '#00B5BE'
+  getWarranty() {
+    return this.http.post(environment.url + 'transfer/getGarantia',
+      httpOptionsUrl).pipe(map((res: Warranty) => {
+        if (res.ars.length === 0 || res.ars === null) {
+          res.ars = {
+            utilizado: 0,
+            proyectado: 0,
+            capacidad: 0,
+            excedido: 0
+          };
         }
-      }
-    };
-
-    this.bullet2 = {
-      name: 'BCRA',
-      vertical: false,
-      segments: {
-        used: {
-          text: 'Utilizado',
-          value: 400000,
-          currency: 'ARS',
-          backgroundColor: '#D988A7'
-        },
-        proyected: {
-          text: 'Proyectado',
-          value: 0,
-          currency: 'ARS',
-          backgroundColor: '#8FB4FF'
-        },
-        available: {
-          text: 'Disponible',
-          value: 1000000,
-          currency: 'ARS',
-          backgroundColor: '#F9ECF0'
-        },
-        exceded: {
-          text: 'Excedido',
-          value: 0,
-          currency: 'ARS',
-          backgroundColor: '#C14978'
+        if (res.usd.length === 0 || res.usd === null) {
+          res.usd = {
+            utilizado: 0,
+            proyectado: 0,
+            capacidad: 0,
+            excedido: 0
+          };
         }
-      }
-    };
-     // asi es como va desde el endpoint
-    //this.recibidas_detalle=this.http.get('http://jsonplaceholder.typicode.com/users');
-
-    //console.log("En el servicio",this.prueba);
-
-    // Cuando viene de un json interno se debe agregar 
-    // of para hacerlo un observable ya que el json en si 
-    // no es un observable esto es a partir de angular 7
-    return of(this.recibidas);
-
+        return res;
+        // }else if(type==='PROCESAMIENTO'){
+        //   if (res.bcraTxs.length === 0 || res.bcraTxs === null) {
+        //       res.bcraTxs = {
+        //       utilizado: 0,
+        //       capacidad: 0,
+        //       excedido:0
+        //     };
+        //   }
+        //   if (res.interbankingTxs.length === 0 || res.interbankingTxs === null) {
+        //       res.interbankingTxs = {
+        //       utilizado: 0,
+        //       proyectado: 0,
+        //       excedido:0
+        //     };
+        //   }
+        // }
+      }));
   }
 }

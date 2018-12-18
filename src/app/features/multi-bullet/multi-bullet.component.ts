@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GraphBulletOptions } from 'src/app/components/graph-bullet/graph-bullet.component';
-
+import { WarrantyService } from '../../services/warranty.service';
+import { Warranty } from 'src/app/model/warranty';
 @Component({
   selector: 'app-multi-bullet',
   templateUrl: './multi-bullet.component.html',
@@ -13,9 +14,17 @@ export class MultiBulletComponent implements OnInit {
   bullet1: GraphBulletOptions;
   bullet2: GraphBulletOptions;
 
-  constructor() { }
+  bullet3 :GraphBulletOptions;
+  warranty: Warranty;
+  constructor(
+    private _WarrantyService: WarrantyService,
+
+  ) { 
+    
+  }
 
   ngOnInit() {
+    this.getWarrantyProcess();
 
     if (this.type === 'process') {
       this.bullet1 = {
@@ -143,6 +152,14 @@ export class MultiBulletComponent implements OnInit {
       };
     }
 
+  }
+
+  getWarrantyProcess() {
+    this._WarrantyService.getWarranty()
+      .subscribe((res: Warranty) => {
+        this.warranty = res;
+        console.log('this.warranty',this.warranty);
+      });
   }
 
 }

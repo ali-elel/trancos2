@@ -3,4 +3,7 @@ export class Receive {
     price: number;
     amountARS: any;
     amountUSD: any;
+    amountUSDGral: any;
+    amountARSGral: any;
+
 }

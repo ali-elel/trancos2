@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { environment } from './../../environments/environment';
-import { Injectable } from '@angular/core';
+import { Injectable, ɵConsole } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -17,7 +17,7 @@ const httpOptionsUrl = {
 })
 export class EmitidasService {
 
-  totalValueARS: number;
+  totalValueARSGral: number;
   constructor(private http: HttpClient, private router: Router) {
 
   }
@@ -46,30 +46,29 @@ export class EmitidasService {
         producto: "",
         canal: "",
         camara: "",
-        fechaDesde: "2018-11-14T00:00:00Z",
-        fechaHasta: "2018-11-15T23:59:59.59Z"
+        fechaDesde: "2018-12-17T00:00:00Z",
+        fechaHasta: "2018-12-17T23:59:59.59Z"
       },
       httpOptionsUrl).pipe(map((res: Emitted) => {
-
-        if (res.amountARS.length === 0) {
-          res.amountARS = [{
+        // console.log(environment.url + this.buildUrl(type));
+        if ((res.amountARSGral.length === 0 || res.amountARSGral.amount === null)) {
+          res.amountARSGral = {
             amount: 0,
             count: 0,
-            detail: ''
-          }];
+          };
         }
-        if (res.amountUSD.length === 0) {
-          res.amountUSD = [{
+        if ((res.amountUSDGral.length === 0 || res.amountUSDGral.amount === null)) {
+          res.amountUSDGral = {
             amount: 0,
             count: 0,
-            detail: ''
-          }];
+          };
         }
         if (type === 'Total') {
-          this.totalValueARS = res.amountARS[0].amount;
+          this.totalValueARSGral = res.amountARSGral.count;
+
         } else {
-          res.percent = Math.round(res.amountARS[0].amount * 100 / this.totalValueARS);
-          if (Number.isNaN(res.percent)) {
+          res.percent = Math.round((res.amountARSGral.count / this.totalValueARSGral) * 100);
+          if (Number.isNaN(res.percent) || res.percent === 0 || res.percent === Infinity) {
             res.percent = 0;
           }
         }

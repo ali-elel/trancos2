@@ -16,11 +16,9 @@ const httpOptionsUrl = {
   providedIn: 'root'
 })
 export class RecibidasService {
-   totalValueARS: number;
+  totalValueARS: number;
 
-  constructor(private http: HttpClient, private router: Router) { 
-
-  }
+  constructor(private http: HttpClient, private router: Router) { }
 
   get(type: string) {
     return this.http.post(environment.url + this.buildUrl(type),
@@ -30,31 +28,30 @@ export class RecibidasService {
         producto: "",
         canal: "",
         camara: "",
-        fechaDesde: "2018-11-14T00:00:00Z",
-        fechaHasta: "2018-11-15T23:59:59.59Z"
+        fechaDesde: "2018-12-17T00:00:00Z",
+        fechaHasta: "2018-12-17T23:59:59.59Z"
       },
       httpOptionsUrl).pipe(map((res: Receive) => {
-        
-        if (res.amountARS.length === 0) {
-          res.amountARS = [{
+        if (res.amountARSGral.length === 0 || res.amountARSGral.amount === null) {
+          res.amountARSGral = {
             amount: 0,
             count: 0,
-            detail: ''
-          }];
+          };
         }
-        if (res.amountUSD.length === 0) {
-          res.amountUSD = [{
+        if (res.amountUSDGral.length === 0 || res.amountUSDGral.amount === null) {
+          res.amountUSDGral = {
             amount: 0,
             count: 0,
-            detail: ''
-          }];
+          };
         }
         if (type === 'Total') {
-          this.totalValueARS = res.amountARS[0].amount;
+          this.totalValueARS = res.amountARSGral.count;
+
         } else {
-          res.percent = Math.round(res.amountARS[0].amount * 100 / this.totalValueARS);
-          if (Number.isNaN(res.percent)) {
+          res.percent = Math.round((res.amountARSGral.count / this.totalValueARS) * 100);
+          if (Number.isNaN(res.percent) || res.percent === 0 || res.percent === Infinity) {
             res.percent = 0;
+
           }
         }
         return res;
@@ -84,66 +81,66 @@ export class RecibidasService {
   }
 
 
-  getIngresado(): Observable<any> {    
-   return this.http.post(environment.url+'transfer/recibidas/getIngresado',
-    {
-      sucursal : "",
-      segmento : "",
-      producto : "",
-      canal : "",
-      camara : "",
-      fechaDesde : "2018-11-14T00:00:00Z",
-      fechaHasta : "2018-11-15T23:59:59.59Z"
-    },
+  getIngresado(): Observable<any> {
+    return this.http.post(environment.url + 'transfer/recibidas/getIngresado',
+      {
+        sucursal: "",
+        segmento: "",
+        producto: "",
+        canal: "",
+        camara: "",
+        fechaDesde: "2018-11-14T00:00:00Z",
+        fechaHasta: "2018-11-15T23:59:59.59Z"
+      },
 
-    httpOptionsUrl);
+      httpOptionsUrl);
 
-   }
+  }
 
   getPendiente(): Observable<any> {
-    return this.http.post(environment.url+'transfer/recibidas/getPendiente',
-    {
-      sucursal : "",
-      segmento : "",
-      producto : "",
-      canal : "",
-      camara : "",
-      fechaDesde : "2018-11-14T00:00:00Z",
-      fechaHasta : "2018-11-15T23:59:59.59Z"
-    },
+    return this.http.post(environment.url + 'transfer/recibidas/getPendiente',
+      {
+        sucursal: "",
+        segmento: "",
+        producto: "",
+        canal: "",
+        camara: "",
+        fechaDesde: "2018-11-14T00:00:00Z",
+        fechaHasta: "2018-11-15T23:59:59.59Z"
+      },
 
-    httpOptionsUrl);
+      httpOptionsUrl);
 
   }
 
   getRechazado(): Observable<any> {
-    return this.http.post(environment.url+'transfer/recibidas/getRechazado',
-    {
-      sucursal : "",
-      segmento : "",
-      producto : "",
-      canal : "",
-      camara : "",
-      fechaDesde : "2018-11-14T00:00:00Z",
-      fechaHasta : "2018-11-15T23:59:59.59Z"
-    },
+    return this.http.post(environment.url + 'transfer/recibidas/getRechazado',
+      {
+        sucursal: "",
+        segmento: "",
+        producto: "",
+        canal: "",
+        camara: "",
+        fechaDesde: "2018-11-14T00:00:00Z",
+        fechaHasta: "2018-11-15T23:59:59.59Z"
+      },
 
-    httpOptionsUrl);
+      httpOptionsUrl);
 
   }
 
   getProcesado(): Observable<any> {
-    return this.http.post(environment.url+'transfer/recibidas/getProcesado',
-    {
-      sucursal : "",
-      segmento : "",
-      producto : "",
-      canal : "",
-      camara : "",
-      fechaDesde : "2018-11-14T00:00:00Z",
-      fechaHasta : "2018-11-15T23:59:59.59Z"
-    },
+    return this.http.post(environment.url + 'transfer/recibidas/getProcesado',
+      {
+        sucursal: "",
+        segmento: "",
+        producto: "",
+        canal: "",
+        camara: "",
+        fechaDesde: "2018-11-14T00:00:00Z",
+        fechaHasta: "2018-11-15T23:59:59.59Z"
+      },
 
-    httpOptionsUrl);
-}
+      httpOptionsUrl);
+  }
 }

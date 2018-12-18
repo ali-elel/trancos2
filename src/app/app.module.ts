@@ -15,6 +15,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {DropdownModule} from 'primeng/dropdown';
 import {CalendarModule} from 'primeng/calendar';
 
+
+
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './presentations/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -83,7 +86,7 @@ import { FiltersBuscadorComponent } from './features/filters-buscador/filters-bu
         FormsModule,
         GridsterModule,
         DropdownModule,
-        CalendarModule
+        CalendarModule,
     ],
     providers: [AuthGuard],
     bootstrap: [AppComponent]
