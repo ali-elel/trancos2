@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-pagos',
@@ -9,9 +10,11 @@ import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 export class PagosComponent implements OnInit {
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
-  constructor() { }
+  constructor(private titleService: TitleService) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Pagos');
+
     this.options = {
       displayGrid: 'onDrag&Resize',
       draggable: { enabled: true },

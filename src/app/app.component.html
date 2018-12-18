@@ -1,2 +1,29 @@
-<router-outlet></router-outlet>
+<div class="santander internas">
+  <header class="container-fluid">
+    <div style="align-items:center" class="row h-100">
+      <div id="brand" class="col-6">
+        <img src="/assets/images/santander-rio.png" class="santander-header-logo">
+        <span class="header-location">&nbsp;{{titleService.title}}</span>
+      </div>
+      <div id="tools" style="display: flex;justify-content: flex-end;" class="col-6 text-right">
+        <div class="header-tool" style=" align-self:center; color:rgba(0,0,0,.6)">
+          <span style="padding-right: 8px;"> Actualizado hace 1"</span>
+        </div>
+        <div (click)="logout()" class="header-tool btn-user color-red">
+          <span style="padding-right: 10px;" style="font-size:1vw"> Juan Perez González</span> <i style="font-size:1.2vw;padding-left: 10px"
+            class="far fa-user"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="navbar-col nav">
+        <app-sidenav></app-sidenav>
+      </div>
+      <div class="col">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
 
+  </div>

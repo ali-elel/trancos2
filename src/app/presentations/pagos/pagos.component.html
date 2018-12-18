@@ -1,27 +1,6 @@
 <div class="santander internas scroll">
-  <header class="container-fluid">
-    <div class="row">
-      <div id="brand" class="col-md-6">
-        <h1>
-          <img src="/assets/images/santander-rio.png" class="santander-header-logo">
-          <span class="header-location">&nbsp;Pagos</span>
-        </h1>
-      </div>
-      <div id="tools" style="display: flex;justify-content: flex-end;" class="col-md-6 text-right">
-        <div class="header-tool" style=" align-self:center; color:rgba(0,0,0,.6)">
-          <span style="padding-right: 8px;"> Actualizado hace 1"</span>
-        </div>
-        <div class="header-tool btn-user color-red">
-          <span style="padding-right: 10px;" style="font-size:.95vw"> Juan Perez González</span> <i style="font-size:1.2vw;padding-left: 10px"
-            class="far fa-user"></i>
-        </div>
-      </div>
-    </div>
-  </header>
   <div class="container-fluid">
-
     <div class="row">
-
       <div class="navbar-col nav">
         <app-sidenav></app-sidenav>
       </div>
@@ -34,11 +13,11 @@
           <div class="col-md-6"></div>
           <gridster-item [item]="item" *ngFor="let item of dashboard">
 
-              <app-operation-mini *ngIf="item.type === 'mini-capturados'" label="ARCH. CAPTURADOS"></app-operation-mini>
-              <app-operation-mini *ngIf="item.type === 'mini-pendiente-tibco'" label="PENDIENTE TIBCO"></app-operation-mini>
-       
-              <app-operation-mini *ngIf="item.type === 'mini-enviada'" label="FUR. ENVIADA"></app-operation-mini>
-              <app-operation-mini *ngIf="item.type === 'mini-pendiente-mq'" label="PENDIENTE MQ PIRYP"></app-operation-mini>
+            <app-operation-mini *ngIf="item.type === 'mini-capturados'" label="ARCH. CAPTURADOS"></app-operation-mini>
+            <app-operation-mini *ngIf="item.type === 'mini-pendiente-tibco'" label="PENDIENTE TIBCO"></app-operation-mini>
+
+            <app-operation-mini *ngIf="item.type === 'mini-enviada'" label="FUR. ENVIADA"></app-operation-mini>
+            <app-operation-mini *ngIf="item.type === 'mini-pendiente-mq'" label="PENDIENTE MQ PIRYP"></app-operation-mini>
 
 
             <div *ngIf="item.type === 'expanded-ingresado'">
@@ -71,16 +50,5 @@
         </gridster>
       </div>
     </div>
-    <!-- </div>
-  <div class="row">
-    <div class="navbar-col nav">
-      <app-sidenav></app-sidenav>
-    </div>
-
-    <div class="col">
-
-      
-    </div>
   </div>
-
-</div> -->
+</div>
