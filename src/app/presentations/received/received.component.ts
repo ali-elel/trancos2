@@ -15,6 +15,7 @@ export class ReceivedComponent implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle('Recibidas');
+    this.titleService.setLogin(false);
 
     this.options = {
       displayGrid: 'onDrag&Resize',

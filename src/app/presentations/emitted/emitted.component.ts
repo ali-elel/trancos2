@@ -16,6 +16,7 @@ export class EmittedComponent implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle('Emitidas');
+    this.titleService.setLogin(false);
 
     this.options = {
       displayGrid: 'onDrag&Resize',

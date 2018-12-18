@@ -3,6 +3,7 @@ import { AuthService } from './../../services/auth.service';
 import { Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ErrorStateMatcher } from '@angular/material';
+import { TitleService } from 'src/app/services/title.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   passwordControl: FormControl;
   usernameDirty = false;
   passwordDirty = false;
-  constructor(private _authService: AuthService, private router: Router) {
+  constructor(private _authService: AuthService, private titleService: TitleService, private router: Router) {
     this.usernameControl = new FormControl('', [Validators.required]);
     this.passwordControl = new FormControl('', [Validators.required]);
   }

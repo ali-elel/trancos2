@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle('Dashboard');
+    this.titleService.setLogin(false);
+
     this.options = {
       displayGrid: 'onDrag&Resize',
       draggable: { enabled: true },
@@ -39,7 +41,5 @@ export class DashboardComponent implements OnInit {
       { cols: 4, rows: 3, y: 3, x: 4, type: 'table' },
     ];
   }
-  logout() {
-    this.router.navigate(['login']);
-  }
+  
 }

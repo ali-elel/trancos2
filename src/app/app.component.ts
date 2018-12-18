@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TitleService } from './services/title.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [TitleService]
+  providers: [TitleService],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor(private titleService: TitleService) {
+  constructor(private router: Router, private titleService: TitleService) { }
 
+  ngOnInit() {
+
+  }
+  logout() {
+    this.titleService.setTitle('');
+    this.router.navigate(['login']);
   }
 
 }

@@ -6,9 +6,13 @@ import { Injectable } from '@angular/core';
 export class TitleService {
 
   title = '';
+  login = true;
   constructor() { }
 
   setTitle(newTitle: string) {
     this.title = newTitle;
+  }
+  setLogin(login: boolean) {
+    this.login = login;
   }
 }

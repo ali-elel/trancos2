@@ -1,4 +1,4 @@
-<div class="santander internas">
+<div *ngIf="titleService.title != ''; else login" class="santander internas">
   <header class="container-fluid">
     <div style="align-items:center" class="row h-100">
       <div id="brand" class="col-6">
@@ -10,8 +10,7 @@
           <span style="padding-right: 8px;"> Actualizado hace 1"</span>
         </div>
         <div (click)="logout()" class="header-tool btn-user color-red">
-          <span style="padding-right: 10px;" style="font-size:1vw"> Juan Perez González</span> <i style="font-size:1.2vw;padding-left: 10px"
-            class="far fa-user"></i>
+          Juan Perez González <i style="font-size:1.1vw;padding-left: .8%" class="far fa-user"></i>
         </div>
       </div>
     </div>
@@ -25,5 +24,9 @@
         <router-outlet></router-outlet>
       </div>
     </div>
-
   </div>
+</div>
+
+<ng-template #login>
+  <router-outlet></router-outlet>
+</ng-template>

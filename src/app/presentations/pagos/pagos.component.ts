@@ -14,6 +14,7 @@ export class PagosComponent implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle('Pagos');
+    this.titleService.setLogin(false);
 
     this.options = {
       displayGrid: 'onDrag&Resize',
