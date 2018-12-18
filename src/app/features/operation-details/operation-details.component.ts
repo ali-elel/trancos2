@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { EmitidasService } from "../../services/emitidas.service";
+import { EmitidasService } from '../../services/emitidas.service';
 
 @Component({
   selector: 'app-operation-details',
@@ -21,15 +21,15 @@ export class OperationDetailsComponent implements OnInit {
     this.listOperations();
   }
 
-
-
   listOperations() {
     this._EmitidasService.getBaja()
       .subscribe(resp => {
         this.listado = resp;
+      },
+      error => { },
+      () => {
+        // console.log('completo-emitidas');
+        // this.listOperations();
       });
   }
-
-
-
 }

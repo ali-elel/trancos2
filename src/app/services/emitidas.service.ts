@@ -64,10 +64,10 @@ export class EmitidasService {
           };
         }
         if (type === 'Total') {
-          this.totalValueARSGral = res.amountARSGral.count+res.amountUSDGral.count;
+          this.totalValueARSGral = res.amountARSGral.count + res.amountUSDGral.count;
 
         } else {
-          res.percent = Math.round(((res.amountARSGral.count+res.amountUSDGral.count) / this.totalValueARSGral) * 100);
+          res.percent = Math.round(((res.amountARSGral.count + res.amountUSDGral.count) / this.totalValueARSGral) * 100);
           if (Number.isNaN(res.percent) || res.percent === 0 || res.percent === Infinity) {
             res.percent = 0;
           }

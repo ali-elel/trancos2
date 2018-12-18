@@ -30,7 +30,11 @@ export class EmitReceiveComponent implements OnInit {
     this._EmitidasService.get(this.label)
       .subscribe((res: Emitted) => {
         this.emitted = res;
-         console.log(this.emitted.percent);
+      },
+      error => { },
+      () => {
+        // console.log('completo-emitidas');
+        // this.getEmitted();
       });
   }
 
@@ -38,7 +42,11 @@ export class EmitReceiveComponent implements OnInit {
     this._RecibidasService.get(this.label)
       .subscribe((res: Receive) => {
         this.recieve = res;
-         console.log(this.recieve.percent);
+      },
+      error => { },
+      () => {
+        // console.log('completo-recibidas');
+        // this.getReceive();
       });
   }
 

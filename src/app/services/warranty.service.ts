@@ -15,16 +15,6 @@ const httpOptionsUrl = {
   providedIn: 'root'
 })
 export class WarrantyService {
-  prueba: any;
-  recibidas: any;
-  recibidas_detalle: any;
-
-  bullet: any;
-
-  bullet1: any;
-  bullet2: any;
-  bullet3: any;
-
   constructor(private http: HttpClient, private router: Router) { }
 
   getWarranty() {
