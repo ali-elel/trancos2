@@ -1,100 +1,112 @@
-
 [type=reset],
 [type=submit],
 button,
 html [type=button] {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 mat-icon {
-    color: white;
-    cursor: pointer;
-    font-size: 120% !important;
+  color: white;
+  cursor: pointer;
+  font-size: 120% !important;
 }
 
 .santander-logo {
-    width: 55%;
-    height: 55%;
-    align-self: center;
+  width: 55%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered-logo {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.top-logo {
+  border: 1px solid rgba(0, 0, 0, .1);
+  height: 120px;
+  display: table;
+  background-color: #FAFAFA;
 }
 
 .logo-section {
-    background-color: #FAFAFA;
-    min-height: 100px;
-    border: 1px solid rgba(0, 0, 0, .1);
+  background-color: #FAFAFA;
+  min-height: 100px;
+  border: 1px solid rgba(0, 0, 0, .1);
 }
 
 input {
-    caret-color: white;
-    color: white;
+  caret-color: white;
+  color: white;
 }
 
 .btn.disabled,
 .btn:disabled {
-    opacity: .65;
-    background-color: rgba(255, 255, 255, 0.2);
-    transition-duration: 1s;
-    cursor: not-allowed;
+  opacity: .65;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition-duration: 1s;
+  cursor: not-allowed;
 }
 
 .btn {
-    transition-duration: 1s;
+  transition-duration: 1s;
 }
 
 .login-section {
-    display: inline-block;
-    background: rgba(80, 90, 90, .96);
-    margin: 0;
-    border-radius: 0;
-    border: none;
-    padding: 15px 50px;
-    FONT-SIZE: 16px;
+  display: inline-block;
+  background: rgba(80, 90, 90, .96);
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  padding: 15px 50px;
+  FONT-SIZE: 16px;
 }
 
 span-error {
-    color: #e57373;
-    font-size: 13px;
+  color: #e57373;
+  font-size: 13px;
 }
 
 .loading {
-    float: right;
+  float: right;
 }
 
 .bg {
-    background-image: url("/assets/images/login-background.svg");
-    background-repeat: round;
-    background-position: top;
-    background-size: cover;
-    height: 100vh !important;
+  background-image: url("/assets/images/login-background.svg");
+  background-repeat: round;
+  background-position: top;
+  background-size: cover;
+  height: 100vh !important;
 }
 
 .bg::before {
-    opacity: .5;
+  opacity: .5;
 }
 
 .centered {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
 
 .login-max-width {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 .max-width {
-    width: 100%;
+  width: 100%;
 }
 
 .login-button {
-    background-color: #f82e42;
-    color: white;
-    width: 100%;
-    border-radius: 0 !important;
-    height: 45px;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 15px;
+  background-color: #f82e42;
+  color: white;
+  width: 100%;
+  border-radius: 0 !important;
+  height: 45px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 15px;
 }
