@@ -13,7 +13,7 @@
         !
       </div>
     </div>
-    <app-graph-bullet [options]='bullet1' ></app-graph-bullet>
-    <app-graph-bullet [options]='bullet2' ></app-graph-bullet>
+    <app-graph-bullet  *ngIf="bullet1 != undefined" [options]='bullet1' ></app-graph-bullet>
+    <app-graph-bullet  *ngIf="bullet2 != undefined" [options]='bullet2' ></app-graph-bullet>
   </div>
 </div>

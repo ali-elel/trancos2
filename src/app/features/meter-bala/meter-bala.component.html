@@ -1,4 +1,4 @@
-<div class="container-fluid h-100">
+<div *ngIf="!loading; else loadingBlock" class="container-fluid h-100">
   <div class="row h-100">
     <div class="col-0-5 h-100">
       <div class="col-12 d-flex h-50">
@@ -35,3 +35,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #loadingBlock>
+  <div class="d-flex h-100 justify-content-center">
+    <i class="fas fa-spin fa-spinner centered"></i>
+  </div>
+</ng-template>

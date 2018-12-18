@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meter-bala.component.scss']
 })
 export class MeterBalaComponent implements OnInit {
-
+  loading = true;
   constructor() { }
 
   ngOnInit() {

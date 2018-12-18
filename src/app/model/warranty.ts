@@ -3,8 +3,5 @@ export class Warranty {
     usd: any;     
 }
 
-export class Process {
-    bcraTxs: any;
-    interbankingTxs: any;
-}
+
 

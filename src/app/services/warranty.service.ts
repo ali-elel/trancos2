@@ -47,22 +47,6 @@ export class WarrantyService {
           };
         }
         return res;
-        // }else if(type==='PROCESAMIENTO'){
-        //   if (res.bcraTxs.length === 0 || res.bcraTxs === null) {
-        //       res.bcraTxs = {
-        //       utilizado: 0,
-        //       capacidad: 0,
-        //       excedido:0
-        //     };
-        //   }
-        //   if (res.interbankingTxs.length === 0 || res.interbankingTxs === null) {
-        //       res.interbankingTxs = {
-        //       utilizado: 0,
-        //       proyectado: 0,
-        //       excedido:0
-        //     };
-        //   }
-        // }
       }));
   }
 }
