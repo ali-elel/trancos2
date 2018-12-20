@@ -12,7 +12,9 @@ export class GraphOperationsComponent implements OnInit {
   chart: any;
 
   constructor() { }
-
+  test() {
+    console.warn('a');
+  }
   ngOnInit() {
     this.chart = new Chart(this.chartRef.nativeElement, {
       type: 'line',

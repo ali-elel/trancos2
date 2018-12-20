@@ -15,6 +15,11 @@ body {
   color: black; // font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.eraser {
+  font-size: 1.3vw;
+  align-self: center;
+}
+
 @import '~@angular/material/theming';
 @include mat-core();
 $candy-app-primary: mat-palette($mat-grey, 50);
@@ -72,10 +77,10 @@ header {
 }
 
 .line-right {
-  border-right: 1px solid rgb(39, 39, 39);
+  border-right: 2px solid #919191;
   position: relative;
-  right: -44%;
-  height: 93%;
+  right: 0%;
+  height: 95%;
   margin-top: 24%;
 }
 
@@ -84,16 +89,12 @@ header {
 }
 
 .vertical-multi {
-  // transform: rotate(-90deg);
-  // font-size: 1vw; // position: absolute;
-  // position: relative;
-  // top: 75%;
-  // white-space: nowrap;
-  // text-transform: uppercase;
+  color: #4d4d4d;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   padding: 7px 0px;
   font-size: .9vw;
+  font-weight: bold;
   white-space: nowrap;
 
 }
