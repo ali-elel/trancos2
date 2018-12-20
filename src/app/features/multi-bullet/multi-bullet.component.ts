@@ -35,7 +35,7 @@ export class MultiBulletComponent implements OnInit {
     if (this.type === 'warranty') {
       this._WarrantyService.getWarranty()
         .subscribe((res: Warranty) => {
-          console.log('warranty', res);
+          // console.log('warranty', res);
           this.bullet1 = {
             name: 'PESOS',
             vertical: false,
@@ -107,7 +107,7 @@ export class MultiBulletComponent implements OnInit {
     } else if (this.type === 'process') {
       this._ProcessService.getProcess()
         .subscribe((res: Process) => {
-          console.log('process', res);
+          // console.log('process', res);
 
           this.bullet1 = {
             name: 'INTERBANKING',

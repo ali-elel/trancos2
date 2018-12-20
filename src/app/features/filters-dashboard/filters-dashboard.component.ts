@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef,Input } from '@angular/core';
+import { FilterProductosService } from './../../services/filter-productos.service';
+import { FilterSegmentosService } from './../../services/filter-segmentos.service';
+import { FilterSucursalesService } from './../../services/filter-sucursales.service';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Calendar } from 'primeng/calendar';
-
 @Component({
   selector: 'app-filters-dashboard',
   templateUrl: './filters-dashboard.component.html',
@@ -18,32 +20,36 @@ export class FiltersDashboardComponent implements OnInit {
   selectedOffices: string[];
   selectedSegments: string[];
   selectedProducts: string[];
-
   @ViewChild('calendar') dateRef: Calendar;
 
-  constructor() {
-    this.sucursales = [
-      { name: 'Banco Santander Rio S.A.', code: 'sr' },
-      { name: 'Banco de Entre Rios S.A.', code: 'er' },
-      { name: 'Banco del Tucuman S.A.', code: 'bt' },
-      { name: 'Israelita de Cordoba S.A.', code: 'ic' },
-      { name: 'Banco Municipal de Rosario', code: 'bmr' }
-    ];
+  constructor(
+    private _FilterSucursalesService: FilterSucursalesService,
+    private _FilterSegmentosService: FilterSegmentosService,
+    private _FilterProductosService: FilterProductosService,
 
-    this.segmentos = [
-      { name: 'Corporates', code: 'co' },
-      { name: 'Individuos', code: 'in' },
-      { name: 'Pyme', code: 'py' },
+  ) {
+    // this.sucursales = [
+    //   { name: 'Banco Santander Rio S.A.', code: 'sr' },
+    //   { name: 'Banco de Entre Rios S.A.', code: 'er' },
+    //   { name: 'Banco del Tucuman S.A.', code: 'bt' },
+    //   { name: 'Israelita de Cordoba S.A.', code: 'ic' },
+    //   { name: 'Banco Municipal de Rosario', code: 'bmr' }
+    // ];
 
-    ];
+    // this.segmentos = [
+    //   { name: 'Corporates', code: 'co' },
+    //   { name: 'Individuos', code: 'in' },
+    //   { name: 'Pyme', code: 'py' },
 
-    this.productos = [
-      { name: 'Productos', code: 'pr' },
-      { name: 'Sueldos', code: 'su' },
-      { name: 'Pago a proveedores', code: 'pap' },
-      { name: 'Minoristas', code: 'mi' },
-      { name: 'Proveedores', code: 'pr' }
-    ];
+    // ];
+
+    // this.productos = [
+    //   { name: 'Productos', code: 'pr' },
+    //   { name: 'Sueldos', code: 'su' },
+    //   { name: 'Pago a proveedores', code: 'pap' },
+    //   { name: 'Minoristas', code: 'mi' },
+    //   { name: 'Proveedores', code: 'pr' }
+    // ];
   }
 
   clearCalendar(cal: Calendar) {
@@ -71,25 +77,69 @@ export class FiltersDashboardComponent implements OnInit {
     this.date = null;
   }
 
-  onChangeOffice() { }
-  onChangeSegment() { }
-  onChangeProduct() { }
+  onChangeOffice() {
+    this.getFilterSegmentos();
+  }
+  onChangeSegment() {
+    this.getFilterProductos();
+  }
+  onChangeProduct() {
+    alert('oka');
+  }
 
   ngOnInit() {
-    //alert(this.label);
+    // alert(this.label);
     this.es = {
       firstDayOfWeek: 1,
       dayNames: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
       dayNamesShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
       dayNamesMin: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],
-      monthNames: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+      monthNames: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre',
+        'octubre', 'noviembre', 'diciembre'],
       monthNamesShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
       today: 'Hoy',
       clear: 'Borrar'
     };
 
+    this.getFilterSucursales();
+  }
+
+  getFilterSucursales() {
+    this._FilterSucursalesService.get('dashboard')
+      .subscribe((res: any) => {
+        this.sucursales = res['filters'];
+      },
+        error => { },
+        () => {
+          // console.log('completo-emitidas');
+          // this.getEmitted();
+        });
   }
 
 
 
+  getFilterSegmentos() {
+    this._FilterSegmentosService.get('dashboard', this.selectedOffices)
+      .subscribe((res: any) => {
+        this.segmentos = res['filters'];
+      },
+        error => { },
+        () => {
+          // console.log('completo-emitidas');
+          // this.getEmitted();
+        });
+  }
+
+  getFilterProductos() {
+    this._FilterProductosService.get('dashboard')
+      .subscribe((res: any) => {
+        this.productos = res['filters'];
+        // console.log(this.productos);
+      },
+        error => { },
+        () => {
+          // console.log('completo-emitidas');
+          // this.getEmitted();
+        });
+  }
 }

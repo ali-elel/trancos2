@@ -55,7 +55,7 @@ export class RecibidasService {
           }
         }
         return res;
-      }));;
+      }));
   }
 
   buildUrl(type: string): string {

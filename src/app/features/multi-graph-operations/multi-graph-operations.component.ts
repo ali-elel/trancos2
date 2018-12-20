@@ -1,6 +1,5 @@
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import * as zoom from 'chartjs-plugin-zoom';
 @Component({
   selector: 'app-multi-graph-operations',
   templateUrl: './multi-graph-operations.component.html',
