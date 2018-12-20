@@ -13,7 +13,10 @@
           !
         </div>
       </div>
-      <canvas style="padding: 0px 0px;" #lineChart>{{ chart }}</canvas>
+      <ngx-charts-line-chart [animations]="false" [scheme]="colorScheme" [results]="data" [xAxis]="true" [yAxis]="true"
+        [legend]="true" [showXAxisLabel]="false" [showYAxisLabel]="false" [xAxisLabel]="false" [yAxisLabel]="false"
+        [autoScale]="false" (select)="onSelect($event)">
+      </ngx-charts-line-chart>
     </div>
     <div class="col-1 d-flex h-50">
       <div class="vertical-multi uppercase">
@@ -22,12 +25,20 @@
       <div class="line-right"></div>
     </div>
     <div class="col-11  h-50">
+      <ngx-charts-line-chart [animations]="false" [scheme]="colorScheme" [results]="data" [xAxis]="true" [yAxis]="true"
+        [legend]="true" [showXAxisLabel]="false" [showYAxisLabel]="false" [xAxisLabel]="false" [yAxisLabel]="false"
+        [autoScale]="false" (select)="onSelect($event)">
+      </ngx-charts-line-chart>
       <!-- <div class="exclamation-circle">
             <div class="exclamation">
               !
             </div>
           </div> -->
-      <canvas style="padding: 0px 0px;" #lineChart2>{{ chart2 }}</canvas>
+      <!-- <canvas style="padding: 0px 0px;" #lineChart2>{{ chart2 }}</canvas> -->
+      <!-- <ngx-charts-line-chart [animations]="false" [scheme]="colorScheme" [results]="data" [xAxis]="true" [yAxis]="true"
+        [legend]="true" [showXAxisLabel]="false" [showYAxisLabel]="false" [xAxisLabel]="false" [yAxisLabel]="false"
+        [autoScale]="true" (select)="onSelect($event)">
+      </ngx-charts-line-chart> -->
       <!-- <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
         [legend]="lineChartLegend" [chartType]="lineChartType"></canvas> -->
     </div>
