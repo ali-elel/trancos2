@@ -48,6 +48,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { MeterBalaComponent } from './features/meter-bala/meter-bala.component';
 import { ChartsModule } from 'ng2-charts';
 import 'chartjs-plugin-zoom';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
     declarations: [
@@ -84,6 +85,7 @@ import 'chartjs-plugin-zoom';
         BrowserAnimationsModule,
         HttpClientModule,
         AppRoutingModule,
+        NgxChartsModule,
         NgbModule,
         MatFormFieldModule,
         MatInputModule,

@@ -41,5 +41,5 @@ export class DashboardComponent implements OnInit {
       { cols: 4, rows: 3, y: 3, x: 4, type: 'table' },
     ];
   }
-  
+
 }

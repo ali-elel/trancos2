@@ -7,7 +7,11 @@
       <div class=" vertical-line"></div>
     </div>
     <article class="col-11 border-grey">
-      <canvas style="padding: 15px 5px;" onClick="test()" #lineChart>{{ chart }}</canvas>     
+      <!-- <canvas style="padding: 15px 5px;" onClick #lineChart>{{ chart }}</canvas>  -->
+      <ngx-charts-line-chart [animations]="false" [scheme]="colorScheme" [results]="data" [xAxis]="true" [yAxis]="true" [legend]="true"
+        [showXAxisLabel]="false" [showYAxisLabel]="false" [xAxisLabel]="false" [yAxisLabel]="false" [autoScale]="true"
+        (select)="onSelect($event)">
+      </ngx-charts-line-chart>
     </article>
   </div>
 </div>
