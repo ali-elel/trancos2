@@ -2,7 +2,6 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Process } from '../model/process';
 const httpOptionsUrl = {
