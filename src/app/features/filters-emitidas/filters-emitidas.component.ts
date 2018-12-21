@@ -85,7 +85,7 @@ export class FiltersEmitidasComponent implements OnInit {
   }
 
   getFilterSucursales() {
-    this._FilterSucursalesService.get('dashboard')
+    this._FilterSucursalesService.get('emitidas')
       .subscribe((res: any) => {
         this.sucursales = res['filters'];
       },
@@ -99,7 +99,7 @@ export class FiltersEmitidasComponent implements OnInit {
 
 
   getFilterSegmentos() {
-    this._FilterSegmentosService.get('dashboard', this.selectedOffices)
+    this._FilterSegmentosService.get('emitidas', this.selectedOffices)
       .subscribe((res: any) => {
         this.segmentos = res['filters'];
       },
@@ -111,7 +111,7 @@ export class FiltersEmitidasComponent implements OnInit {
   }
 
   getFilterProductos() {
-    this._FilterProductosService.get('dashboard')
+    this._FilterProductosService.get('emitidas')
       .subscribe((res: any) => {
         this.productos = res['filters'];
         // console.log(this.productos);

@@ -2,12 +2,13 @@
   <div style="height:inherit" class="row">
     
     <div class="d-block col-12 h-30 full-width border-bottom-black">
-      <span class="uppercase">Capacidad de Procesamiento</span>
+      <span class="uppercase">Estado de Garantía</span>
     </div>
 
-    <div class="col-12 h-70">
-      <app-graph-bullet [options]='graphWarrantyOptions'></app-graph-bullet>
+    <div class="col-11">
+      <app-graph-bullet *ngIf="bullet != undefined" [options]='bullet'></app-graph-bullet>
     </div>
 
   </div>
 </div>
+

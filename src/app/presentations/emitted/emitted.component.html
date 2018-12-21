@@ -58,8 +58,9 @@
               <app-operation-details *ngIf="item.type === 'expanded-procesado'" cab1="Cámara" label="Procesado"></app-operation-details>
               <app-operation-details *ngIf="item.type === 'expanded-rechazado'" cab1="Motivo" label="Rechazado"></app-operation-details>
 
-              <app-graph-process *ngIf="item.type === 'process'"></app-graph-process>
               <app-graph-warranty *ngIf="item.type === 'process-2'"></app-graph-warranty>
+              <app-graph-process *ngIf="item.type === 'process'"></app-graph-process>
+              
 
               <div style="height: inherit" *ngIf="item.type === 'graph'">
                 <app-graph-operations label="Emitidas por hora"></app-graph-operations>
