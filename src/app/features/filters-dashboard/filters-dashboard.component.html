@@ -2,29 +2,9 @@
   <div class="row d-flex border-grey h-100 ">
 
     <div class="col-3 align-self-center border-right">
-      <p-calendar #calendar [(ngModel)]="date" showIcon="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy"
+      <p-calendar #calendar onSelect="calendarOnSelect(value)" [maxDate]="maxDate" [minDate]="minDate" [(ngModel)]="date" showIcon="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy"
         placeholder="Fecha">
-        <p-footer>
-          <div class="container-fluid pt-2">
-            <div class="row">
-              <div class="col-4 d-flex justify-content-center">
-                <div (click)="applyDateCalendar(calendar)" class="calendar-button apply">
-                  Aplicar
-                </div>
-              </div>
-              <div class="col-4 d-flex justify-content-center">
-                <div (click)="clearCalendar(calendar)" class="calendar-button default">
-                  Limpiar
-                </div>
-              </div>
-              <div class="col-4 d-flex justify-content-center">
-                <div (click)="cancelCalendar(calendar)" class="calendar-button default">
-                  Cancelar
-                </div>
-              </div>
-            </div>
-          </div>
-        </p-footer>
+
       </p-calendar>
       <!-- <span class="ui-dropdown-trigger-icon ui-clickable pi pi-caret-down" ng-reflect-klass="ui-dropdown-trigger-icon ui-cl" ng-reflect-ng-class="pi pi-caret-down"></span>-->
 

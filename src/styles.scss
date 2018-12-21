@@ -113,7 +113,8 @@ header {
 }
 
 .btn-user {
-  padding: 10px 20px;
+  // padding: 10px 5%;
+
   background-color: rgba(0, 0, 0, .09);
   border-radius: 2px;
   cursor: pointer;
@@ -124,17 +125,16 @@ header {
 }
 
 .nav a {
-  font-size: 1.5em;
+  font-size: 1.5vw;
   text-align: center; //   transition-duration: 1s;
-  color: white;
+  color: white !important;
   display: block;
   line-height: 2em;
   margin-bottom: .1em; // padding: 5px 15px
 }
 
 .navbar-col {
-  max-width: 70px;
-  padding: 0px 13px;
+  max-width: 3vw;
 }
 
 .no-padding {
@@ -142,15 +142,16 @@ header {
 }
 
 nav .active {
-  color: rgb(255, 224, 224);
+  color: rgb(255, 245, 245);
 }
 
 nav a:hover {
-  color: #ffffff;
-  // background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
-  // background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
-  // background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+//   color: #ffffff;
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=1);
+  transition-duration: 700ms;
 }
 
 .dropdown {
@@ -522,7 +523,7 @@ h3 span {
 }
 
 .btn-user {
-  height: 40px;
+  // height: 40px;
 }
 
 .btn-user>span {

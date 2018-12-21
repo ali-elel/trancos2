@@ -11,7 +11,8 @@ export class FiltersDashboardComponent implements OnInit {
   segmentos: any[];
   productos: any[];
   es: any;
-
+  maxDate: Date = new Date(Date.now());
+  minDate: Date = new Date(Date.now());
   date: Date[];
   selectedOffices: string[];
   selectedSegments: string[];
@@ -20,6 +21,8 @@ export class FiltersDashboardComponent implements OnInit {
   @ViewChild('calendar') dateRef: Calendar;
 
   constructor() {
+    this.minDate.setMonth(this.minDate.getMonth() - 1);
+
     this.sucursales = [
       { name: 'Banco Santander Rio S.A.', code: 'sr' },
       { name: 'Banco de Entre Rios S.A.', code: 'er' },
@@ -43,7 +46,9 @@ export class FiltersDashboardComponent implements OnInit {
       { name: 'Proveedores', code: 'pr' }
     ];
   }
-
+  calendarOnSelect(event) {
+    console.log(event);
+  }
   clearCalendar(cal: Calendar) {
     cal.updateModel(null);
     cal.updateInputfield();
