@@ -1,17 +1,17 @@
 <div style="height:100%" class="container-fluid">
   <div style="height:100%" class="row">
     <div style="padding-right: 5px; padding-left:0px;" class="col-1 d-flex">
-      <div class="vertical-multi">
+      <div class="vertical-multi uppercase">
         {{label}}
       </div>
       <div class=" vertical-line"></div>
     </div>
     <article class="col-11 border-grey">
-      <!-- <canvas style="padding: 15px 5px;" onClick #lineChart>{{ chart }}</canvas>  -->
-      <ngx-charts-line-chart [animations]="false" [scheme]="colorScheme" [results]="data" [xAxis]="true" [yAxis]="true" [legend]="true"
+      <canvas style="padding: 15px 5px;" onClick #lineChart>{{ chart }}</canvas> 
+      <!-- <ngx-charts-line-chart [animations]="false" [scheme]="colorScheme" [results]="data" [xAxis]="true" [yAxis]="true" [legend]="true"
         [showXAxisLabel]="false" [showYAxisLabel]="false" [xAxisLabel]="false" [yAxisLabel]="false" [autoScale]="true"
         (select)="onSelect($event)">
-      </ngx-charts-line-chart>
+      </ngx-charts-line-chart> -->
     </article>
   </div>
 </div>

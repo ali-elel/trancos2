@@ -1,3 +1,4 @@
+import 'moment';
 import { Chart } from 'node_modules/chart.js/dist/chart.js';
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 @Component({
@@ -7,126 +8,100 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 })
 export class GraphOperationsComponent implements OnInit {
 
-  // @ViewChild('lineChart') chartRef;
+  @ViewChild('lineChart') chartRef;
   @Input() label: string;
-  // chart: any;
+  chart: any;
 
-  view: any[] = [700, 400];
-  data = [{
-    'name': 'Tx',
-    'series': [
-      {
-        'name': new Date('2016-04-05T04:39:50.327Z'),
-        'value': 7300
-      },
-      {
-        'name': new Date('2016-04-05T05:39:50.327Z'),
-        'value': 4940
-      },
-      {
-        'name': new Date('2016-04-05T07:39:50.327Z'),
-        'value': 3930
-      },
-      {
-        'name': new Date('2016-04-05T09:39:50.327Z'),
-        'value': 7731
-      },
-      {
-        'name': new Date('2016-04-05T10:39:50.327Z'),
-        'value': 4731
-      },
-      {
-        'name': new Date('2016-04-05T10:58:50.327Z'),
-        'value': 3731
-      },
-      {
-        'name': new Date('2016-04-05T11:58:50.327Z'),
-        'value': 4231
-      }
-    ]
-  },
-
-  {
-    'name': 'Media',
-    'series': [
-      {
-        'value': 3453,
-        'name': new Date('2016-04-05T04:39:50.327Z')
-      },
-      {
-        'name': new Date('2016-04-05T05:00:00Z'),
-        'value': 8270
-      },
-      {
-        'name': new Date('2016-04-05T07:00:00Z'),
-        'value': 6330
-      },
-      {
-        'name': new Date('2016-04-05T19:00:00Z'),
-        'value': 8270
-      }
-    ]
-  },
-  ];
-
-  // options
-  colorScheme = {
-    domain: ['#ff2b2b', '#ffb7b7']
-  };
-
-  // line, area
-  autoScale = true;
-
-  onSelect(event) {
-    console.log(event);
-  }
 
   constructor() {
   }
 
 
   ngOnInit() {
+    const tzoffset = new Date().getTimezoneOffset() / 60;
 
-    // this.chart = new Chart(this.chartRef.nativeElement, {
-    //   type: 'line',
-    //   data: {
-    //     labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10'],
-    //     datasets: [
-    //       {
-    //         label: 'Data 1',
-    //         data: [0, 4, 11, 5, 7, 8, 10, 15, 16, 12],
-    //         borderColor: '#ff2b2b',
-    //         fill: false,
-    //         borderWidth: 2,
-    //         pointStyle: 'rect',
-    //         onClick: this.test(event)
-    //       },
-    //       {
-    //         label: 'Data 2',
-    //         data: [5, 1, 2, 3, 8, 5, 4, 12, 16, 26],
-    //         borderColor: '#ffb7b7',
-    //         fill: false,
-    //         borderWidth: 2,
-    //         pointStyle: 'rect',
-    //         borderDash: [5, 5]
-    //       }
-    //     ]
-    //   },
-    //   options: {
-    //     maintainAspectRatio: false,
-    //     responsive: true,
-    //     legend: {
-    //       position: 'bottom'
-    //     },
-    //     elements: {
-    //       line: {
-    //         tension: 0
-    //         // titleFontColor: '#000',
-    //         // backgroundColor: 'rgba(255,255,255,.9)',
-    //       }
-    //     }
-    //   }
-    // });
+    this.chart = new Chart(this.chartRef.nativeElement, {
+      type: 'line',
+      data: {
+        labels: ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9', 'T10'],
+        datasets: [
+          {
+            label: 'Data 1',
+            data: [
+              { x: 1, y: 108 },
+              { x: 2, y: 46 },
+              { x: 3, y: 54 },
+              { x: 4, y: 130 },
+              { x: 5, y: 83 }
+            ],
+            borderColor: '#ff2b2b',
+            fill: false,
+            borderWidth: 1.5
+          }, {
+            label: 'Data 2',
+            data: [
+              { x: new Date('2018-12-18T00:19:54.000-0' + tzoffset + ':00'), y: 80 },
+              { x: new Date('2018-12-18T00:27:12.000-0' + tzoffset + ':00'), y: 120 },
+              { x: new Date('2018-12-18T00:42:23.000-0' + tzoffset + ':00'), y: 100 },
+              { x: new Date('2018-12-18T00:49:35.000-0' + tzoffset + ':00'), y: 80 },
+              { x: new Date('2018-12-18T00:57:12.000-0' + tzoffset + ':00'), y: 120 },
+              { x: new Date('2018-12-18T00:58:33.000-0' + tzoffset + ':00'), y: 290 },
+              { x: new Date('2018-12-18T01:19:05.000-0' + tzoffset + ':00'), y: 270 },
+              { x: new Date('2018-12-18T01:48:19.000-0' + tzoffset + ':00'), y: 250 },
+              { x: new Date('2018-12-18T02:56:07.000-0' + tzoffset + ':00'), y: 300 },
+              { x: new Date('2018-12-18T05:13:54.000-0' + tzoffset + ':00'), y: 150 },
+              { x: new Date('2018-12-18T08:30:12.000-0' + tzoffset + ':00'), y: 90 },
+              { x: new Date('2018-12-18T09:38:23.000-0' + tzoffset + ':00'), y: 160 },
+              { x: new Date('2018-12-18T10:40:35.000-0' + tzoffset + ':00'), y: 110 },
+              { x: new Date('2018-12-18T11:42:12.000-0' + tzoffset + ':00'), y: 165 },
+              { x: new Date('2018-12-18T11:54:33.000-0' + tzoffset + ':00'), y: 302 },
+              { x: new Date('2018-12-18T12:05:32.000-0' + tzoffset + ':00'), y: 290 },
+              { x: new Date('2018-12-18T12:20:05.000-0' + tzoffset + ':00'), y: 242 },
+              { x: new Date('2018-12-18T12:29:19.000-0' + tzoffset + ':00'), y: 193 },
+              { x: new Date('2018-12-18T13:19:07.000-0' + tzoffset + ':00'), y: 350 },
+              { x: new Date('2018-12-18T13:12:54.000-0' + tzoffset + ':00'), y: 108 },
+              { x: new Date('2018-12-18T14:33:11.000-0' + tzoffset + ':00'), y: 46 },
+            ], borderColor: '#ffb7b7',
+            fill: false,
+            borderWidth: 1.5,
+            borderDash: [5, 5]
+          }
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
+        responsive: true,
+        elements: {
+          line: {
+            tension: 0
+          }
+        },
+        pan: {
+          enabled: true,
+          mode: 'x',
+        },
+        zoom: {
+          enabled: true,
+          mode: 'x',
+
+        },
+        // scales: {
+        //   xAxes: [
+        //     {
+        //       type: 'time',
+        //       time: {
+        //         parser: 'HH:mm',
+        //         minUnit: 'minute',
+        //         tooltipFormat: 'HH:mm'
+        //       },
+        //       ticks: {
+        //         maxRotation: 0
+        //       }
+        //     }
+        //   ],
+        // },
+      }
+    });
   }
 
 }

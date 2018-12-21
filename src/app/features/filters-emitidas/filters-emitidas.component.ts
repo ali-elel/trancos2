@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Calendar } from 'primeng/calendar';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-filters-emitidas',
@@ -6,66 +7,94 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filters-emitidas.component.scss']
 })
 export class FiltersEmitidasComponent implements OnInit {
-  fecha: any[];
-  sucursal: any[];
-  segmento: any[];
+  sucursales: any[];
+  segmentos: any[];
   productos: any[];
-  canal: any[];
-  camara: any[];
+  camaras: any[];
+  canales: any[];
+  es: any;
+  maxDate: Date = new Date(Date.now());
+  minDate: Date = new Date(Date.now());
+  date: Date[];
+  selectedOffices: string[];
+  selectedSegments: string[];
+  selectedProducts: string[];
+  selectedChambers: string[];
+  selectedChannels: string[];
 
-  constructor() { 
+  @ViewChild('calendar') dateRef: Calendar;
 
-    this.fecha = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-  ];
+  constructor() {
+    this.minDate.setMonth(this.minDate.getMonth() - 1);
 
-   this.sucursal = [
-    {name: 'New York', code: 'NY'},
-    {name: 'Rome', code: 'RM'},
-    {name: 'London', code: 'LDN'},
-    {name: 'Istanbul', code: 'IST'},
-    {name: 'Paris', code: 'PRS'}
-];
+    this.sucursales = [
+      { name: 'Banco Santander Rio S.A.', code: 'sr' },
+      { name: 'Banco de Entre Rios S.A.', code: 'er' },
+      { name: 'Banco del Tucuman S.A.', code: 'bt' },
+      { name: 'Israelita de Cordoba S.A.', code: 'ic' },
+      { name: 'Banco Municipal de Rosario', code: 'bmr' }
+    ];
 
-this.segmento = [
-  {name: 'fff', code: 'NY'},
-  {name: 'Rome', code: 'RM'},
-  {name: 'London', code: 'LDN'},
-  {name: 'Istanbul', code: 'IST'},
-  {name: 'Paris', code: 'PRS'}
-];
+    this.segmentos = [
+      { name: 'Corporates', code: 'co' },
+      { name: 'Individuos', code: 'in' },
+      { name: 'Pyme', code: 'py' },
 
-  this.productos = [
-    {name: 'New York', code: 'NY'},
-    {name: 'Rome', code: 'RM'},
-    {name: 'London', code: 'LDN'},
-    {name: 'Istanbul', code: 'IST'},
-    {name: 'Paris', code: 'PRS'}
-  ];
+    ];
 
-  this.canal = [
-    {name: 'New York', code: 'NY'},
-    {name: 'Rome', code: 'RM'},
-    {name: 'London', code: 'LDN'},
-    {name: 'Istanbul', code: 'IST'},
-    {name: 'Paris', code: 'PRS'}
-  ]
-
-  this.camara = [
-    {name: 'New York', code: 'NY'},
-    {name: 'Rome', code: 'RM'},
-    {name: 'London', code: 'LDN'},
-    {name: 'Istanbul', code: 'IST'},
-    {name: 'Paris', code: 'PRS'}
-  ]
-
+    this.productos = [
+      { name: 'Productos', code: 'pr' },
+      { name: 'Sueldos', code: 'su' },
+      { name: 'Pago a proveedores', code: 'pap' },
+      { name: 'Minoristas', code: 'mi' },
+      { name: 'Proveedores', code: 'pr' }
+    ];
   }
+  calendarOnSelect(event) {
+    console.log(event);
+  }
+  clearCalendar(cal: Calendar) {
+    cal.updateModel(null);
+    cal.updateInputfield();
+    cal.hideOverlay();
+  }
+
+  cancelCalendar(cal: Calendar) {
+    cal.updateInputfield();
+    cal.hideOverlay();
+  }
+
+  applyDateCalendar(cal: Calendar) {
+    cal.hideOverlay();
+    cal.onModelTouched();
+  }
+
+  eraseFilters() {
+    this.selectedSegments = [];
+    this.selectedOffices = [];
+    this.selectedProducts = [];
+    this.dateRef.value = null;
+    this.dateRef.updateInputfield();
+    this.date = null;
+  }
+
+  onChangeOffice() { }
+  onChangeSegment() { }
+  onChangeProduct() { }
 
   ngOnInit() {
+    this.es = {
+      firstDayOfWeek: 1,
+      dayNames: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
+      dayNamesShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
+      dayNamesMin: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],
+      monthNames: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+      monthNamesShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+      today: 'Hoy',
+      clear: 'Borrar'
+    };
+
   }
+
 
 }

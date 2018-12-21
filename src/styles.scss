@@ -124,6 +124,32 @@ header {
   color: red;
 }
 
+.circle-status {
+  width: 1.3vw;
+  height: 1.3vw;
+  background: green;
+  border-radius: 50%;
+}
+
+body .ui-multiselect-panel .ui-multiselect-items .ui-multiselect-item.ui-state-highlight {
+  color: red !important;
+  transition-duration: 700ms;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+body .ui-chkbox .ui-chkbox-box.ui-state-active {
+  border-color: red !important;
+  background-color: red !important;
+}
+
+body .ui-multiselect-panel .ui-multiselect-header .ui-multiselect-filter-container .ui-multiselect-filter-icon {
+  color: red !important;
+}
+
+body .ui-inputtext:enabled:focus:not(.ui-state-error) {
+  border-color: red !important;
+}
+
 .nav a {
   font-size: 1.5vw;
   text-align: center; //   transition-duration: 1s;
@@ -146,7 +172,7 @@ nav .active {
 }
 
 nav a:hover {
-//   color: #ffffff;
+  //   color: #ffffff;
   background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
   background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);

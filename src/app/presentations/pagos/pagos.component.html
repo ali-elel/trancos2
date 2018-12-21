@@ -1,54 +1,64 @@
-<div class="santander internas scroll">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="navbar-col nav">
-        <app-sidenav></app-sidenav>
-      </div>
-      <div class="col">
-        <div>
-          <app-filters-recibidas></app-filters-recibidas>
+<div style="padding: 1px 10px;" class="filter-height">
+  <div class="row h-100">
+    <div style="padding: 1px 15px;" class="col-3 d-flex h-100 align-self-center ">
+      <div style="border-radius: 7px 0px 0px 7px;" class="container-fluid border-grey">
+        <div class="row h-100">
+          <div class="col-1 align-self-center">
+            <div class="circle-status">
+
+            </div>
+          </div>
+          <div class="col-8 align-self-center d-flex h-100">
+            <span class="align-self-center filter-font"> ESTADO DE LAS CÁMARAS</span>
+          </div>
+
+          <div class="col-3"></div>
         </div>
-
-        <gridster [options]="options">
-          <div class="col-md-6"></div>
-          <gridster-item [item]="item" *ngFor="let item of dashboard">
-
-            <app-operation-mini *ngIf="item.type === 'mini-capturados'" label="ARCH. CAPTURADOS"></app-operation-mini>
-            <app-operation-mini *ngIf="item.type === 'mini-pendiente-tibco'" label="PENDIENTE TIBCO"></app-operation-mini>
-
-            <app-operation-mini *ngIf="item.type === 'mini-enviada'" label="FUR. ENVIADA"></app-operation-mini>
-            <app-operation-mini *ngIf="item.type === 'mini-pendiente-mq'" label="PENDIENTE MQ PIRYP"></app-operation-mini>
-
-
-            <div *ngIf="item.type === 'expanded-ingresado'">
-              <app-operation-details label="INGRESADO" cab1="CANAL"></app-operation-details>
-            </div>
-
-            <div class="pink" *ngIf="item.type === 'expanded-rosa-pendiente'">
-              <app-operation-details label="PENDIENTE" cab1="SISTEMA"></app-operation-details>
-            </div>
-
-            <div *ngIf="item.type === 'expanded-procesado'">
-              <app-operation-details label="PROCESADO" cab1="CANAL"></app-operation-details>
-            </div>
-
-            <div *ngIf="item.type === 'expanded-rechazado'">
-              <app-operation-details label="RECHAZADO" cab1="SISTEMA"></app-operation-details>
-            </div>
-
-            <div *ngIf="item.type === 'expanded-baja'">
-              <app-operation-details-baja label="BAJA" cab1="SISTEMA"></app-operation-details-baja>
-            </div>
-
-            <div style="height: 100%" *ngIf="item.type === 'graph1'">
-              <app-graph-operations></app-graph-operations>
-            </div>
-            <div style="height:100%" *ngIf="item.type === 'table'">
-              <app-table-operations-pagos></app-table-operations-pagos>
-            </div>
-          </gridster-item>
-        </gridster>
       </div>
     </div>
+    <div class="col-9">
+      <app-filters-dashboard></app-filters-dashboard>
+    </div>
   </div>
+</div>
+<div style="height:92%">
+  <gridster [options]="options">
+    <div class="col-md-6"></div>
+    <gridster-item [item]="item" *ngFor="let item of dashboard">
+
+      <app-operation-mini *ngIf="item.type === 'mini-capturados'" label="ARCH. CAPTURADOS"></app-operation-mini>
+      <app-operation-mini *ngIf="item.type === 'mini-pendiente-tibco'" label="PENDIENTE TIBCO"></app-operation-mini>
+
+      <app-operation-mini *ngIf="item.type === 'mini-enviada'" label="FUR. ENVIADA"></app-operation-mini>
+      <app-operation-mini *ngIf="item.type === 'mini-pendiente-mq'" label="PENDIENTE MQ PIRYP"></app-operation-mini>
+
+
+      <div *ngIf="item.type === 'expanded-ingresado'">
+        <app-operation-details label="INGRESADO" cab1="CANAL"></app-operation-details>
+      </div>
+
+      <div class="pink" *ngIf="item.type === 'expanded-rosa-pendiente'">
+        <app-operation-details label="PENDIENTE" cab1="SISTEMA"></app-operation-details>
+      </div>
+
+      <div *ngIf="item.type === 'expanded-procesado'">
+        <app-operation-details label="PROCESADO" cab1="CANAL"></app-operation-details>
+      </div>
+
+      <div *ngIf="item.type === 'expanded-rechazado'">
+        <app-operation-details label="RECHAZADO" cab1="SISTEMA"></app-operation-details>
+      </div>
+
+      <div *ngIf="item.type === 'expanded-baja'">
+        <app-operation-details-baja label="BAJA" cab1="SISTEMA"></app-operation-details-baja>
+      </div>
+
+      <div style="height: 100%" *ngIf="item.type === 'graph1'">
+        <app-graph-operations></app-graph-operations>
+      </div>
+      <div style="height:100%" *ngIf="item.type === 'table'">
+        <app-table-operations-pagos></app-table-operations-pagos>
+      </div>
+    </gridster-item>
+  </gridster>
 </div>

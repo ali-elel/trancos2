@@ -1,27 +1,35 @@
-select {
-    background: transparent;
-    border: 1px;
-    font-size: 14px;
-    height: 30px;
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 150px;
- }
-
-.container{
-    width: 100%;
-    // max-width: 1263px;
-}
-
-.caja-rigth{    
-    float: right;
-    
-}
-.border-right{
-    border-radius: 1px solid black;
-}
-.caja{    
-   // border-right: 1px solid gray;
-    
-    
-}
+.calendar-button {
+    padding: 3px 3px;
+    font-size: 1vw;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .apply {
+    color: white;
+    background-color: #368c36;
+  }
+  
+  .erase-filters-button {
+    cursor: pointer;
+    font-size: .9vw
+  }
+  
+  
+  
+  .default {
+    color: rgb(29, 29, 29);
+    background-color: white;
+    border: 1px solid rgb(107, 107, 107);
+  }
+  
+  .col-2-5 {
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding: 0px 1%;
+  }
+  
+  .delete-filters {
+    font-size: .8vw;
+  }
+  
