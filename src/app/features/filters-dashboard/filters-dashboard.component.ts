@@ -28,28 +28,6 @@ export class FiltersDashboardComponent implements OnInit {
     private _FilterProductosService: FilterProductosService,
 
   ) {
-    // this.sucursales = [
-    //   { name: 'Banco Santander Rio S.A.', code: 'sr' },
-    //   { name: 'Banco de Entre Rios S.A.', code: 'er' },
-    //   { name: 'Banco del Tucuman S.A.', code: 'bt' },
-    //   { name: 'Israelita de Cordoba S.A.', code: 'ic' },
-    //   { name: 'Banco Municipal de Rosario', code: 'bmr' }
-    // ];
-
-    // this.segmentos = [
-    //   { name: 'Corporates', code: 'co' },
-    //   { name: 'Individuos', code: 'in' },
-    //   { name: 'Pyme', code: 'py' },
-
-    // ];
-
-    // this.productos = [
-    //   { name: 'Productos', code: 'pr' },
-    //   { name: 'Sueldos', code: 'su' },
-    //   { name: 'Pago a proveedores', code: 'pap' },
-    //   { name: 'Minoristas', code: 'mi' },
-    //   { name: 'Proveedores', code: 'pr' }
-    // ];
   }
 
   clearCalendar(cal: Calendar) {

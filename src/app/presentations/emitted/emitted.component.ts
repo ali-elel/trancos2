@@ -11,8 +11,6 @@ export class EmittedComponent implements OnInit {
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
 
-  
-
   constructor() { }
 
   ngOnInit() {

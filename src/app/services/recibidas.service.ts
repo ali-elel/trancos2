@@ -23,11 +23,11 @@ export class RecibidasService {
   get(type: string) {
     return this.http.post(environment.url + this.buildUrl(type),
       {
-        sucursal: "",
-        segmento: "",
-        producto: "",
-        canal: "",
-        camara: "",
+        sucursal: [],
+        segmento: [],
+        producto: [],
+        canal: [],
+        camara: [],
         fechaDesde: "2018-12-17T00:00:00Z",
         fechaHasta: "2018-12-17T23:59:59.59Z"
       },
@@ -78,69 +78,5 @@ export class RecibidasService {
         break;
     }
     return url;
-  }
-
-
-  getIngresado(): Observable<any> {
-    return this.http.post(environment.url + 'transfer/recibidas/getIngresado',
-      {
-        sucursal: "",
-        segmento: "",
-        producto: "",
-        canal: "",
-        camara: "",
-        fechaDesde: "2018-11-14T00:00:00Z",
-        fechaHasta: "2018-11-15T23:59:59.59Z"
-      },
-
-      httpOptionsUrl);
-
-  }
-
-  getPendiente(): Observable<any> {
-    return this.http.post(environment.url + 'transfer/recibidas/getPendiente',
-      {
-        sucursal: "",
-        segmento: "",
-        producto: "",
-        canal: "",
-        camara: "",
-        fechaDesde: "2018-11-14T00:00:00Z",
-        fechaHasta: "2018-11-15T23:59:59.59Z"
-      },
-
-      httpOptionsUrl);
-
-  }
-
-  getRechazado(): Observable<any> {
-    return this.http.post(environment.url + 'transfer/recibidas/getRechazado',
-      {
-        sucursal: "",
-        segmento: "",
-        producto: "",
-        canal: "",
-        camara: "",
-        fechaDesde: "2018-11-14T00:00:00Z",
-        fechaHasta: "2018-11-15T23:59:59.59Z"
-      },
-
-      httpOptionsUrl);
-
-  }
-
-  getProcesado(): Observable<any> {
-    return this.http.post(environment.url + 'transfer/recibidas/getProcesado',
-      {
-        sucursal: "",
-        segmento: "",
-        producto: "",
-        canal: "",
-        camara: "",
-        fechaDesde: "2018-11-14T00:00:00Z",
-        fechaHasta: "2018-11-15T23:59:59.59Z"
-      },
-
-      httpOptionsUrl);
   }
 }

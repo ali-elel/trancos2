@@ -1,4 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { EmitidasService } from '../../services/emitidas.service';
+import { Emitted } from 'src/app/model/emitted';
 
 @Component({
   selector: 'app-operation-mini',
@@ -7,10 +9,29 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class OperationMiniComponent implements OnInit {
   @Input() label: string;
-  @Input() alert: boolean; 
-  constructor() { }
+  @Input() alert: boolean;
+  public listado: any;
+  public listGral: any;
+  constructor(
+    private _EmitidasService: EmitidasService
+  ) { }
 
   ngOnInit() {
+    this.listOperationsMini();
+  }
+
+  listOperationsMini() {
+    this._EmitidasService.get(this.label)
+      .subscribe((res: Emitted) => {
+        this.listado = res;
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
+        // console.log('completo-emitidas');
+        // this.getEmitted();
+      });
   }
 
 }

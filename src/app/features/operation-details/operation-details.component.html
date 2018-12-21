@@ -1,13 +1,13 @@
 <div [ngClass]="{'pink': alert}" class="container">
   <div class="row">
     <div style="font-size: 1vw" class="col-12 bold widget-mini-title uppercase color-santander">{{label}}</div>
-
-    <div class="col-9">
-      <span class="widget-mini-price">$2.300.120</span>
-      <span class="widget-mini-quantity"> &nbsp; | 2301</span>
+    
+    <div class="col-9" *ngIf="listGral != undefined">
+      <span class="widget-mini-price">{{listGral.amountARSGral.amount | currency}}</span>
+      <span class="widget-mini-quantity"> &nbsp; | {{listGral.amountARSGral.count}}</span>
     </div>
-    <div class="col-3 aligned-centered-flex">
-      <span class="widget-mini-percent">20%</span>
+    <div class="col-3 aligned-centered-flex" *ngIf="listGral != undefined">
+      <span class="widget-mini-percent" *ngIf="label != 'Ingresado'">{{listGral.percent}} %</span>
     </div>
 
     <div class="mt-2 col-12">
@@ -20,31 +20,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>41</td>
-            <td>ARS 800.000</td>
+          <tr  *ngFor= "let list of listado; index as i;"> 
+            <td>{{list.detail}}</td>
+            <td>{{list.count}}</td>
+            <td>{{list.amount | currency}}</td>
           </tr>
           <tr>
-            <td>4</td>
-            <td>11</td>
-            <td>ARS 150.000</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>26</td>
-            <td>USD 3.000</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>32</td>
-            <td>USD 5.000</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>5</td>
-            <td>ARS 5.300.200</td>
-          </tr>
         </tbody>
       </table>
     </div>

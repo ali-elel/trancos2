@@ -1,3 +1,5 @@
+import { RecibidasTxhoraService } from './../../services/recibidas-txhora.service';
+import { EmitdasTxhoraService } from './../../services/emitdas-txhora.service';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
 @Component({
@@ -83,10 +85,16 @@ export class MultiGraphOperationsComponent implements OnInit {
   public lineChartLegend = true;
   lineChartType = 'line';
 
-  constructor() {
+  constructor(
+    private _EmitdasTxhoraService: EmitdasTxhoraService,
+    private _RecibidasTxhoraService: RecibidasTxhoraService,
+
+  ) {
   }
 
   ngOnInit() {
+    this.getEmitidasTxHora();
+    this.getRecibidasTxHora();
     const tzoffset = new Date().getTimezoneOffset() / 60;
 
     this.chart = new Chart(this.chartRef.nativeElement, {
@@ -154,6 +162,29 @@ export class MultiGraphOperationsComponent implements OnInit {
     });
   }
 
+  getEmitidasTxHora() {
+    this._EmitdasTxhoraService.get(this.label)
+      .subscribe((res: any) => {
+        console.log('getEmitidasTxHora',res) ;
+      },
+      error => { },
+      () => {
+        // console.log('completo-recibidas');
+        // this.getReceive();
+      });
+  }
+
+  getRecibidasTxHora() {
+    this._RecibidasTxhoraService.get(this.label)
+      .subscribe((res: any) => {
+        console.log('getRecibidasTxHora',res) ;
+      },
+      error => { },
+      () => {
+        // console.log('completo-recibidas');
+        // this.getReceive();
+      });
+  }
 
   //   this.chart2 = new Chart(this.chartRef2.nativeElement, {
   //     type: 'line',

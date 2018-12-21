@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EmitidasService } from '../../services/emitidas.service';
-
+import { Emitted } from 'src/app/model/emitted';
 @Component({
   selector: 'app-operation-details',
   templateUrl: './operation-details.component.html',
@@ -12,24 +12,28 @@ export class OperationDetailsComponent implements OnInit {
   @Input() alert = false;
 
   public listado: any;
+  public listGral: any;
+
 
   constructor(
     private _EmitidasService: EmitidasService) {
   }
 
   ngOnInit() {
-    this.listOperations();
+    this.listOperationsDetails();
   }
 
-  listOperations() {
-    this._EmitidasService.getBaja()
-      .subscribe(resp => {
-        this.listado = resp;
+  listOperationsDetails() {
+    this._EmitidasService.get(this.label)
+      .subscribe((res: Emitted) => {
+        this.listado = res.amountARS;
+        this.listGral = res;
+        // console.log(this.listGral);
       },
       error => { },
       () => {
         // console.log('completo-emitidas');
-        // this.listOperations();
+        // this.getEmitted();
       });
   }
 }
