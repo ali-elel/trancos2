@@ -49,6 +49,7 @@ import { MeterBalaComponent } from './features/meter-bala/meter-bala.component';
 import { ChartsModule } from 'ng2-charts';
 import 'chartjs-plugin-zoom';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 @NgModule({
     declarations: [
@@ -82,6 +83,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     ],
     imports: [
         BrowserModule,
+        RadioButtonModule,
         BrowserAnimationsModule,
         HttpClientModule,
         AppRoutingModule,

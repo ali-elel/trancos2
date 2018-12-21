@@ -10,8 +10,13 @@ import { TitleService } from 'src/app/services/title.service';
 export class ReceivedComponent implements OnInit {
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
+  selectedValue: string;
+  val1 = 'Option 1';
 
-  constructor(private titleService: TitleService) { }
+  constructor(private titleService: TitleService) {
+    this.selectedValue = 'val1';
+
+  }
 
   ngOnInit() {
     this.titleService.setTitle('Recibidas');

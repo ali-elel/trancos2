@@ -7,10 +7,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./filters-recibidas.component.scss']
 })
 export class FiltersRecibidasComponent implements OnInit {
-
   sucursales: any[];
   segmentos: any[];
   productos: any[];
+  camaras: any[];
   es: any;
   maxDate: Date = new Date(Date.now());
   minDate: Date = new Date(Date.now());
@@ -18,6 +18,7 @@ export class FiltersRecibidasComponent implements OnInit {
   selectedOffices: string[];
   selectedSegments: string[];
   selectedProducts: string[];
+  selectedChambers: string[];
 
   @ViewChild('calendar') dateRef: Calendar;
 

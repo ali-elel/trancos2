@@ -1,26 +1,35 @@
 <div style="padding: 1px 10px;" class="filter-height">
-    <div class="row h-100">
-      <div style="padding: 1px 15px;" class="col-3 d-flex h-100 align-self-center ">
-        <div style="border-radius: 7px 0px 0px 7px;" class="container-fluid border-grey">
-          <div class="row h-100">
-            <div class="col-1 align-self-center">
-              <div class="circle-status">
-  
-              </div>
-            </div>
-            <div class="col-8 align-self-center d-flex h-100">
-              <span class="align-self-center filter-font"> ESTADO DE LAS CÁMARAS</span>
-            </div>
-  
-            <div class="col-3"></div>
+  <div class="row h-100">
+    <div style="padding: 1px 15px;" class="col-3 d-flex h-100 align-self-center ">
+      <div style="border-radius: 7px 0px 0px 7px;" class="container-fluid border-grey">
+        <div class="row h-100" style="font-size:.9vw !important">
+          <div class="col-4" style="display: flex;
+              justify-content: center;
+              align-self: center;">
+            <span>
+              Filtrar por:
+            </span>
+          </div>
+          <div class="col-4" style="display: flex;
+              justify-content: center;
+              align-self: center;">
+            <p-radioButton name="group1" label="Pesos" value="Option 1"  [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+
+          </div>
+          <div class="col-4" style="display: flex;
+              justify-content: center;
+              align-self: center;">
+            <p-radioButton name="group1" label="Dólares" value="Option 2"  [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+
           </div>
         </div>
       </div>
-      <div class="col-9">
-        <app-filters-emitidas></app-filters-emitidas>
-      </div>
+    </div>
+    <div class="col-9">
+      <app-filters-emitidas></app-filters-emitidas>
     </div>
   </div>
+</div>
 <div class="grid-height">
   <gridster [options]="options">
     <gridster-item [item]="item" *ngFor="let item of dashboard">
