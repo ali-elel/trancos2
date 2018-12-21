@@ -191,30 +191,6 @@ export class MultiGraphOperationsComponent implements OnInit {
       }
     });
 
-  getEmitidasTxHora() {
-    this._EmitdasTxhoraService.get(this.label)
-      .subscribe((res: any) => {
-        console.log('getEmitidasTxHora',res) ;
-      },
-      error => { },
-      () => {
-        // console.log('completo-recibidas');
-        // this.getReceive();
-      });
-  }
-
-  getRecibidasTxHora() {
-    this._RecibidasTxhoraService.get(this.label)
-      .subscribe((res: any) => {
-        console.log('getRecibidasTxHora',res) ;
-      },
-      error => { },
-      () => {
-        // console.log('completo-recibidas');
-        // this.getReceive();
-      });
-  }
-
     this.chart2 = new Chart(this.chartRef2.nativeElement, {
       type: 'line',
       data: {
@@ -324,4 +300,27 @@ export class MultiGraphOperationsComponent implements OnInit {
     });
   }
 
+  getEmitidasTxHora() {
+    this._EmitdasTxhoraService.get(this.label)
+      .subscribe((res: any) => {
+        console.log('getEmitidasTxHora', res);
+      },
+        error => { },
+        () => {
+          // console.log('completo-recibidas');
+          // this.getReceive();
+        });
+  }
+
+  getRecibidasTxHora() {
+    this._RecibidasTxhoraService.get(this.label)
+      .subscribe((res: any) => {
+        console.log('getRecibidasTxHora', res);
+      },
+        error => { },
+        () => {
+          // console.log('completo-recibidas');
+          // this.getReceive();
+        });
+  }
 }

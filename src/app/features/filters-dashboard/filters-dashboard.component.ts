@@ -23,11 +23,10 @@ export class FiltersDashboardComponent implements OnInit {
   selectedProducts: string[];
   @ViewChild('calendar') dateRef: Calendar;
 
-  constructor(
-    private _FilterSucursalesService: FilterSucursalesService,
+  constructor(private _FilterSucursalesService: FilterSucursalesService,
     private _FilterSegmentosService: FilterSegmentosService,
-    private _FilterProductosService: FilterProductosService,
-  constructor() {
+    private _FilterProductosService: FilterProductosService) {
+
     this.minDate.setMonth(this.minDate.getMonth() - 1);
 
     this.sucursales = [
@@ -37,9 +36,8 @@ export class FiltersDashboardComponent implements OnInit {
       { name: 'Israelita de Cordoba S.A.', code: 'ic' },
       { name: 'Banco Municipal de Rosario', code: 'bmr' }
     ];
-
-  ) {
   }
+
   calendarOnSelect(event) {
     console.log(event);
   }

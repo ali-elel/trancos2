@@ -33,13 +33,6 @@ export class FiltersEmitidasComponent implements OnInit {
     private _FilterSegmentosService: FilterSegmentosService,
     private _FilterProductosService: FilterProductosService,
   ) {
-   }
-
-  clearCalendar(cal: Calendar) {
-    cal.updateModel(null);
-    cal.updateInputfield();
-    cal.hideOverlay();
-  }
     this.sucursales = [
       { name: 'Banco Santander Rio S.A.', code: 'sr' },
       { name: 'Banco de Entre Rios S.A.', code: 'er' },
@@ -47,30 +40,11 @@ export class FiltersEmitidasComponent implements OnInit {
       { name: 'Israelita de Cordoba S.A.', code: 'ic' },
       { name: 'Banco Municipal de Rosario', code: 'bmr' }
     ];
-
-  cancelCalendar(cal: Calendar) {
-    cal.updateInputfield();
-    cal.hideOverlay();
-  }
     this.segmentos = [
       { name: 'Corporates', code: 'co' },
       { name: 'Individuos', code: 'in' },
       { name: 'Pyme', code: 'py' },
-
     ];
-  applyDateCalendar(cal: Calendar) {
-    cal.hideOverlay();
-    cal.onModelTouched();
-  }
-
-  eraseFilters() {
-    this.selectedSegments = [];
-    this.selectedOffices = [];
-    this.selectedProducts = [];
-    this.dateRef.value = null;
-    this.dateRef.updateInputfield();
-    this.date = null;
-  }
     this.productos = [
       { name: 'Productos', code: 'pr' },
       { name: 'Sueldos', code: 'su' },
@@ -79,17 +53,14 @@ export class FiltersEmitidasComponent implements OnInit {
       { name: 'Proveedores', code: 'pr' }
     ];
   }
-  calendarOnSelect(event) {
-    console.log(event);
-  }
+
   clearCalendar(cal: Calendar) {
     cal.updateModel(null);
     cal.updateInputfield();
     cal.hideOverlay();
   }
 
-  onChangeOffice() {
-    this.getFilterSegmentos();
+
   cancelCalendar(cal: Calendar) {
     cal.updateInputfield();
     cal.hideOverlay();
@@ -98,12 +69,6 @@ export class FiltersEmitidasComponent implements OnInit {
   applyDateCalendar(cal: Calendar) {
     cal.hideOverlay();
     cal.onModelTouched();
-  }
-  onChangeSegment() {
-    this.getFilterProductos();
-  }
-  onChangeProduct() {
-    alert('oka');
   }
 
   eraseFilters() {
@@ -115,9 +80,21 @@ export class FiltersEmitidasComponent implements OnInit {
     this.date = null;
   }
 
-  onChangeOffice() { }
-  onChangeSegment() { }
-  onChangeProduct() { }
+  calendarOnSelect(event) {
+    console.log(event);
+  }
+
+  onChangeOffice() {
+    this.getFilterSegmentos();
+  }
+
+
+  onChangeSegment() {
+    this.getFilterProductos();
+  }
+  onChangeProduct() {
+    alert('oka');
+  }
 
   ngOnInit() {
     this.es = {
