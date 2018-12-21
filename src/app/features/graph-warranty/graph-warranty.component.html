@@ -1,14 +1,24 @@
-<div style="height:100%" class="container-fluid h-100">
+<!-- <div style="height:100%" class="container-fluid h-100">
   <div style="height:inherit" class="row">
-    
+
     <div class="d-block col-12 h-30 full-width border-bottom-black">
       <span class="uppercase">Estado de Garantía</span>
     </div>
 
-    <div class="col-11">
+    <div class="col-12">
       <app-graph-bullet *ngIf="bullet != undefined" [options]='bullet'></app-graph-bullet>
     </div>
 
   </div>
-</div>
+</div> -->
 
+<div style="height:100%" class="container-fluid h-100">
+  <div style="height:inherit" class="row">
+    <div class="d-block col-12 h-30 full-width border-bottom-black">
+      <span class="uppercase">Capacidad de Procesamiento</span>
+    </div>
+    <div class="col-12 h-70">
+      <app-graph-bullet *ngIf="bullet != undefined" [options]='bullet'></app-graph-bullet>
+    </div>
+  </div>
+</div>

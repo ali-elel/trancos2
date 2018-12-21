@@ -2,11 +2,11 @@
   <div class="row">
     <div style="font-size: 1vw" class="col-12 bold widget-mini-title uppercase color-santander">{{label}}</div>
     
-    <div class="col-9" *ngIf="listGral != undefined">
+    <div class="col-8" *ngIf="listGral != undefined">
       <span class="widget-mini-price">{{listGral.amountARSGral.amount | currency}}</span>
       <span class="widget-mini-quantity"> &nbsp; | {{listGral.amountARSGral.count}}</span>
     </div>
-    <div class="col-3 aligned-centered-flex" *ngIf="listGral != undefined">
+    <div class="col-4 aligned-centered-flex" *ngIf="listGral != undefined">
       <span class="widget-mini-percent" *ngIf="label != 'Ingresado'">{{listGral.percent}} %</span>
     </div>
 

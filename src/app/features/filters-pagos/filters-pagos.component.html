@@ -13,19 +13,19 @@
       <div class="col-2-5 align-self-center border-right">
         <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
           [options]="sucursales" (onChange)="onChangeOffice()" [(ngModel)]="selectedOffices" [style]="{'width': '100%','border':'0px'}"
-          defaultLabel="Sucursales" optionLabel="name"></p-multiSelect>
+          defaultLabel="Sucursales" optionLabel="description"></p-multiSelect>
       </div>
   
       <div class="col-2-5 align-self-center border-right">
         <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
           [options]="segmentos" (onChange)="onChangeSegment()" [(ngModel)]="selectedSegments" [style]="{'width': '100%','border':'0px'}"
-          defaultLabel="Segmentos" optionLabel="name"></p-multiSelect>
+          defaultLabel="Segmentos" optionLabel="description"></p-multiSelect>
       </div>
   
       <div class="col-2-5 align-self-center border-right">
         <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
           [options]="productos" (onChange)="onChangeProduct()" [(ngModel)]="selectedProducts" [style]="{'width': '100%','border':'0px'}"
-          defaultLabel="Productos" optionLabel="name"></p-multiSelect>
+          defaultLabel="Productos" optionLabel="description"></p-multiSelect>
       </div>
       <div style="justify-content: center; display: flex;" (click)="eraseFilters()" class="col erase-filters-button align-self-center">
         <i class="fas fa-eraser eraser d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>

@@ -22,7 +22,7 @@ export class GraphWarrantyComponent implements OnInit {
     this._WarrantyService.getWarranty()
       .subscribe((res: Warranty) => {
         this.bullet = {
-          name: 'BCRA',
+          name: '',
           vertical: true,
           segments: {
             used: {
