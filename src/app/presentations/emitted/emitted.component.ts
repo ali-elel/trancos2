@@ -1,3 +1,4 @@
+import { TitleService } from './../../services/title.service';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,10 +11,13 @@ export class EmittedComponent implements OnInit {
 
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
-
-  constructor() { }
+  val1 = 'Option 1';
+  constructor(private titleService: TitleService) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Emitidas');
+    this.titleService.setLogin(false);
+
     this.options = {
       displayGrid: 'onDrag&Resize',
       draggable: { enabled: true },
@@ -35,7 +39,7 @@ export class EmittedComponent implements OnInit {
 
       { cols: 5, rows: 1, y: 2, x: 0, type: 'process' },
       { cols: 3, rows: 1, y: 2, x: 5, type: 'process-2' },
-      { cols: 4, rows: 3, y: 2, x: 0, type: 'graph' },
+      { cols: 4, rows: 3, y: 2, x: 0, type: 'graph', dragEnabled: false },
       { cols: 4, rows: 3, y: 2, x: 5, type: 'table' },
     ];
   }

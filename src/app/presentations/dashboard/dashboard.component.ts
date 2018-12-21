@@ -1,3 +1,4 @@
+import { TitleService } from './../../services/title.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
@@ -12,9 +13,12 @@ export class DashboardComponent implements OnInit {
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private titleService: TitleService) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Dashboard');
+    this.titleService.setLogin(false);
+
     this.options = {
       displayGrid: 'onDrag&Resize',
       draggable: { enabled: true },
@@ -37,7 +41,5 @@ export class DashboardComponent implements OnInit {
       { cols: 4, rows: 3, y: 3, x: 4, type: 'table' },
     ];
   }
-  logout() {
-    this.router.navigate(['login']);
-  }
+
 }

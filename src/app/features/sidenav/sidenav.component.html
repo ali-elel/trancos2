@@ -1,10 +1,14 @@
 <nav id="menu">
-  <a [routerLink]="['/','dashboard']" routerLinkActive="active"><i class="fas fa-th-large"></i></a>
-  <a [routerLink]="['/','emitted']" routerLinkActive="active"><i class="fas fa-sign-out-alt"></i></a>
-  <a [routerLink]="['/','received']" routerLinkActive="active"><i class="fas fa-sign-in-alt"></i></a>
-  <a [routerLink]="['/','pagos']" routerLinkActive="active"><i class="fas fa-donate"></i></a>
-  <a href="#"><i class="fas fa-search-dollar"></i></a>
-  <a href="detalle.html"><i class="fas fa-chart-bar"></i></a>
-  <a href="tx.html"><i class="fas fa-random"></i></a>
-  <a href="alertas.html"><i class="fas fa-exclamation-triangle"></i></a>
+  <div class="container-fluid">
+    <div class="row">
+      <a class="col-12" [routerLink]="['/','dashboard']" routerLinkActive="active"><i class="fas fa-th-large"></i></a>
+      <a class="col-12" [routerLink]="['/','emitted']" routerLinkActive="active"><i class="fas fa-sign-out-alt"></i></a>
+      <a class="col-12" [routerLink]="['/','received']" routerLinkActive="active"><i class="fas fa-sign-in-alt"></i></a>
+      <a class="col-12" [routerLink]="['/','pagos']" routerLinkActive="active"><i class="fas fa-donate"></i></a>
+      <a class="col-12" href="#"><i class="fas fa-search-dollar"></i></a>
+      <a class="col-12" href="detalle.html"><i class="fas fa-chart-bar"></i></a>
+      <a class="col-12" href="tx.html"><i class="fas fa-random"></i></a>
+      <a class="col-12" href="alertas.html"><i class="fas fa-exclamation-triangle"></i></a>
+    </div>
+  </div>
 </nav>

@@ -11,15 +11,20 @@ import { Calendar } from 'primeng/calendar';
   styleUrls: ['./filters-emitidas.component.scss']
 })
 export class FiltersEmitidasComponent implements OnInit {
-  fecha: any[];
   sucursales: any[];
   segmentos: any[];
   productos: any[];
+  camaras: any[];
+  canales: any[];
+  es: any;
+  maxDate: Date = new Date(Date.now());
+  minDate: Date = new Date(Date.now());
+  date: Date[];
   selectedOffices: string[];
   selectedSegments: string[];
   selectedProducts: string[];
-  date: Date[];
-  es: any;
+  selectedChambers: string[];
+  selectedChannels: string[];
 
   @ViewChild('calendar') dateRef: Calendar;
 
@@ -35,12 +40,24 @@ export class FiltersEmitidasComponent implements OnInit {
     cal.updateInputfield();
     cal.hideOverlay();
   }
+    this.sucursales = [
+      { name: 'Banco Santander Rio S.A.', code: 'sr' },
+      { name: 'Banco de Entre Rios S.A.', code: 'er' },
+      { name: 'Banco del Tucuman S.A.', code: 'bt' },
+      { name: 'Israelita de Cordoba S.A.', code: 'ic' },
+      { name: 'Banco Municipal de Rosario', code: 'bmr' }
+    ];
 
   cancelCalendar(cal: Calendar) {
     cal.updateInputfield();
     cal.hideOverlay();
   }
+    this.segmentos = [
+      { name: 'Corporates', code: 'co' },
+      { name: 'Individuos', code: 'in' },
+      { name: 'Pyme', code: 'py' },
 
+    ];
   applyDateCalendar(cal: Calendar) {
     cal.hideOverlay();
     cal.onModelTouched();
@@ -54,9 +71,33 @@ export class FiltersEmitidasComponent implements OnInit {
     this.dateRef.updateInputfield();
     this.date = null;
   }
+    this.productos = [
+      { name: 'Productos', code: 'pr' },
+      { name: 'Sueldos', code: 'su' },
+      { name: 'Pago a proveedores', code: 'pap' },
+      { name: 'Minoristas', code: 'mi' },
+      { name: 'Proveedores', code: 'pr' }
+    ];
+  }
+  calendarOnSelect(event) {
+    console.log(event);
+  }
+  clearCalendar(cal: Calendar) {
+    cal.updateModel(null);
+    cal.updateInputfield();
+    cal.hideOverlay();
+  }
 
   onChangeOffice() {
     this.getFilterSegmentos();
+  cancelCalendar(cal: Calendar) {
+    cal.updateInputfield();
+    cal.hideOverlay();
+  }
+
+  applyDateCalendar(cal: Calendar) {
+    cal.hideOverlay();
+    cal.onModelTouched();
   }
   onChangeSegment() {
     this.getFilterProductos();
@@ -65,6 +106,18 @@ export class FiltersEmitidasComponent implements OnInit {
     alert('oka');
   }
 
+  eraseFilters() {
+    this.selectedSegments = [];
+    this.selectedOffices = [];
+    this.selectedProducts = [];
+    this.dateRef.value = null;
+    this.dateRef.updateInputfield();
+    this.date = null;
+  }
+
+  onChangeOffice() { }
+  onChangeSegment() { }
+  onChangeProduct() { }
 
   ngOnInit() {
     this.es = {
@@ -72,12 +125,12 @@ export class FiltersEmitidasComponent implements OnInit {
       dayNames: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
       dayNamesShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
       dayNamesMin: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],
-      monthNames: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre',
-        'octubre', 'noviembre', 'diciembre'],
+      monthNames: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
       monthNamesShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
       today: 'Hoy',
       clear: 'Borrar'
     };
+
 
     this.getFilterSucursales();
     this.getFilterSegmentos();

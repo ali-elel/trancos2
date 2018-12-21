@@ -15,7 +15,8 @@ export class FiltersDashboardComponent implements OnInit {
   segmentos: any[];
   productos: any[];
   es: any;
-
+  maxDate: Date = new Date(Date.now());
+  minDate: Date = new Date(Date.now());
   date: Date[];
   selectedOffices: string[];
   selectedSegments: string[];
@@ -26,10 +27,22 @@ export class FiltersDashboardComponent implements OnInit {
     private _FilterSucursalesService: FilterSucursalesService,
     private _FilterSegmentosService: FilterSegmentosService,
     private _FilterProductosService: FilterProductosService,
+  constructor() {
+    this.minDate.setMonth(this.minDate.getMonth() - 1);
+
+    this.sucursales = [
+      { name: 'Banco Santander Rio S.A.', code: 'sr' },
+      { name: 'Banco de Entre Rios S.A.', code: 'er' },
+      { name: 'Banco del Tucuman S.A.', code: 'bt' },
+      { name: 'Israelita de Cordoba S.A.', code: 'ic' },
+      { name: 'Banco Municipal de Rosario', code: 'bmr' }
+    ];
 
   ) {
   }
-
+  calendarOnSelect(event) {
+    console.log(event);
+  }
   clearCalendar(cal: Calendar) {
     cal.updateModel(null);
     cal.updateInputfield();
@@ -72,8 +85,7 @@ export class FiltersDashboardComponent implements OnInit {
       dayNames: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
       dayNamesShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
       dayNamesMin: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],
-      monthNames: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre',
-        'octubre', 'noviembre', 'diciembre'],
+      monthNames: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
       monthNamesShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
       today: 'Hoy',
       clear: 'Borrar'

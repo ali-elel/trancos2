@@ -1,5 +1,6 @@
 import { GridsterItem, GridsterConfig } from 'angular-gridster2';
 import { Component, OnInit } from '@angular/core';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-received',
@@ -9,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class ReceivedComponent implements OnInit {
   options: GridsterConfig;
   dashboard: Array<GridsterItem>;
+  selectedValue: string;
+  val1 = 'Option 1';
 
-  constructor() { }
+  constructor(private titleService: TitleService) {
+    this.selectedValue = 'val1';
+
+  }
 
   ngOnInit() {
+    this.titleService.setTitle('Recibidas');
+    this.titleService.setLogin(false);
+
     this.options = {
       displayGrid: 'onDrag&Resize',
       draggable: { enabled: true },

@@ -1,53 +1,47 @@
-<div style="padding: 2px 15px 0 0px" class="container-fluid h-100 ">
-  <div class="row d-flex border-grey h-100 ">
+  <div class="row d-flex border-grey h-100 bold">
 
     <div class="col-3 align-self-center border-right">
-      <p-calendar #calendar [(ngModel)]="date" showIcon="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy"
-        placeholder="Fecha">
-        <p-footer>
-          <div class="container-fluid pt-2">
-            <div class="row">
-              <div class="col-4 d-flex justify-content-center">
-                <div (click)="applyDateCalendar(calendar)" class="calendar-button apply">
-                  Aplicar
-                </div>
-              </div>
-              <div class="col-4 d-flex justify-content-center">
-                <div (click)="clearCalendar(calendar)" class="calendar-button default">
-                  Limpiar
-                </div>
-              </div>
-              <div class="col-4 d-flex justify-content-center">
-                <div (click)="cancelCalendar(calendar)" class="calendar-button default">
-                  Cancelar
-                </div>
-              </div>
-            </div>
-          </div>
-        </p-footer>
+      <p-calendar #calendar onSelect="calendarOnSelect(value)" [maxDate]="maxDate" [minDate]="minDate" [(ngModel)]="date"
+        showIcon="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy" placeholder="Fecha">
+
       </p-calendar>
       <!-- <span class="ui-dropdown-trigger-icon ui-clickable pi pi-caret-down" ng-reflect-klass="ui-dropdown-trigger-icon ui-cl" ng-reflect-ng-class="pi pi-caret-down"></span>-->
 
     </div>
 
-    <div class="col-2 align-self-center border-right">
-      <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados" [options]="sucursales" (onChange)="onChangeOffice()"
-        [(ngModel)]="selectedOffices" [style]="{'width': '100%','border':'0px'}" defaultLabel="Sucursales" optionLabel="description"></p-multiSelect>
+    <div class="col-2-5 align-self-center border-right">
+      <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
+        [options]="sucursales" (onChange)="onChangeOffice()" [(ngModel)]="selectedOffices" [style]="{'width': '100%','border':'0px'}"
+        defaultLabel="Sucursales" optionLabel="name"></p-multiSelect>
     </div>
 
-    <div class="col-2 align-self-center border-right">
-      <p-multiSelect maxSelectedLabels="1"  selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados" [options]="segmentos" (onChange)="onChangeSegment()"
-        [(ngModel)]="selectedSegments"  [style]="{'width': '100%','border':'0px'}" defaultLabel="Segmentos" optionLabel="description"></p-multiSelect>
+    <div class="col-2-5 align-self-center border-right">
+      <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
+        [options]="segmentos" (onChange)="onChangeSegment()" [(ngModel)]="selectedSegments" [style]="{'width': '100%','border':'0px'}"
+        defaultLabel="Segmentos" optionLabel="name"></p-multiSelect>
     </div>
 
-    <div class="col-2 align-self-center border-right">
-      <p-multiSelect maxSelectedLabels="1"  selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados" [options]="productos" (onChange)="onChangeProduct()"
-        [(ngModel)]="selectedProducts" [style]="{'width': '100%','border':'0px'}" defaultLabel="Productos" optionLabel="description"></p-multiSelect>
+    <div class="col-2-5 align-self-center border-right">
+      <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
+        [options]="productos" (onChange)="onChangeProduct()" [(ngModel)]="selectedProducts" [style]="{'width': '100%','border':'0px'}"
+        defaultLabel="Productos" optionLabel="name"></p-multiSelect>
+    </div>
+    <div class="col-2-5 align-self-center border-right">
+      <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
+        [options]="canales" (onChange)="onChangeChannel()" [(ngModel)]="selectedChannels" [style]="{'width': '100%','border':'0px'}"
+        defaultLabel="Canales" optionLabel="name"></p-multiSelect>
+    </div>
+
+    <div class="col-2-5 align-self-center border-right">
+      <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
+        [options]="camaras" (onChange)="onChangeChambers()" [(ngModel)]="selectedChambers" [style]="{'width': '100%','border':'0px'}"
+        defaultLabel="Cámaras" optionLabel="name"></p-multiSelect>
     </div>
     <div style="justify-content: center; display: flex;" (click)="eraseFilters()" class="col erase-filters-button align-self-center">
-      <i class="fas fa-eraser fa-2x d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>
-      <span style="align-self: center">
-        BORRAR FILTROS
+      <i class="fas fa-eraser eraser d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>
+      <span style="align-self: center" class="delete-filters">
+        <div> BORRAR </div>
+        <div> FILTROS</div>
       </span>
     </div>
   </div>

@@ -1,32 +1,45 @@
-<div style="padding: 2px 10px 0 10px;" class="container-fluid h-100 ">
-  <div class="row d-flex border-grey h-100 bold">
-
-    <div class="col align-self-center border-right">
-        <p-calendar [(ngModel)]="value" [style]="{'width': '90%','border':'0px'}" showButtonBar="false" [locale]="es"  [readonlyInput]="true" dateFormat="dd/mm/yy" placeholder="Fecha"></p-calendar>
-       <!-- <span class="ui-dropdown-trigger-icon ui-clickable pi pi-caret-down" ng-reflect-klass="ui-dropdown-trigger-icon ui-cl" ng-reflect-ng-class="pi pi-caret-down"></span>-->
-
-    </div>
-
-    <div class="col align-self-center border-right">
-      <p-dropdown [options]="canal " [style]="{'width': '100%','border':'0px'}"  placeholder="Canal"
-        optionLabel="name" [showClear]="true"></p-dropdown>
-    </div> 
-     
-     <div class="col align-self-center border-right">
-      <p-dropdown [options]="producto " [style]="{'width': '100%','border':'0px'}"  placeholder="Producto"
-        optionLabel="name" [showClear]="true"></p-dropdown>
-    </div> 
-    <div class="col align-self-center border-right">
-      <p-dropdown [options]="acuerdo " [style]="{'width': '100%','border':'0px'}" 
-        placeholder="Acuerdo" optionLabel="name" [showClear]="true"></p-dropdown>
-    </div>
-
-    
-    <div style="justify-content: center; display: flex;" class="col align-self-center">
-      <i class="fas fa-eraser fa-2x d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>
-      <span style="align-self: center;">
-        BORRAR FILTROS
-      </span>
+<div style="padding: 2px 15px 0 0px" class="container-fluid h-100 ">
+    <div class="row d-flex border-grey h-100 ">
+  
+      <div class="col-3 align-self-center border-right">
+        <p-calendar #calendar onSelect="calendarOnSelect(value)" [maxDate]="maxDate" [minDate]="minDate" [(ngModel)]="date"
+          showIcon="true" [locale]="es" selectionMode="range" dateFormat="dd/mm/yy" placeholder="Fecha">
+  
+        </p-calendar>
+        <!-- <span class="ui-dropdown-trigger-icon ui-clickable pi pi-caret-down" ng-reflect-klass="ui-dropdown-trigger-icon ui-cl" ng-reflect-ng-class="pi pi-caret-down"></span>-->
+  
+      </div>
+  
+      <div class="col-2-5 align-self-center border-right">
+        <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
+          [options]="sucursales" (onChange)="onChangeOffice()" [(ngModel)]="selectedOffices" [style]="{'width': '100%','border':'0px'}"
+          defaultLabel="Sucursales" optionLabel="name"></p-multiSelect>
+      </div>
+  
+      <div class="col-2-5 align-self-center border-right">
+        <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
+          [options]="segmentos" (onChange)="onChangeSegment()" [(ngModel)]="selectedSegments" [style]="{'width': '100%','border':'0px'}"
+          defaultLabel="Segmentos" optionLabel="name"></p-multiSelect>
+      </div>
+  
+      <div class="col-2-5 align-self-center border-right">
+        <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
+          [options]="productos" (onChange)="onChangeProduct()" [(ngModel)]="selectedProducts" [style]="{'width': '100%','border':'0px'}"
+          defaultLabel="Productos" optionLabel="name"></p-multiSelect>
+      </div>
+  
+      <div class="col-2-5 align-self-center border-right">
+        <p-multiSelect maxSelectedLabels="1" selectedItemsLabel="{0} Seleccionados" filter="true" emptyFilterMessage="Sin Resultados"
+          [options]="camaras" (onChange)="onChangeChambers()" [(ngModel)]="selectedChambers" [style]="{'width': '100%','border':'0px'}"
+          defaultLabel="Cámaras" optionLabel="name"></p-multiSelect>
+      </div>
+      <div style="justify-content: center; display: flex;" (click)="eraseFilters()" class="col erase-filters-button align-self-center">
+        <i class="fas fa-eraser eraser d-inline-block" style="color: darkgrey; margin-right: 8px;"></i>
+        <span style="align-self: center" class="delete-filters">
+          <div> BORRAR </div>
+          <div> FILTROS</div>
+        </span>
+      </div>
     </div>
   </div>
-</div>
+  

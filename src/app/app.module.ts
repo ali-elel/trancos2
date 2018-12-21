@@ -1,9 +1,10 @@
+import { TitleService } from './services/title.service';
 import { OperationDetailsBajaComponent } from './features/operation-details-baja/operation-details-baja.component';
 import { FiltersPagosComponent } from './features/filters-pagos/filters-pagos.component';
 import { PagosComponent } from './presentations/pagos/pagos.component';
 // import { CookieService } from 'ngx-cookie-service';
 import { AuthGuard } from './auth-guard';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -47,6 +48,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { MeterBalaComponent } from './features/meter-bala/meter-bala.component';
 import { ChartsModule } from 'ng2-charts';
 import 'chartjs-plugin-zoom';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 @NgModule({
     declarations: [
@@ -80,9 +83,11 @@ import 'chartjs-plugin-zoom';
     ],
     imports: [
         BrowserModule,
+        RadioButtonModule,
         BrowserAnimationsModule,
         HttpClientModule,
         AppRoutingModule,
+        NgxChartsModule,
         NgbModule,
         MatFormFieldModule,
         MatInputModule,
@@ -96,7 +101,7 @@ import 'chartjs-plugin-zoom';
         MultiSelectModule,
         ChartsModule
     ],
-    providers: [AuthGuard],
+    providers: [AuthGuard, TitleService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -33,17 +33,23 @@ import 'core-js/es6/regexp';
 import 'core-js/es6/map';
 import 'core-js/es6/weak-map';
 import 'core-js/es6/set';
-
+import 'core-js/es6';
+import 'core-js/es7/array';
+import 'core-js/es7/reflect';
+import 'core-js/client/shim';
+import 'intl';
 /**
  * If the application will be indexed by Google Search, the following is required.
  * Googlebot uses a renderer based on Chrome 41.
  * https://developers.google.com/search/docs/guides/rendering
  **/
-// import 'core-js/es6/array';
+import 'core-js/es6/array';
 
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
-// import 'classlist.js';  // Run `npm install --save classlist.js`.
-
+import 'classlist.js';  // Run `npm install --save classlist.js`.
+if (typeof SVGElement.prototype.contains == 'undefined') {
+    SVGElement.prototype.contains = HTMLDivElement.prototype.contains;
+}
 /** IE10 and IE11 requires the following for the Reflect API. */
 // import 'core-js/es6/reflect';
 
@@ -59,14 +65,14 @@ import 'core-js/es6/set';
  * user can disable parts of macroTask/DomEvents patch by setting following flags
  */
 
- // (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
- // (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- // (window as any).__zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
+// (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
+// (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
+// (window as any).__zone_symbol__BLACK_LISTED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
 
- /*
- * in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
- * with the following flag, it will bypass `zone.js` patch for IE/Edge
- */
+/*
+* in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
+* with the following flag, it will bypass `zone.js` patch for IE/Edge
+*/
 // (window as any).__Zone_enable_cross_context_check = true;
 
 /***************************************************************************************************

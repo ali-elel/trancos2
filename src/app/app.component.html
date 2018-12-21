@@ -1,2 +1,34 @@
-<router-outlet></router-outlet>
+<div *ngIf="titleService.title != ''; else login" class="santander internas">
+  <header class="container-fluid">
+    <div style="align-items:center" class="row h-100">
+      <div id="brand" class="col-6">
+        <img src="/assets/images/santander-rio.png" class="santander-header-logo">
+        <span class="header-location">&nbsp;{{titleService.title}}</span>
+      </div>
+      <div id="tools" style="display: flex;justify-content: flex-end;" class="col-6 text-right">
+        <div class="header-tool" style=" align-self:center; color:rgba(0,0,0,.6)">
+          <span style="padding-right: 8px;"> Actualizado hace 1"</span>
+        </div>
+        <div (click)="logout()" class="header-tool btn-user color-red" style="padding:10px">
+          <span>
+            Juan Perez González <i style="font-size:1.1vw;margin-left:5px" class="far fa-user"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="navbar-col nav">
+        <app-sidenav></app-sidenav>
+      </div>
+      <div class="col">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
 
+<ng-template #login>
+  <router-outlet></router-outlet>
+</ng-template>
