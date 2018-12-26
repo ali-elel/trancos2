@@ -2,24 +2,27 @@
   <div class="row h-100">
     <div style="padding: 1px 15px;" class="col-3 d-flex h-100 align-self-center ">
       <div style="border-radius: 7px 0px 0px 7px;" class="container-fluid border-grey">
-        <div class="row h-100" style="font-size:.9vw !important">
+        <div class="row h-100" style="font-size:.75vw !important">
           <div class="col-4" style="display: flex;
               justify-content: center;
               align-self: center;">
-            <span>
+            <span style="white-space: nowrap">
               Filtrar por:
             </span>
           </div>
           <div class="col-4" style="display: flex;
               justify-content: center;
-              align-self: center;">
-            <p-radioButton name="group1" label="Pesos" value="Option 1"  [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+              align-self: center;
+              white-space: nowrap;">
+            <p-radioButton name="group1" label="Pesos" value="Option 1" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
 
           </div>
           <div class="col-4" style="display: flex;
               justify-content: center;
+              white-space: nowrap;
               align-self: center;">
-            <p-radioButton name="group1" label="Dólares" value="Option 2"  [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+            <p-radioButton name="group1" label="Dólares" value="Option 2" [(ngModel)]="val1" inputId="opt2">
+              </p-radioButton>
 
           </div>
         </div>

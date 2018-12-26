@@ -47,11 +47,13 @@ a:hover {
 }
 
 .vertical {
-  transform: rotate(-90deg);
-  font-size: .95em;
-  position: absolute;
-  left: 0px;
-  top: 82%;
+  color: #4d4d4d;
+  // writing-mode: vertical-rl;
+  transform: rotate(270deg);
+  padding: 4px 0px;
+  font-size: .87vw;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 #brand span {
@@ -68,7 +70,7 @@ a:hover {
 
 header {
   border-bottom: 1px solid #eee;
-  height: 7.5vh;
+  height: 6vh;
 }
 
 .nav {
@@ -548,19 +550,17 @@ h3 span {
   font-size: 1.1vw !important;
 }
 
-.btn-user {
-  // height: 40px;
-}
-
 .btn-user>span {
-  font-size: .9vw;
+  font-size: .75vw;
 }
 
 .header-tool {
   margin-left: 2px;
   margin-right: 2px;
 }
-
+.ui-calendar{
+  height: 100% !important;
+}
 gridster {
   background: white !important;
 }
@@ -574,7 +574,7 @@ gridster {
 }
 
 body .ui-inputtext {
-  font-size: .9vw !important;
+  font-size: .75vw !important;
 }
 
 .gridster-row {
@@ -616,7 +616,7 @@ body .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
 }
 
 .ui-multiselect .ui-multiselect-label {
-  font-size: .9vw;
+  font-size: .75vw;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -645,11 +645,11 @@ body .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button {
 }
 
 .grid-height {
-  height: 93%;
+  height: 95%;
 }
 
 .filter-height {
-  height: 7%;
+  height: 5%;
 }
 
 .widget-mini-percent {
