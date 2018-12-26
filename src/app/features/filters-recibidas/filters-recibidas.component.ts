@@ -79,7 +79,7 @@ export class FiltersRecibidasComponent implements OnInit {
   onChangeOffice() { }
   onChangeSegment() { }
   onChangeProduct() { }
-
+  onChangeChambers() { }
   ngOnInit() {
     this.es = {
       firstDayOfWeek: 1,

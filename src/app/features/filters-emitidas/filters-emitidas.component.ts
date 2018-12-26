@@ -95,6 +95,10 @@ export class FiltersEmitidasComponent implements OnInit {
   onChangeProduct() {
     alert('oka');
   }
+  onChangeChannel() {
+
+  }
+  onChangeChambers() { }
 
   ngOnInit() {
     this.es = {
@@ -107,7 +111,6 @@ export class FiltersEmitidasComponent implements OnInit {
       today: 'Hoy',
       clear: 'Borrar'
     };
-
 
     this.getFilterSucursales();
     this.getFilterSegmentos();
