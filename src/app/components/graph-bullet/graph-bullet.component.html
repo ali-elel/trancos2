@@ -73,12 +73,12 @@
 
         <!-- Utilizado -->
 
-        <div class="segment start" matTooltip="Utilizado: {{options.segments.used.value | currency:options.segments.proyected.currency}}"
+        <div [ngClass]="{'full': isUsedFull, 'start': !isUsedFull}" class="segment" matTooltip="Utilizado: {{options.segments.used.value | currency:options.segments.proyected.currency}}"
           placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentUsed" [style.width]="segmentsWidth.used + '%'"
           [style.backgroundColor]="options.segments.used.backgroundColor"></div>
 
         <!-- Proyectado -->
-        <div class="segment" matTooltip="Proyectado: {{options.segments.proyected.value | currency:options.segments.proyected.currency}}"
+        <div [ngClass]="{'full': isProyectedFull}" class="segment" matTooltip="Proyectado: {{options.segments.proyected.value | currency:options.segments.proyected.currency}}"
           placement="bottom" triggers="mouseenter:mouseleave" [ngbPopover]="segmentProyected" [style.width]="segmentsWidth.proyected + '%'"
           [style.backgroundColor]="options.segments.proyected.backgroundColor"></div>
         <!-- <ng-template #segmentProyected>Proyectado: {{options.segments.proyected.value | currency:'ARS'}}</ng-template> -->
