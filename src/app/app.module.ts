@@ -86,7 +86,6 @@ import {RadioButtonModule} from 'primeng/radiobutton';
         BrowserAnimationsModule,
         HttpClientModule,
         AppRoutingModule,
-        NgxChartsModule,
         NgbModule,
         MatFormFieldModule,
         MatInputModule,
