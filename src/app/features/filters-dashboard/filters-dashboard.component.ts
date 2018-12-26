@@ -28,14 +28,6 @@ export class FiltersDashboardComponent implements OnInit {
     private _FilterProductosService: FilterProductosService) {
 
     this.minDate.setMonth(this.minDate.getMonth() - 1);
-
-    this.sucursales = [
-      { name: 'Banco Santander Rio S.A.', code: 'sr' },
-      { name: 'Banco de Entre Rios S.A.', code: 'er' },
-      { name: 'Banco del Tucuman S.A.', code: 'bt' },
-      { name: 'Israelita de Cordoba S.A.', code: 'ic' },
-      { name: 'Banco Municipal de Rosario', code: 'bmr' }
-    ];
   }
 
   calendarOnSelect(event) {
