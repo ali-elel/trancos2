@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-// import * from 'jquery';
+
 @Component({
   selector: 'app-graph-bullet',
   templateUrl: './graph-bullet.component.html',

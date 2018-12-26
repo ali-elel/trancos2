@@ -14,3 +14,81 @@
 .table tr {
     font-size: .85vw;
 }
+
+
+.align-self-center {
+    align-self: center;
+  }
+  
+  .p-custom {
+    padding: 0px 5px;
+  }
+  
+  .half {
+    height: 49%;
+  }
+  
+  .h-2 {
+    height: 2%
+  }
+  
+  .align-center {
+    align-self: center;
+  }
+  
+  .quantity {
+    color: #464646;
+    font-size: .95vw;
+  }
+  
+  .line {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    border-right: 1px solid rgb(73, 73, 73);
+    left: 100%;
+    top: 0%;
+  }
+  
+  .price {
+    font-size: 1vw;
+  }
+  
+  .red-hover:hover {
+    color: red;
+    transition-duration: .5s;
+    cursor: pointer;
+  }
+  
+  .h-30 {
+    height: 30%;
+  }
+  .h-10{
+      height: 10%;
+  }
+  
+  .title {
+    color: #FF6666;
+    font-weight: bold;
+    padding-top: 2%;
+    font-size: .85vw;
+  }
+  
+  .h-70 {
+    height: 70%;
+  }
+  
+  .text-align-right {
+    text-align: right;
+  }
+  
+  .no-wrap {
+    white-space: nowrap;
+  }
+  
+  .percent {
+    font-size: 1.9vw;
+    font-weight: bold;
+    color: rgb(117, 117, 117);
+  }
+  
