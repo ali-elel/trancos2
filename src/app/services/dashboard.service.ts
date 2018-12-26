@@ -15,7 +15,7 @@ const httpOptionsUrl = {
 })
 export class DashboardService {
 
-  constructor(private http: HttpClient, private router: Router) {    
+  constructor(private http: HttpClient, private router: Router) {
    }
 
    getTotalE(user: string, password: string): Observable<any> {

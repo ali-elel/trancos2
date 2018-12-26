@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { GraphBulletOptions } from 'src/app/components/graph-bullet/graph-bullet.component';
 import { WarrantyService } from '../../services/warranty.service';
 import { ProcessService } from '../../services/process.service';
-
+import { interval, Observable } from 'rxjs';
+import { switchMap, startWith } from 'rxjs/operators';
 import { Warranty } from 'src/app/model/warranty';
 import { Process } from 'src/app/model/process';
 
@@ -33,7 +34,10 @@ export class MultiBulletComponent implements OnInit {
 
   getWarrantyProcess() {
     if (this.type === 'warranty') {
-      this._WarrantyService.getWarranty()
+       interval(1500)
+        .pipe(
+          startWith(0),
+          switchMap(() => this._WarrantyService.getWarranty()))
         .subscribe((res: Warranty) => {
           // console.log('warranty', res);
           this.bullet1 = {
@@ -105,10 +109,12 @@ export class MultiBulletComponent implements OnInit {
           });
 
     } else if (this.type === 'process') {
-      this._ProcessService.getProcess()
+      interval(1500)
+      .pipe(
+        startWith(0),
+        switchMap(() => this._ProcessService.getProcess()))
         .subscribe((res: Process) => {
           // console.log('process', res);
-
           this.bullet1 = {
             name: 'INTERBANKING',
             vertical: false,
@@ -179,3 +185,5 @@ export class MultiBulletComponent implements OnInit {
     }
   }
 }
+
+

@@ -6,15 +6,6 @@ import { Receive } from 'src/app/model/receive';
 import { interval, Observable } from 'rxjs';
 import { switchMap, startWith } from 'rxjs/operators';
 
-// emit value in sequence every 1 second
-const source = interval(5000);
-// output: 0,1,2,3,4,5....
-const subscribe = source.subscribe(val => console.log('esto es', val));
-
-
-
-
-
 @Component({
   selector: 'app-emit-receive',
   templateUrl: './emit-receive.component.html',
@@ -41,14 +32,18 @@ export class EmitReceiveComponent implements OnInit {
 
   getEmitted() {
     interval(1500)
-    .pipe(
-      startWith(0),
-      switchMap(() => this._EmitidasService.get(this.label))
-    )
-    .subscribe((res: any) => {
-      // console.log(res);
-      this.emitted = res;
-    });
+      .pipe(
+        startWith(0),
+        switchMap(() => this._EmitidasService.get(this.label))
+      )
+      .subscribe((res: any) => {
+         console.log('emitted', res);
+        this.emitted = res;
+      }, error => { },
+      () => {
+        // console.log('completo-recibidas');
+        // this.getReceive();
+      });
 
     // this._EmitidasService.get(this.label)
     //   .subscribe((res: Emitted) => {
@@ -62,15 +57,29 @@ export class EmitReceiveComponent implements OnInit {
   }
 
   getReceive() {
-    this._RecibidasService.get(this.label)
-      .subscribe((res: Receive) => {
+    interval(1500)
+      .pipe(
+        startWith(0),
+        switchMap(() => this._RecibidasService.get(this.label))
+      )
+      .subscribe((res: any) => {
+         console.log('recieve ', res);
         this.recieve = res;
-      },
-        error => { },
+      }, error => { },
         () => {
           // console.log('completo-recibidas');
           // this.getReceive();
         });
+
+    // this._RecibidasService.get(this.label)
+    //   .subscribe((res: Receive) => {
+    //     this.recieve = res;
+    //   },
+    //     error => { },
+    //     () => {
+    //       // console.log('completo-recibidas');
+    //       // this.getReceive();
+    //     });
   }
 
 

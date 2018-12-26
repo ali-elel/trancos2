@@ -2,6 +2,8 @@ import { WarrantyService } from './../../services/Warranty.service';
 import { GraphBulletOptions } from './../../components/graph-bullet/graph-bullet.component';
 import { Component, OnInit } from '@angular/core';
 import { Warranty } from 'src/app/model/Warranty';
+import { interval, Observable } from 'rxjs';
+import { switchMap, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-graph-warranty',
@@ -19,7 +21,10 @@ export class GraphWarrantyComponent implements OnInit {
      this.getWarranty();
   }
   getWarranty() {
-    this._WarrantyService.getWarranty()
+    interval(1500)
+    .pipe(
+      startWith(0),
+      switchMap(() =>  this._WarrantyService.getWarranty()))
       .subscribe((res: Warranty) => {
         this.bullet = {
           name: '',

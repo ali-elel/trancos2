@@ -2,6 +2,8 @@ import { RecibidasTxhoraService } from './../../services/recibidas-txhora.servic
 import { EmitdasTxhoraService } from './../../services/emitdas-txhora.service';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
+import { interval, Observable } from 'rxjs';
+import { switchMap, startWith } from 'rxjs/operators';
 @Component({
   selector: 'app-multi-graph-operations',
   templateUrl: './multi-graph-operations.component.html',
@@ -301,9 +303,12 @@ export class MultiGraphOperationsComponent implements OnInit {
   }
 
   getEmitidasTxHora() {
-    this._EmitdasTxhoraService.get(this.label)
-      .subscribe((res: any) => {
-        console.log('getEmitidasTxHora', res);
+    interval(1500)
+    .pipe(
+      startWith(0),
+      switchMap(() =>  this._EmitdasTxhoraService.get(this.label))
+    ).subscribe((res: any) => {
+        // console.log('getEmitidasTxHora', res);
       },
         error => { },
         () => {
@@ -313,9 +318,13 @@ export class MultiGraphOperationsComponent implements OnInit {
   }
 
   getRecibidasTxHora() {
-    this._RecibidasTxhoraService.get(this.label)
+    interval(1500)
+      .pipe(
+        startWith(0),
+        switchMap(() => this._RecibidasTxhoraService.get(this.label))
+      )
       .subscribe((res: any) => {
-        console.log('getRecibidasTxHora', res);
+        // console.log('getRecibidasTxHora', res);
       },
         error => { },
         () => {

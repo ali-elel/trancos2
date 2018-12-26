@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EmitidasService } from '../../services/emitidas.service';
 import { Emitted } from 'src/app/model/emitted';
+import { interval, Observable } from 'rxjs';
+import { switchMap, startWith } from 'rxjs/operators';
 @Component({
   selector: 'app-operation-details',
   templateUrl: './operation-details.component.html',
@@ -24,7 +26,11 @@ export class OperationDetailsComponent implements OnInit {
   }
 
   listOperationsDetails() {
-    this._EmitidasService.get(this.label)
+    interval(1500)
+      .pipe(
+        startWith(0),
+        switchMap(() => this._EmitidasService.get(this.label))
+      )
       .subscribe((res: Emitted) => {
         this.listado = res.amountARS;
         this.listGral = res;

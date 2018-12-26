@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EmitidasService } from '../../services/emitidas.service';
 import { Emitted } from 'src/app/model/emitted';
+import { interval, Observable } from 'rxjs';
+import { switchMap, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-operation-mini',
@@ -9,7 +11,7 @@ import { Emitted } from 'src/app/model/emitted';
 })
 export class OperationMiniComponent implements OnInit {
   @Input() label: string;
-  @Input() alert: boolean;
+  @Input() alert: boolean;
   public listado: any;
   public listGral: any;
   constructor(
@@ -21,17 +23,21 @@ export class OperationMiniComponent implements OnInit {
   }
 
   listOperationsMini() {
-    this._EmitidasService.get(this.label)
+    interval(1500)
+      .pipe(
+        startWith(0),
+        switchMap(() => this._EmitidasService.get(this.label))
+      )
       .subscribe((res: Emitted) => {
         this.listado = res;
       },
-      error => {
-        console.log(error);
-      },
-      () => {
-        // console.log('completo-emitidas');
-        // this.getEmitted();
-      });
+        error => {
+          console.log(error);
+        },
+        () => {
+          // console.log('completo-emitidas');
+          // this.getEmitted();
+        });
   }
 
 }

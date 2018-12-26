@@ -2,6 +2,8 @@ import { ProcessService } from './../../services/process.service';
 import { Process } from 'src/app/model/process';
 import { GraphBulletOptions } from './../../components/graph-bullet/graph-bullet.component';
 import { Component, OnInit } from '@angular/core';
+import { interval, Observable } from 'rxjs';
+import { switchMap, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-graph-process',
@@ -80,8 +82,11 @@ export class GraphProcessComponent implements OnInit {
   }
 
   getProcess() {
-    this._ProcessService.getProcess()
-      .subscribe((res: Process) => {
+    interval(1500)
+    .pipe(
+      startWith(0),
+      switchMap(() => this._ProcessService.getProcess())
+    ).subscribe((res: Process) => {
         this.graphINTBKOptions2 = {
           name: 'BCRA',
           vertical: true,
@@ -143,8 +148,8 @@ export class GraphProcessComponent implements OnInit {
             }
           }
         };
-        console.log('graphBCRAOptions2', this.graphBCRAOptions2);
-        console.log('graphINTBKOptions2', this.graphINTBKOptions2);
+        // console.log('graphBCRAOptions2', this.graphBCRAOptions2);
+        // console.log('graphINTBKOptions2', this.graphINTBKOptions2);
 
       },
       error => {
