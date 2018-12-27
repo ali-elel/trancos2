@@ -1,4 +1,4 @@
-<div [ngClass]="{'pink': alert}" class="container">
+<!-- <div [ngClass]="{'pink': alert}" class="container">
   <div class="row">
     <div style="font-size: 1vw" class="col-12 bold widget-mini-title uppercase color-santander">{{label}}</div>
     
@@ -28,6 +28,49 @@
           <tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</div> -->
+
+
+<div [ngClass]="{'pink': alert}" class="container-fluid h-100">
+
+  <div class="h-10 title uppercase">
+    {{label}}
+  </div>
+  <div class="h-25">
+    <div class="container-fluid h-100 p-custom">
+      <div class="row h-100">
+        <div class="col-8 h-100 d-flex align-self-center" *ngIf="listGral != undefined">
+          <div class="widget-mini-price align-self-center">{{listGral.amountARSGral.amount | currency}}</div>
+          <div style="margin-right: 5px; margin-bottom: 1%;" class="widget-mini-quantity align-self-center" *ngIf="listado != undefined">
+            &nbsp; | </div>
+          <div class="widget-mini-quantity align-self-center"> {{listGral.amountARSGral.count}}</div>
+        </div>
+        <div class="col-4 d-flex aligned-centered-flex" *ngIf="listGral != undefined">
+          <span style="white-space: nowrap;" class="percent widget-mini-percent" *ngIf="label != 'Ingresado'">{{listGral.percent}}
+            %</span>
+        </div>
+        <div class="mt-2 col-12">
+          <table class="table table-sm">
+            <thead>
+              <tr class="uppercase">
+                <th scope="col">{{cab1}}</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Monto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let list of listado; index as i;">
+                <td>{{list.detail}}</td>
+                <td>{{list.count}}</td>
+                <td>{{list.amount | currency}}</td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>

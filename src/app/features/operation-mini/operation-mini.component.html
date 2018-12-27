@@ -1,4 +1,4 @@
-<div  [ngClass]="{'pink': alert}"  class="container h-100">
+<!-- <div  [ngClass]="{'pink': alert}"  class="container h-100">
   <div class="row h-100">
     <div class="col-12 d-flex h-25 widget-mini-title bold uppercase label">
       <div class="align-self-center"> {{label}}</div>
@@ -10,6 +10,28 @@
             <span class="widget-mini-price" *ngIf="listado != undefined">$ {{listado.amountARS.amount}} </span>
             <span class="widget-mini-quantity" *ngIf="listado != undefined"> &nbsp; | {{listado.amountARS.count}}</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div [ngClass]="{'pink': alert}" class="container-fluid h-100">
+
+  <div class="h-30 title uppercase">
+    {{label}}
+  </div>
+  <div class="h-70">
+    <div class="container-fluid h-100 p-custom">
+      <div class="row h-100">
+        <div class="col-12 d-flex align-self-center">
+          <span class="widget-mini-price" *ngIf="listado != undefined">$ {{listado.amountARS.amount}} </span>
+          <div style="margin-right: 5px;    margin-bottom: 1%;" class="widget-mini-quantity align-self-center h-100"
+            *ngIf="listado != undefined">
+            &nbsp; | </div>
+          <div class="widget-mini-quantity align-self-center h-100" *ngIf="listado != undefined">
+            {{listado.amountARS.count}}</div>
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-// import * from 'jquery';
+
 @Component({
   selector: 'app-graph-bullet',
   templateUrl: './graph-bullet.component.html',
@@ -12,6 +11,8 @@ export class GraphBulletComponent implements OnInit {
   @Input() options: GraphBulletOptions;
 
   values: number[];
+  isUsedFull = false;
+  isProyectedFull = false;
   max: number;
   segmentsWidth: SegmentTypesWidth;
 
@@ -35,11 +36,10 @@ export class GraphBulletComponent implements OnInit {
 
     // Numbers for Division
     this.values = [];
-    const minim = this.max / 5;
+    const minim = this.max / 4;
     this.values.push(minim);
     this.values.push(minim * 2);
     this.values.push(minim * 3);
-    this.values.push(minim * 4);
     this.values.push(this.max);
 
     // Definir dimensiones
@@ -58,6 +58,11 @@ export class GraphBulletComponent implements OnInit {
       } else {
         this.segmentsWidth.used = this.options.segments.used.value * 100 / this.max;
       }
+
+      if (this.segmentsWidth.used === 100 || this.segmentsWidth.used === 0) {
+        this.isUsedFull = true;
+      }
+
     }
 
     if (this.options.segments.proyected.value > 0) {
@@ -65,6 +70,9 @@ export class GraphBulletComponent implements OnInit {
         this.segmentsWidth.proyected = this.options.segments.proyected.value * 100 / this.max - this.segmentsWidth.exceded - this.segmentsWidth.used;
       } else {
         this.segmentsWidth.proyected = this.options.segments.proyected.value * 100 / this.max;
+      }
+      if (this.segmentsWidth.proyected === 100) {
+        this.isProyectedFull = true;
       }
     }
 
