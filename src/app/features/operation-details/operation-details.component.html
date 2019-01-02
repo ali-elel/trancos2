@@ -62,7 +62,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let list of listado; index as i;">
-                <td>{{list.detail}}</td>
+                <td>{{list.detail | uppercase}}</td>
                 <td>{{list.count}}</td>
                 <td>{{list.amount | currency}}</td>
               </tr>
